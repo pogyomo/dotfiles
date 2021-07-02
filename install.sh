@@ -4,4 +4,4 @@ git clone https://github.com/junegunn/vim-plug.git
 cp vim-plug/plug.vim ~/.vim/autoload/
 rm -rf vim-plug
 echo "making symbolic link..."
-ln -s .vimrc ~/.vimrc
+ln -s ~/dotfiles/.vimrc ~/.vimrc
