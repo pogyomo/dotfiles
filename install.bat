@@ -23,7 +23,8 @@ if %choice% == 1 (
 
 :install_vim_plug
     echo installing vim-plug...
-    curl -fo %HOMEDRIVE%%HOMEPATH%\vimfiles\autoload\plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -fo %HOMEDRIVE%%HOMEPATH%\vimfiles\autoload\plug.vim --create-dirs ^
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     exit
 :uninstall_vim_plug
     del %HOMEDRIVE%%HOMEPATH%\vimfiles\autoload\plug.vim
