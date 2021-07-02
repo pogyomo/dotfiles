@@ -1,46 +1,11 @@
 @echo off
-echo what do you want to do?
-echo 1.install/update vim-plug
-echo 2.uninstall vim-plug
-echo 3.make symbolic link
-echo 4.delete symbolic link
-echo 5~.end bat
-set /p choice="?"
 
+@rem make symbolic links
+if exist %USERPROFILE%\.vimrc del %USERPROFILE%\.vimrc
+mklink %USERPROFILE%\.vimrc %USERPROFILE%\dotfiles\.vimrc
 
-if %choice% == 1 (
-    goto :install_vim_plug
-) else if %choice% == 2 (
-    goto :uninstall_vim_plug
-) else if %choice% == 3 (
-    goto :make_symbolic_link
-) else if %choice% == 4 (
-    goto :delete_symbolic_link
-) else (
-    exit
-)
-
-
-:install_vim_plug
-    echo installing vim-plug...
-    curl -fo %HOMEDRIVE%%HOMEPATH%\vimfiles\autoload\plug.vim ^
-    --create-dirs ^
+@rem install vim-plug
+curl -fo %USERPROFILE%\vimfiles\autoload\plug.vim --create-dirs ^
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    echo finish!
-    exit
-:uninstall_vim_plug
-    echo uninstalling vim-plug...
-    del %HOMEDRIVE%%HOMEPATH%\vimfiles\autoload\plug.vim
-    echo finish!
-    exit
-:make_symbolic_link
-    echo makeing symbolic link...
-    mklink %HOMEDRIVE%%HOMEPATH%\.vimrc ^
-    %HOMEDRIVE%%HOMEPATH%\dotfiles\.vimrc
-    echo finish!
-    exit
-:delete_symbolic_link
-    echo deleting symbolic link
-    del %HOMEDRIVE%%HOMEPATH%\.vimrc
-    echo finish!
-    exit
+
+pause
