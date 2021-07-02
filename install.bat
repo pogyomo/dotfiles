@@ -7,5 +7,3 @@ mklink %USERPROFILE%\.vimrc %USERPROFILE%\dotfiles\.vimrc
 @rem install vim-plug
 curl -fo %USERPROFILE%\vimfiles\autoload\plug.vim --create-dirs ^
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-pause
