@@ -26,16 +26,21 @@ if %choice% == 1 (
     curl -fo %HOMEDRIVE%%HOMEPATH%\vimfiles\autoload\plug.vim ^
     --create-dirs ^
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo finish!
     exit
 :uninstall_vim_plug
+    echo uninstalling vim-plug...
     del %HOMEDRIVE%%HOMEPATH%\vimfiles\autoload\plug.vim
+    echo finish!
     exit
 :make_symbolic_link
     echo makeing symbolic link...
     mklink %HOMEDRIVE%%HOMEPATH%\.vimrc ^
     %HOMEDRIVE%%HOMEPATH%\dotfiles\.vimrc
+    echo finish!
     exit
 :delete_symbolic_link
     echo deleting symbolic link
     del %HOMEDRIVE%%HOMEPATH%\.vimrc
+    echo finish!
     exit
