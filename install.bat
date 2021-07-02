@@ -5,4 +5,3 @@ copy vim-plug\plug.vim %HOMEDRIVR%%HOMEPATH%\vimfiles\autoload
 rd /s /q vim-plug
 echo makeing symbolic link...
 mklink %HOMEDRIVE%%HOMEPATH%\.vimrc %HOMEDRIVE%%HOMEPATH%\dotfiles\.vimrc
-pause
