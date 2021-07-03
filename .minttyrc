@@ -1,0 +1,6 @@
+Term=xterm-256color
+Transparency=low
+ThemeFile=xterm
+Font=Ricty Diminished
+FontHeight=12
+CursorType=block

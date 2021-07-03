@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #make symbolic link
-if [ -L ~/.vimrc ]; then
-    unlink ~/.vimrc
-fi
+unlink ~/.vimrc
+unlink ~/.minttyrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.minttyrc ~/.minttyrc
 
 #install vim-plug
 curl -fo ~/.vim/autoload/plug.vim --create-dirs \
