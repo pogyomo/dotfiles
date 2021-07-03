@@ -1,10 +1,9 @@
-#!/bin/bash
-
 #make symbolic link
-unlink ~/.vimrc
-unlink ~/.minttyrc
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.minttyrc ~/.minttyrc
+for f in .??*
+do
+    [ "$f" = ".git" ] && continue
+    ln -snfv ~/dotfiles/$f ~/$f
+done
 
 #install vim-plug
 curl -fo ~/.vim/autoload/plug.vim --create-dirs \
