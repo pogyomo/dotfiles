@@ -14,8 +14,8 @@ FontHeight=12
 
 ### ウィンドウ
 # ウィンドウサイズ
-columns=180
-Rows=48
+columns=120
+Rows=36
 
 ### ターミナル
 # ターミナルをxterm-256coloer互換にする
