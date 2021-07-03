@@ -1,6 +1,22 @@
-Term=xterm-256color
-Transparency=low
-ThemeFile=xterm
-Font=Ricty Diminished
-FontHeight=12
+### 見た目
+# 背景を透過する
+Transparency=medium
+# テーマを変更する
+ThemeFile=gruvbox
+# カーソルをブロックにする
 CursorType=block
+
+### フォント関係
+# フォントを変更する
+Font=Ricty Diminished
+# フォントサイズを12ptに
+FontHeight=12
+
+### ウィンドウ
+# ウィンドウサイズ
+columns=180
+Rows=48
+
+### ターミナル
+# ターミナルをxterm-256coloer互換にする
+Term=xterm-256color

@@ -2,7 +2,7 @@
 for f in .??*
 do
     [ "$f" = ".git" ] && continue
-    ln -snfv ~/dotfiles/$f ~/$f
+    ln -sf ~/dotfiles/$f ~/$f
 done
 
 #install vim-plug
