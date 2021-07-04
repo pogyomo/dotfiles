@@ -292,14 +292,15 @@ nnoremap <silent> [NERDTree]c :NERDTreeClose<CR>
 " 左端のシンボルカラムを常時表示する
 let g:ale_sign_column_always = 1
 " エラー時のシンボルを変更する
-let g:ale_sign_error = 'E:'
-let g:ale_sign_warning = 'W:'
+let g:ale_sign_error = 'E>'
+let g:ale_sign_warning = 'W>'
 
 " lint関係
 " lintを保存時と開いたときに走らせる
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+
 
 " -----lightline-----
 " 表示の設定
