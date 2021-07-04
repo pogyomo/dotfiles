@@ -247,11 +247,17 @@ call plug#begin('~/.vim/plugged')
 
 " ここに導入したいプラグインを書く
 " Plugin '[Github Auther]/[Github repo]'の形式で書く
+" 全体に関わるやつ
 Plug 'vim-jp/vimdoc-ja' "docを日本語化する
 Plug 'tomasr/molokai' "molokaiを入れる
-Plug 'thentenaar/vim-syntax-obscure' "nesasmやca65のシンタックスハイライト
 Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
+Plug 'dense-analysis/ale' "プログラミング言語の構文チェック等用
+" nesasmに関係するやつ
+Plug 'thentenaar/vim-syntax-obscure' "nesasmやca65のシンタックスハイライト
+" latexに関係するやつ
+Plug 'lervag/vimtex' "latex用のシンタックスハイライト
+
 
 " 呼び出し必須
 call plug#end()
@@ -279,6 +285,24 @@ hi Tag             guifg=#F92672               gui=none
 " 現在のタブでNERDTreeを開閉する
 nnoremap <silent> [NERDTree]o :NERDTree<CR>
 nnoremap <silent> [NERDTree]c :NERDTreeClose<CR>
+
+
+" -----ale-----
+" 表示関係
+" 左端のシンボルカラムを常時表示する
+let g:ale_sign_column_always = 1
+
+" エラー時のシンボルを変更する
+let g:ale_sign_error = 'E:'
+let g:ale_sign_warning = 'W:'
+
+" エラー時にステータスラインに表示する物の設定
+let g:ale_statusline_format = [ 'E:%d', 'W:%d', 'ok' ]
+
+
+" lint関係
+" lintを保存時に走らせる
+let g:ale_lint_on_save = 1
 
 
 " -----lightline-----
@@ -315,6 +339,7 @@ function! Plug_lightline_IsPreviewWindow()
     endif
 endfunction
 
+
 " タブページで使用する関数(標準)
 " タブのバッファの数を返す
 function! Plug_lightline_GetNumberOfBuffer(n)
@@ -329,8 +354,8 @@ let g:lightline = {
 " アクティブ時に左右に表示するものの設定
 let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
-    \            [ 'filename', 'readonly', 'help', 'preview' ] ],
-    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
+    \ 'right': [ [ 'lineinfo'],
     \            [ 'percent' ],
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
     \ }
