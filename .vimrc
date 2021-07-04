@@ -296,9 +296,6 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'E:'
 let g:ale_sign_warning = 'W:'
 
-" エラー時にステータスラインに表示する物の設定
-let g:ale_statusline_format = [ 'E:%d', 'W:%d', 'ok' ]
-
 
 " lint関係
 " lintを保存時に走らせる
