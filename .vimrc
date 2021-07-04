@@ -159,7 +159,7 @@ nnoremap [FileType]s :set filetype=
 
 " -----表示-----
 " 入力中のコマンドを表示
-"=set showcmd
+set showcmd
 
 
 " 行番号を表示
