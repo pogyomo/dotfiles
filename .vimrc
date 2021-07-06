@@ -358,8 +358,8 @@ let g:lightline.separator = {
     \ 'right': ''
     \ }
 let g:lightline.subseparator = {
-    \  'left': '>',
-    \ 'right': '<'
+    \  'left': '|',
+    \ 'right': '|'
     \ }
 
 " タブページの設定
