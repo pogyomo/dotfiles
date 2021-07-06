@@ -82,6 +82,7 @@ let mapleader="s"
 
 " ラベルを設定する
 nmap <Leader>n [NERDTree]
+nmap <Leader>g [fugitive]
 
 
 "-----------------------------
@@ -90,12 +91,12 @@ nmap <Leader>n [NERDTree]
 " -----入力-----
 " タブ文字関係
 " タブをスペースで扱う
-set expandtab "入力されたタブ文字をスペースで扱う(既存のタブ文字には影響しない)
-set tabstop=4 "tabキーが押されたときに、挿入されたスペースがこの値を超えたらタブ文字にする。
-              "また、タブ文字を設定された数の半角スペースで表示する
+set expandtab     "入力されたタブ文字をスペースで扱う(既存のタブ文字には影響しない)
+set tabstop=4     "tabキーが押されたときに、挿入されたスペースがこの値を超えたらタブ文字にする。
+                  "また、タブ文字を設定された数の半角スペースで表示する
 set softtabstop=4 "tabキーやbsキーが押された際、タブの幅をを
                   "設定された数の半角スペースとして挿入、削除する
-set shiftwidth=4 "インデントを増やすときに設定された数の半角スペースを挿入する
+set shiftwidth=4  "インデントを増やすときに設定された数の半角スペースを挿入する
 
 
 " 自動インデントを有効にする
@@ -158,8 +159,8 @@ nnoremap [FileType]s :set filetype=
 
 
 " -----表示-----
-" 入力中のコマンドを表示
-set showcmd
+" 入力中のコマンドを表示しない
+set noshowcmd
 
 
 " 行番号を表示
@@ -244,7 +245,6 @@ set noswapfile
 " -----vim-plug-----
 " プラグインの登録
 call plug#begin('~/.vim/plugged')
-
 " ここに導入したいプラグインを書く
 " Plugin '[Github Auther]/[Github repo]'の形式で書く
 " 全体に関わるやつ
@@ -252,10 +252,9 @@ Plug 'vim-jp/vimdoc-ja' "docを日本語化する
 Plug 'tomasr/molokai' "molokaiを入れる
 Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
+Plug 'tpope/vim-fugitive' "gitの操作
 " nesasmに関係するやつ
 Plug 'thentenaar/vim-syntax-obscure' "nesasmやca65のシンタックスハイライト
-
-
 " 呼び出し必須
 call plug#end()
 
@@ -282,6 +281,13 @@ hi Tag             guifg=#F92672               gui=none
 " 現在のタブでNERDTreeを開閉する
 nnoremap <silent> [NERDTree]o :NERDTree<CR>
 nnoremap <silent> [NERDTree]c :NERDTreeClose<CR>
+
+
+" -----fugitive-----
+" キーの設定
+nnoremap <silent> [fugitive]a :Gwrite<CR>
+nnoremap <silent> [fugitive]c :Gcommit<CR>
+nnoremap <silent> [fugitive]p :Gpush<CR>
 
 
 " -----lightline-----
@@ -332,7 +338,7 @@ let g:lightline = {
 " アクティブ時に左右に表示するものの設定
 let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
-    \            [ 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
+    \            [ 'fugitive', 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
     \ 'right': [ [ 'lineinfo'],
     \            [ 'percent' ],
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
@@ -350,6 +356,7 @@ let g:lightline.component = {
     \ }
 " 使用する関数を登録
 let g:lightline.component_function = {
+    \ 'fugitive': 'FugitiveStatusLine',
     \ 'filename': 'Plug_lightline_GetFileName',
     \     'help': 'Plug_lightline_IsHelpBuffer',
     \  'preview': 'Plug_lightline_IsPreviewWindow',
