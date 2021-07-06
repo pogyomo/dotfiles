@@ -252,7 +252,6 @@ Plug 'vim-jp/vimdoc-ja' "docを日本語化する
 Plug 'tomasr/molokai' "molokaiを入れる
 Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
-Plug 'tpope/vim-fugitive' "gitの操作
 " nesasmに関係するやつ
 Plug 'thentenaar/vim-syntax-obscure' "nesasmやca65のシンタックスハイライト
 " 呼び出し必須
@@ -282,13 +281,6 @@ hi Tag             guifg=#F92672               gui=none
 nnoremap <silent> [NERDTree]o :NERDTree<CR>
 nnoremap <silent> [NERDTree]c :NERDTreeClose<CR>
 
-
-" -----fugitive-----
-" キーの設定
-nnoremap <silent> [fugitive]a :Gwrite<CR>
-nnoremap [fugitive]c :Gcommit -m<Space>
-nnoremap <silent> [fugitive]p :Gpush<CR>
-nnoremap <silent> [fugitive]d :Gdiff<CR>
 
 
 " -----lightline-----
@@ -339,7 +331,7 @@ let g:lightline = {
 " アクティブ時に左右に表示するものの設定
 let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
-    \            [ 'fugitive', 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
+    \            [ 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
     \ 'right': [ [ 'lineinfo'],
     \            [ 'percent' ],
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
@@ -357,7 +349,6 @@ let g:lightline.component = {
     \ }
 " 使用する関数を登録
 let g:lightline.component_function = {
-    \ 'fugitive': 'FugitiveStatusLine',
     \ 'filename': 'Plug_lightline_GetFileName',
     \     'help': 'Plug_lightline_IsHelpBuffer',
     \  'preview': 'Plug_lightline_IsPreviewWindow',
