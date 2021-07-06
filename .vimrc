@@ -282,7 +282,6 @@ nnoremap <silent> [NERDTree]o :NERDTree<CR>
 nnoremap <silent> [NERDTree]c :NERDTreeClose<CR>
 
 
-
 " -----lightline-----
 " 表示の設定
 set laststatus=2 "ステータスラインを常に表示する
