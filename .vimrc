@@ -286,8 +286,9 @@ nnoremap <silent> [NERDTree]c :NERDTreeClose<CR>
 " -----fugitive-----
 " キーの設定
 nnoremap <silent> [fugitive]a :Gwrite<CR>
-nnoremap <silent> [fugitive]c :Gcommit<CR>
+nnoremap [fugitive]c :Gcommit -m<Space>
 nnoremap <silent> [fugitive]p :Gpush<CR>
+nnoremap <silent> [fugitive]d :Gdiff<CR>
 
 
 " -----lightline-----
