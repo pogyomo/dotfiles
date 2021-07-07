@@ -82,7 +82,6 @@ let mapleader="s"
 
 " ラベルを設定する
 nmap <Leader>n [NERDTree]
-nmap <Leader>g [fugitive]
 
 
 "-----------------------------
@@ -111,7 +110,7 @@ set backspace=indent,eol,start
 set completeopt=menuone,noinsert
 
 
-" キーの設定
+" ノーマルモードでのキーの設定
 " タブでファイルの開閉
 nnoremap [Tab]o :tabnew<Space>
 nnoremap <silent> [Tab]co :tabclose<CR>
@@ -139,8 +138,8 @@ nnoremap [Window]> <C-w>>
 nnoremap [Window]+ <C-w>+
 nnoremap [Window]- <C-w>-
 
-" 入力補完時にEnterで補完内容を決定する
-inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
+" :set Filetype=と入力する
+nnoremap [FileType]s :set filetype=
 
 " 表示行単位で移動する
 "そのための設定
@@ -151,11 +150,20 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" normalモードへの移行をjjキーで代用する
-im <silent> jj <ESC>
 
-" :set Filetype=と入力する
-nnoremap [FileType]s :set filetype=
+" インサートモードでのキーの設定
+" 入力補完時にEnterで補完内容を決定する
+inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
+
+" normalモードへの移行をjjキーで代用する
+inoremap <silent> jj <ESC>
+
+" 括弧とクォーテーションを自動で補完する
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
 
 
 " -----表示-----
