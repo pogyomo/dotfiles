@@ -159,11 +159,11 @@ inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
 inoremap <silent> jj <ESC>
 
 " 括弧とクォーテーションを自動で補完する
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap ' ''<Left>
+inoremap " ""<Left>
 
 
 " -----表示-----
