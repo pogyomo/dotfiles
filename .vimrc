@@ -26,7 +26,7 @@
 " mapleader="\<Space>" =>標準の操作用
 " [Window] <- <Leader>w
 " [Tab] <- <Leader>t
-" [FileType] <- <Leader>f
+" [File] <- <Leader>f
 " mapleader="s" =>プラグイン用
 " [NERDTree] <- <Leader>n
 "
@@ -50,7 +50,9 @@
 " [Tab]l <- gt =>タブ間を右に移動する
 " [Tab]H <- <silent> :-tabmove =>タブ自体を左に移動する
 " [Tab]L <- <silent> :+tabmove =>タブ自体を右に移動する
-" [FileType]s <- :set filetype= =>:set filetype=と入力する
+" [File]t <- :set filetype= =>:set filetype=と入力する
+" [File]e <- :set fileencoding= =>:set fileencodingと入力する
+" [File]f <- :set fileformat= =>:set fileformatと入力する
 " [NERDTree]o <- <silent> :NERDTree<CR> =>現在のタブでNERDTreeを開く
 " [NERDTree]c <- <silent> :NERDTreeClose<CR> =>現在のタブのNERDTreeを閉じる
 "
@@ -75,7 +77,7 @@ let mapleader="\<Space>"
 " ラベルを設定する
 nmap <Leader>w [Window]
 nmap <Leader>t [Tab]
-nmap <Leader>f [FileType]
+nmap <Leader>f [File]
 
 " sキーをleaderに設定する(プラグインのキーマップ用)
 let mapleader="s"
@@ -138,14 +140,15 @@ nnoremap [Window]> <C-w>>
 nnoremap [Window]+ <C-w>+
 nnoremap [Window]- <C-w>-
 
-" :set Filetype=と入力する
-nnoremap [FileType]s :set filetype=
+" ファイル関係のコマンド
+nnoremap [File]t :set filetype=
+nnoremap [File]e :set fileencoding=
+nnoremap [File]f :set fileformat=
 
 " 表示行単位で移動する
 "そのための設定
 nnoremap j gj
 nnoremap k gk
-
 "逆の場合も設定
 nnoremap gj j
 nnoremap gk k
