@@ -29,6 +29,7 @@
 " [File] <- <Leader>f
 " mapleader="s" =>プラグイン用
 " [NERDTree] <- <Leader>n
+" [preview-markdown] <- <Leader>m
 "
 " leaderキーから始まるやつ
 " [Window]h <- <C-w>h =>ウィンドウ間を左に移動
@@ -55,6 +56,11 @@
 " [File]f <- :set fileformat= =>:set fileformatと入力する
 " [NERDTree]o <- <silent> :NERDTree<CR> =>現在のタブでNERDTreeを開く
 " [NERDTree]c <- <silent> :NERDTreeClose<CR> =>現在のタブのNERDTreeを閉じる
+" [preview-markdown]t <- <silent> :PreviewMarkdown tab<CR> =>新しいタブでmarkdownのプレビューを行う
+" [preview-markdown]l <- <silent> :PreviewMarkdown right<CR> =>ウィンドウの右側でmarkdownのプレビューを行う
+" [preview-markdown]h <- <silent> :PreviewMarkdown left<CR> =>ウィンドウの左側でmarkdownのプレビューを行う
+" [preview-markdown]k <- <silent> :PreviewMarkdown top<CR> =>ウィンドウの上側でmarkdownのプレビューを行う
+" [preview-markdown]j <- <silent> :PreviewMarkdown bottom<CR> =>ウィンドウの下側でmarkdownのプレビューを行う
 "
 " gキーが先頭
 " j <-> gj =>表示されている行単位で下に移動
@@ -84,6 +90,7 @@ let mapleader="s"
 
 " ラベルを設定する
 nmap <Leader>n [NERDTree]
+nmap <Leader>m [preview-markdown]
 
 
 "-----------------------------
@@ -263,6 +270,7 @@ Plug 'vim-jp/vimdoc-ja' "docを日本語化する
 Plug 'tomasr/molokai' "molokaiを入れる
 Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
+Plug 'skanehira/preview-markdown.vim' "マークダウンのプレビュー
 " nesasmに関係するやつ
 Plug 'thentenaar/vim-syntax-obscure' "nesasmやca65のシンタックスハイライト
 " 呼び出し必須
@@ -291,6 +299,18 @@ hi Tag             guifg=#F92672               gui=none
 " 現在のタブでNERDTreeを開閉する
 nnoremap <silent> [NERDTree]o :NERDTree<CR>
 nnoremap <silent> [NERDTree]c :NERDTreeClose<CR>
+
+
+" -----preview-markdown-----
+" キーの設定
+nnoremap <silent> [preview-markdown]t :PreviewMarkdown tab<CR>
+nnoremap <silent> [preview-markdown]l :PreviewMarkdown right<CR>
+nnoremap <silent> [preview-markdown]h :PreviewMarkdown left<CR>
+nnoremap <silent> [preview-markdown]k :PreviewMarkdown top<CR>
+nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
+
+" レンダラの設定
+let g:preview_markdown_parser='glow'
 
 
 " -----lightline-----
