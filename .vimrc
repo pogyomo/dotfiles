@@ -175,7 +175,6 @@ inoremap ( ()<Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
 
-
 " -----表示-----
 " 入力中のコマンドを表示しない
 set noshowcmd
@@ -271,9 +270,10 @@ Plug 'tomasr/molokai' "molokaiを入れる
 Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
 Plug 'skanehira/preview-markdown.vim' "マークダウンのプレビュー
-Plug 'sheerun/vim-polyglot' "シンタックスハイライトの強化
 " nesasmに関係するやつ
 Plug 'thentenaar/vim-syntax-obscure' "nesasmやca65のシンタックスハイライト
+" c/c++に関係するやつ
+Plug 'bfrg/vim-cpp-modern' "c/c++のシンタックスハイライト
 " 呼び出し必須
 call plug#end()
 
