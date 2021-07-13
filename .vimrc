@@ -271,6 +271,7 @@ Plug 'tomasr/molokai' "molokaiを入れる
 Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
 Plug 'skanehira/preview-markdown.vim' "マークダウンのプレビュー
+Plug 'sheerun/vim-polyglot' "シンタックスハイライトの強化
 " nesasmに関係するやつ
 Plug 'thentenaar/vim-syntax-obscure' "nesasmやca65のシンタックスハイライト
 " 呼び出し必須
