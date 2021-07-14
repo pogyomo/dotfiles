@@ -262,7 +262,7 @@ set noswapfile
 "-----------------------------
 " -----vim-plug-----
 " プラグインの登録
-call plug#begin('$HOME/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " ここに導入したいプラグインを書く
 " Plugin '[Github Auther]/[Github repo]'の形式で書く
 " 全体に関わるやつ
