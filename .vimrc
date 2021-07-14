@@ -270,10 +270,12 @@ Plug 'tomasr/molokai' "molokaiを入れる
 Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
 Plug 'skanehira/preview-markdown.vim' "マークダウンのプレビュー
-" nesasmに関係するやつ
-Plug 'thentenaar/vim-syntax-obscure' "nesasmやca65のシンタックスハイライト
+" asm6に関係するやつ
+Plug 'pogyomo/asm6-syntax' "asm6のシンタックスハイライト
 " c/c++に関係するやつ
 Plug 'bfrg/vim-cpp-modern' "c/c++のシンタックスハイライト
+" latexに関係するやつ
+Plug 'lervag/vimtex' "latexのシンタックスハイライト関係
 " 呼び出し必須
 call plug#end()
 
