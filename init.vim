@@ -182,6 +182,7 @@ set noshowcmd
 
 " 行番号を表示
 set number
+set relativenumber
 
 
 " ビープ音と画面の点滅を無効化
@@ -261,11 +262,11 @@ set noswapfile
 "-----------------------------
 " -----vim-plug-----
 " プラグインの登録
-call plug#begin('~/.vim/plugged')
+call plug#begin('$HOME/.config/nvim/plugged')
 " ここに導入したいプラグインを書く
 " Plugin '[Github Auther]/[Github repo]'の形式で書く
 " 全体に関わるやつ
-Plug 'vim-jp/vimdoc-ja' "docを日本語化する
+"Plug 'vim-jp/vimdoc-ja' "docを日本語化する
 Plug 'tomasr/molokai' "molokaiを入れる
 Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
