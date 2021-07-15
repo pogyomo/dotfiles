@@ -1,7 +1,11 @@
 @echo off
 
+@rem -----------------------------------
+@rem for neovim
+@rem -----------------------------------
+
 @rem setting for XDG_CONFIG_HOME
-setx XDG_CONFIG_HOME "%HOMEDRIVE%%HOMEPATH%\.config"
+setx XDG_CONFIG_HOME "%userprofile%\.config"
 mkdir %XDG_CONFIG_HOME%\nvim
 
 @rem make symbolic link
