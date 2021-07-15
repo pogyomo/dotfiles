@@ -27,6 +27,7 @@
 " [Window] <- <Leader>w
 " [Tab] <- <Leader>t
 " [File] <- <Leader>f
+" [Split] <- <Leader>s
 " mapleader="s" =>プラグイン用
 " [NERDTree] <- <Leader>n
 " [preview-markdown] <- <Leader>m
@@ -54,6 +55,10 @@
 " [File]t <- :set filetype= =>:set filetype=と入力する
 " [File]e <- :set fileencoding= =>:set fileencodingと入力する
 " [File]f <- :set fileformat= =>:set fileformatと入力する
+" [Split]j <- <siletn> :sp<CR><C-w>j =>画面を上下に分割して下に行く
+" [Split]k <- <siletn> :sp<CR><C-w>k =>画面を上下に分割して下に行く
+" [Split]h <- <siletn> :vsp<CR><C-w>h =>画面を左右に分割して左に行く
+" [Split]l <- <siletn> :vsp<CR><C-w>l =>画面を左右に分割して右に行く
 " [NERDTree]o <- <silent> :NERDTree<CR> =>現在のタブでNERDTreeを開く
 " [NERDTree]c <- <silent> :NERDTreeClose<CR> =>現在のタブのNERDTreeを閉じる
 " [preview-markdown]t <- <silent> :PreviewMarkdown tab<CR> =>新しいタブでmarkdownのプレビューを行う
@@ -84,6 +89,7 @@ let mapleader="\<Space>"
 nmap <Leader>w [Window]
 nmap <Leader>t [Tab]
 nmap <Leader>f [File]
+nmap <Leader>s [Split]
 
 " sキーをleaderに設定する(プラグインのキーマップ用)
 let mapleader="s"
@@ -151,6 +157,12 @@ nnoremap [Window]- <C-w>-
 nnoremap [File]t :set filetype=
 nnoremap [File]e :set fileencoding=
 nnoremap [File]f :set fileformat=
+
+" 画面分割関係のコマンド
+nnoremap <silent> [Split]j :sp<CR><C-w>j
+nnoremap <silent> [Split]k :sp<CR><C-w>k
+nnoremap <silent> [Split]h :vsp<CR><C-w>h
+nnoremap <silent> [Split]l :vsp<CR><C-w>l
 
 " 表示行単位で移動する
 "そのための設定
