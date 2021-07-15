@@ -73,8 +73,15 @@
 "
 "
 " -----insert-----
-" その他
+" モードの変更
 " jj <- <ESC> =>normalモードにjjで入る
+"
+" 括弧の補完
+" {} <- {
+" [] <- [
+" () <- (
+" '' <- '
+" "" <- "
 
 
 "-----------------------------
@@ -126,6 +133,7 @@ set completeopt=menuone,noinsert
 
 
 " ノーマルモードでのキーの設定
+" タブ関係のコマンド
 " タブでファイルの開閉
 nnoremap [Tab]o :tabnew<Space>
 nnoremap <silent> [Tab]co :tabclose<CR>
@@ -174,9 +182,6 @@ nnoremap gk k
 
 
 " インサートモードでのキーの設定
-" 入力補完時にEnterで補完内容を決定する
-inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
-
 " normalモードへの移行をjjキーで代用する
 inoremap <silent> jj <ESC>
 
@@ -186,6 +191,7 @@ inoremap [ []<Left>
 inoremap ( ()<Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
+
 
 " -----表示-----
 " 入力中のコマンドを表示しない
