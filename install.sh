@@ -1,9 +1,8 @@
+# --------------------------------------
+# for vim
+# --------------------------------------
 #make symbolic link
-for f in .??*
-do
-    [ "$f" = ".git" ] && continue
-    ln -sfv ~/dotfiles/"$f" ~/"$f"
-done
+ln -sfv ~/dotfiles/init.vim ~/.vimrc
 
 #install vim-plug
 curl -fo ~/.vim/autoload/plug.vim --create-dirs \
