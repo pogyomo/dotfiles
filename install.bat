@@ -1,15 +1,11 @@
 @echo off
 
-@rem -----------------------------------
-@rem for neovim
-@rem -----------------------------------
-@rem setting for XDG_CONFIG_HOME
+@rem set XDG_CONFIG_HOME
 setx XDG_CONFIG_HOME "%USERPROFILE%\.config"
-mkdir %XDG_CONFIG_HOME%\nvim
+if not exist %XDG_CONFIG_HOME%\nvim mkdir %XDG_CONFIG_HOME%\nvim
 
 @rem make symbolic link
-if exist %XDG_CONFIG_HOME%\nvim\init.vim del ^
-    %XDG_CONFIG_HOME%\nvim\init.vim
+if exist %XDG_CONFIG_HOME%\nvim\init.vim del %XDG_CONFIG_HOME%\nvim\init.vim
 mklink %XDG_CONFIG_HOME%\nvim\init.vim %USERPROFILE%\dotfiles\init.vim
 
 @rem install vim-plug
