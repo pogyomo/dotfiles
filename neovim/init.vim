@@ -30,13 +30,13 @@
 "-----------------------------
 " 標準の設定
 "-----------------------------
-source init\mapping.vim
-source init\editor.vim
+source ~/dotfiles/neovim/init/mapping.vim
+source ~/dotfiles/neovim/init/editor.vim
 
 "-----------------------------
 " プラグインの設定
 "-----------------------------
-source plugin/vim-plug.vim
-source plugin/molokai.vim
-source plugin/preview-markdown.vim
-source plugin/lightline.vim
+source ~/dotfiles/neovim/plugin/vim-plug.vim
+source ~/dotfiles/neovim/plugin/molokai.vim
+source ~/dotfiles/neovim/plugin/preview-markdown.vim
+source ~/dotfiles/neovim/plugin/lightline.vim
