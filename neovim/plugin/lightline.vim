@@ -1,8 +1,13 @@
+" --------------------------------------
 " 表示の設定
+" --------------------------------------
 set laststatus=2 "ステータスラインを常に表示する
 set showtabline=2 "タブページを常に表示する
 
+
+" --------------------------------------
 " ステータスラインで使用する関数(標準)
+" --------------------------------------
 " ファイルパスと修正フラグを表示する
 function! Plug_lightline_GetFileName()
     let filename = expand('%:p')
@@ -14,6 +19,7 @@ function! Plug_lightline_GetFileName()
         return filename
     endif
 endfunction
+
 " ヘルプバッファならHelpと返す
 function! Plug_lightline_IsHelpBuffer()
     if &buftype == 'help'
@@ -22,6 +28,7 @@ function! Plug_lightline_IsHelpBuffer()
         return ''
     endif
 endfunction
+
 " プレビューバッファならPrevと返す
 function! Plug_lightline_IsPreviewWindow()
     if &previewwindow == 1
@@ -31,17 +38,24 @@ function! Plug_lightline_IsPreviewWindow()
     endif
 endfunction
 
+
+" --------------------------------------
 " タブページで使用する関数(標準)
+" --------------------------------------
 " タブのバッファの数を返す
 function! Plug_lightline_GetNumberOfBuffer(n)
     return tabpagewinnr(a:n, '$')
 endfunction
 
+
+" --------------------------------------
 " ステータスラインの設定
+" --------------------------------------
 " カラースキームを設定
 let g:lightline = {
     \ 'colorscheme': 'wombat'
     \ }
+
 " アクティブ時に左右に表示するものの設定
 let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
@@ -50,6 +64,7 @@ let g:lightline.active = {
     \            [ 'percent' ],
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
     \ }
+
 " インアクティブ時に左右に表示するものの設定
 let g:lightline.inactive = {
     \  'left': [ [ 'filename', 'readonly', 'help', 'preview' ] ],
@@ -57,16 +72,19 @@ let g:lightline.inactive = {
     \            [ 'percent' ],
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
     \ }
+
 " 使用するコンポーネントを登録
 let g:lightline.component = {
     \ 'lineinfo': '%v:%l/%L'
     \ }
+
 " 使用する関数を登録
 let g:lightline.component_function = {
     \ 'filename': 'Plug_lightline_GetFileName',
     \     'help': 'Plug_lightline_IsHelpBuffer',
     \  'preview': 'Plug_lightline_IsPreviewWindow',
     \ }
+
 " 区切り文字の設定
 let g:lightline.separator = {
     \  'left': '',
@@ -77,21 +95,27 @@ let g:lightline.subseparator = {
     \ 'right': '|'
     \ }
 
+
+" --------------------------------------
 " タブページの設定
+" --------------------------------------
 " 左右に表示するものの設定
 let g:lightline.tabline = {
     \  'left': [ [ 'tabs' ] ],
     \ 'right': [ ]
     \ } 
+
 " タブに表示するものを設定
 let g:lightline.tab = {
     \   'active': [ 'bufnum', 'filename', 'modified' ],
     \ 'inactive': [ 'bufnum', 'filename', 'modified' ]
     \ }
+
 " 使用する関数を登録
 let g:lightline.tab_component_function = {
     \ 'bufnum': 'Plug_lightline_GetNumberOfBuffer'
     \ }
+
 " 区切り文字の設定
 let g:lightline.tabline_separator = {
     \  'left': '',
