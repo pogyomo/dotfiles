@@ -59,6 +59,7 @@ let g:lightline = {
 " アクティブ時に左右に表示するものの設定
 let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
+    \            [ 'fugitive' ], 
     \            [ 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
     \ 'right': [ [ 'lineinfo'],
     \            [ 'percent' ],
@@ -67,7 +68,8 @@ let g:lightline.active = {
 
 " インアクティブ時に左右に表示するものの設定
 let g:lightline.inactive = {
-    \  'left': [ [ 'filename', 'readonly', 'help', 'preview' ] ],
+    \  'left': [ [ 'fugitive'], 
+    \            [ 'filename', 'readonly', 'help', 'preview' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
@@ -80,9 +82,10 @@ let g:lightline.component = {
 
 " 使用する関数を登録
 let g:lightline.component_function = {
+    \ 'fugitive': 'FugitiveHead',
     \ 'filename': 'Plug_lightline_GetFileName',
     \     'help': 'Plug_lightline_IsHelpBuffer',
-    \  'preview': 'Plug_lightline_IsPreviewWindow',
+    \  'preview': 'Plug_lightline_IsPreviewWindow'
     \ }
 
 " 区切り文字の設定
