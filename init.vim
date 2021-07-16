@@ -111,15 +111,20 @@ nmap <Leader>m [preview-markdown]
 "-----------------------------
 " -----入力-----
 " タブ文字関係
+" smarttab: 行頭でtabが押されたら、インデントの処理をする->shiftwidth分のスペースを挿入する
+" expandtab: スペースの数がtabstopの数と同じになったときにタブ文字へ変換しない
+" softtabstop: tabが押されたときに挿入するスペースの数。0で無効
+" shiftwidth: インデント時に挿入するスペースの数。0でtabstopの値を使う
+" tabstop: tab文字の見た目をスペース何文字分にするか
+set softtabstop=4 shiftwidth=4 tabstop=4 expandtab                                      "通常の設定
 augroup tab_setting
     autocmd!
-    autocmd BufNewFile,BufRead * setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab " 標準の設定
-    autocmd Filetype c setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab           " cの設定
-    autocmd Filetype cpp setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab         " cppの設定
-    autocmd Filetype make setlocal softtabstop=0 shiftwidth=4 tabstop=4 noexpandtab      " makefileの設定
-    autocmd Filetype markdown setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab    " markdownの設定
-    autocmd Filetype python setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab      " pythonの設定
-    autocmd Filetype tex setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab         " texの設定
+    autocmd Filetype c        setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " cの設定
+    autocmd Filetype cpp      setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " cppの設定
+    autocmd Filetype make     setlocal softtabstop=0 shiftwidth=4 tabstop=4 noexpandtab " makefileの設定
+    autocmd Filetype markdown setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " markdownの設定
+    autocmd Filetype python   setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " pythonの設定
+    autocmd Filetype tex      setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " texの設定
 augroup END
 
 
