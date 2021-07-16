@@ -9,6 +9,6 @@ curl -fo %XDG_CONFIG_HOME%\nvim\autoload\plug.vim --create-dirs ^
 
 @rem make symbolic link
 if exist %XDG_CONFIG_HOME%\nvim\init.vim del %XDG_CONFIG_HOME%\nvim\init.vim
-mklink %XDG_CONFIG_HOME%\nvim\init.vim %USERPROFILE%\dotfiles\init.vim
+mklink %XDG_CONFIG_HOME%\nvim\init.vim %USERPROFILE%\dotfiles\neovim\init.vim
 
 pause
