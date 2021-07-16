@@ -111,13 +111,16 @@ nmap <Leader>m [preview-markdown]
 "-----------------------------
 " -----入力-----
 " タブ文字関係
-" タブをスペースで扱う
-set expandtab     "入力されたタブ文字をスペースで扱う(既存のタブ文字には影響しない)
-set tabstop=4     "tabキーが押されたときに、挿入されたスペースがこの値を超えたらタブ文字にする。
-                  "また、タブ文字を設定された数の半角スペースで表示する
-set softtabstop=4 "tabキーやbsキーが押された際、タブの幅をを
-                  "設定された数の半角スペースとして挿入、削除する
-set shiftwidth=4  "インデントを増やすときに設定された数の半角スペースを挿入する
+augroup tab_setting
+    autocmd!
+    autocmd BufNewFile,BufRead * setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab " 標準の設定
+    autocmd Filetype c setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab           " cの設定
+    autocmd Filetype cpp setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab         " cppの設定
+    autocmd Filetype make setlocal softtabstop=0 shiftwidth=4 tabstop=4 noexpandtab      " makefileの設定
+    autocmd Filetype markdown setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab    " markdownの設定
+    autocmd Filetype python setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab      " pythonの設定
+    autocmd Filetype tex setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab         " texの設定
+augroup END
 
 
 " 自動インデントを有効にする
@@ -296,10 +299,6 @@ Plug 'bfrg/vim-cpp-modern' "c/c++のシンタックスハイライト
 Plug 'lervag/vimtex' "latexのシンタックスハイライト関係
 " 呼び出し必須
 call plug#end()
-
-
-" -----vimdoc-jp-----
-set helplang=ja "有効にする
 
 
 " -----molokai-----
