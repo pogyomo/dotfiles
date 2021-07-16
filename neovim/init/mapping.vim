@@ -78,6 +78,7 @@ nmap <Leader>s [Split]
 let mapleader="s"
 nmap <Leader>n [NERDTree]
 nmap <Leader>m [preview-markdown]
+nmap <Leader>f [fugitive]
 
 
 " --------------------------------------
@@ -142,6 +143,12 @@ nnoremap <silent> [preview-markdown]l :PreviewMarkdown right<CR>
 nnoremap <silent> [preview-markdown]h :PreviewMarkdown left<CR>
 nnoremap <silent> [preview-markdown]k :PreviewMarkdown top<CR>
 nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
+
+" fugitiveの設定
+nnoremap <silent> [fugitive]s :Gstatus<CR>
+nnoremap <silent> [fugitive]a :Gwrite<CR>
+nnoremap <silent> [fugitive]d :Gdiff<CR>
+nnoremap <silent> [fugitive]c :Gcommit<CR>
 
 
 " --------------------------------------
