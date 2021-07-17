@@ -48,9 +48,10 @@
 " [preview-markdown]k <- <silent> :PreviewMarkdown top<CR>    =>ウィンドウの上側でmarkdownのプレビューを行う
 " [preview-markdown]j <- <silent> :PreviewMarkdown bottom<CR> =>ウィンドウの下側でmarkdownのプレビューを行う
 " [fugitive]s         <- <silent> :Gstatus<CR>                =>git statusと同じ
-" [fugitive]a         <- <silent> :Gwrite<CR>                 =>現在のファイルをgit addする
 " [fugitive]d         <- <silent> :Gdiff<CR>                  =>現在のファイルでgit diffする
+" [fugitive]a         <- <silent> :Gwrite<CR>                 =>現在のファイルをgit addする
 " [fugitive]c         <- <silent> :Gcommit<CR>                =>git commitと同じ
+" [fugitive]b         <- <silent> :Gblame<CR>                 =>git blameと同じ
 "
 " gキーが先頭
 " j                   <-> gj                                  =>表示されている行単位で下に移動
@@ -151,9 +152,10 @@ nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
 
 " fugitiveの設定
 nnoremap <silent> [fugitive]s :Gstatus<CR>
-nnoremap <silent> [fugitive]a :Gwrite<CR>
 nnoremap <silent> [fugitive]d :Gdiff<CR>
+nnoremap <silent> [fugitive]a :Gwrite<CR>
 nnoremap <silent> [fugitive]c :Gcommit<CR>
+nnoremap <silent> [fugitive]b :Gblame<CR>
 
 
 " --------------------------------------
