@@ -3,15 +3,15 @@
 " --------------------------------------
 " -----normal-----
 " leaderキーの設定
-" mapleader="\<Space>" =>標準の操作用
-" [Window] <- <Leader>w
-" [Tab] <- <Leader>t
-" [File] <- <Leader>f
-" [Split] <- <Leader>s
-" mapleader="s" =>プラグイン用
-" [NERDTree] <- <Leader>n
-" [preview-markdown] <- <Leader>m
-" [fugitive] <- <Leader>f
+" mapleader="\<Space>"                                        =>標準の操作用
+" [Window]            <- <Leader>w
+" [Tab]               <- <Leader>t
+" [File]              <- <Leader>f
+" [Split]             <- <Leader>s
+" mapleader="s"                                               =>プラグイン用
+" [NERDTree]          <- <Leader>n
+" [preview-markdown]  <- <Leader>m
+" [fugitive]          <- <Leader>f
 "
 " leaderキーから始まるやつ
 " [Window]h           <- <C-w>h                               =>ウィンドウ間を左に移動
@@ -85,6 +85,7 @@ let mapleader="s"
 nmap <Leader>n [NERDTree]
 nmap <Leader>m [preview-markdown]
 nmap <Leader>f [fugitive]
+nmap <Leader>l [ale]
 
 
 " --------------------------------------
