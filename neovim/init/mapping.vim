@@ -85,7 +85,6 @@ let mapleader="s"
 nmap <Leader>n [NERDTree]
 nmap <Leader>m [preview-markdown]
 nmap <Leader>f [fugitive]
-nmap <Leader>l [ale]
 
 
 " --------------------------------------
