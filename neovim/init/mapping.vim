@@ -11,7 +11,6 @@
 " mapleader="s"                                               =>プラグイン用
 " [NERDTree]          <- <Leader>n
 " [preview-markdown]  <- <Leader>m
-" [fugitive]          <- <Leader>f
 "
 " leaderキーから始まるやつ
 " [Window]h           <- <C-w>h                               =>ウィンドウ間を左に移動
@@ -47,11 +46,6 @@
 " [preview-markdown]h <- <silent> :PreviewMarkdown left<CR>   =>ウィンドウの左側でmarkdownのプレビューを行う
 " [preview-markdown]k <- <silent> :PreviewMarkdown top<CR>    =>ウィンドウの上側でmarkdownのプレビューを行う
 " [preview-markdown]j <- <silent> :PreviewMarkdown bottom<CR> =>ウィンドウの下側でmarkdownのプレビューを行う
-" [fugitive]s         <- <silent> :Gstatus<CR>                =>git statusと同じ
-" [fugitive]d         <- <silent> :Gdiff<CR>                  =>現在のファイルでgit diffする
-" [fugitive]a         <- <silent> :Gwrite<CR>                 =>現在のファイルをgit addする
-" [fugitive]c         <- <silent> :Gcommit<CR>                =>git commitと同じ
-" [fugitive]b         <- <silent> :Gblame<CR>                 =>git blameと同じ
 "
 " gキーが先頭
 " j                   <-> gj                                  =>表示されている行単位で下に移動
@@ -84,7 +78,6 @@ nmap <Leader>s [Split]
 let mapleader="s"
 nmap <Leader>n [NERDTree]
 nmap <Leader>m [preview-markdown]
-nmap <Leader>f [fugitive]
 
 
 " --------------------------------------
@@ -149,13 +142,6 @@ nnoremap <silent> [preview-markdown]l :PreviewMarkdown right<CR>
 nnoremap <silent> [preview-markdown]h :PreviewMarkdown left<CR>
 nnoremap <silent> [preview-markdown]k :PreviewMarkdown top<CR>
 nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
-
-" fugitiveの設定
-nnoremap <silent> [fugitive]s :Gstatus<CR>
-nnoremap <silent> [fugitive]d :Gdiff<CR>
-nnoremap <silent> [fugitive]a :Gwrite<CR>
-nnoremap <silent> [fugitive]c :Gcommit<CR>
-nnoremap <silent> [fugitive]b :Gblame<CR>
 
 
 " --------------------------------------
