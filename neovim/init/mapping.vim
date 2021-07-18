@@ -3,14 +3,15 @@
 " --------------------------------------
 " -----normal-----
 " ---leaderキーの設定
-" mapleader="\<Space>" =>標準の操作用
+" mapleader="\<Space>" =>標準の操作用1
+" mapleader="s"        =>標準の操作用2
 " [Window]             <- <Leader>w
 " [Tab]                <- <Leader>t
 " [File]               <- <Leader>f
 " [Split]              <- <Leader>s
-" mapleader="s"        =>プラグイン用
 " [NERDTree]           <- <Leader>n
 " [preview-markdown]   <- <Leader>m
+" [vim-easymotion]     <- <Leader>e
 " ---leaderキーから始まるやつ
 " [Window]h            =>ウィンドウ間を左に移動
 " [Window]j            =>ウィンドウ間を下に移動
@@ -68,15 +69,25 @@
 " --------------------------------------
 " リーダーキーの設定
 " --------------------------------------
-" spaceキーをleaderに設定する(標準のキーマップ用)
+" spaceキーをleaderに設定する
 let mapleader="\<Space>"
+" 標準のleader
 nmap <Leader>w [Window]
 nmap <Leader>t [Tab]
 nmap <Leader>f [File]
 nmap <Leader>s [Split]
+" プラグインのleader
+nmap <Leader>n [NERDTree]
+nmap <Leader>m [preview-markdown]
 
-" sキーをleaderに設定する(プラグインのキーマップ用)
+" sキーをleaderにする
 let mapleader="s"
+" 標準のleader
+nmap <Leader>w [Window]
+nmap <Leader>t [Tab]
+nmap <Leader>f [File]
+nmap <Leader>s [Split]
+" プラグインのleader
 nmap <Leader>n [NERDTree]
 nmap <Leader>m [preview-markdown]
 
