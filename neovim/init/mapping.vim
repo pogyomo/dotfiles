@@ -2,66 +2,67 @@
 " 一覧
 " --------------------------------------
 " -----normal-----
-" leaderキーの設定
-" mapleader="\<Space>"                                        =>標準の操作用
-" [Window]            <- <Leader>w
-" [Tab]               <- <Leader>t
-" [File]              <- <Leader>f
-" [Split]             <- <Leader>s
-" mapleader="s"                                               =>プラグイン用
-" [NERDTree]          <- <Leader>n
-" [preview-markdown]  <- <Leader>m
-"
-" leaderキーから始まるやつ
-" [Window]h           <- <C-w>h                               =>ウィンドウ間を左に移動
-" [Window]j           <- <C-w>j                               =>ウィンドウ間を下に移動
-" [Window]k           <- <C-w>k                               =>ウィンドウ間を上に移動
-" [Window]l           <- <C-w>l                               =>ウィンドウ間を右に移動
-" [Window]H           <- <C-w>H                               =>ウィンドウを左に動かす
-" [Window]J           <- <C-w>J                               =>ウィンドウを下に動かす
-" [Window]K           <- <C-w>K                               =>ウィンドウを上に動かす
-" [Window]L           <- <C-w>L                               =>ウィンドウを右に動かす
-" [Window]<           <- <C-w><                               =>ウィンドウの幅を一文字分狭くする
-" [Window]>           <- <C-w>>                               =>ウィンドウの幅を一文字分広くする
-" [Window]+           <- <C-w>+                               =>ウィンドウの高さを一文字分広くする
-" [Window]-           <- <C-w>-                               =>ウィンドウの高さを一文字分狭くする
-" [Tab]o              <- :tabnew<Space>                       =>:tabnew と入力する
-" [Tab]co             <- <silent> :tabclose<CR>               =>現在のタブを閉じる
-" [Tab]ca             <- <silent> :tabonly<CR>                =>現在のタブ以外をすべて閉じる
-" [Tab]h              <- gT                                   =>タブ間を左に移動する
-" [Tab]l              <- gt                                   =>タブ間を右に移動する
-" [Tab]H              <- <silent> :-tabmove                   =>タブ自体を左に移動する
-" [Tab]L              <- <silent> :+tabmove                   =>タブ自体を右に移動する
-" [File]t             <- :set filetype=                       =>:set filetype=と入力する
-" [File]e             <- :set fileencoding=                   =>:set fileencodingと入力する
-" [File]f             <- :set fileformat=                     =>:set fileformatと入力する
-" [Split]j            <- <siletn> :sp<CR><C-w>j               =>画面を上下に分割して下に行く
-" [Split]k            <- <siletn> :sp<CR><C-w>k               =>画面を上下に分割して下に行く
-" [Split]h            <- <siletn> :vsp<CR><C-w>h              =>画面を左右に分割して左に行く
-" [Split]l            <- <siletn> :vsp<CR><C-w>l              =>画面を左右に分割して右に行く
-" [NERDTree]o         <- <silent> :NERDTree<CR>               =>現在のタブでNERDTreeを開く
-" [NERDTree]c         <- <silent> :NERDTreeClose<CR>          =>現在のタブのNERDTreeを閉じる
-" [preview-markdown]t <- <silent> :PreviewMarkdown tab<CR>    =>新しいタブでmarkdownのプレビューを行う
-" [preview-markdown]l <- <silent> :PreviewMarkdown right<CR>  =>ウィンドウの右側でmarkdownのプレビューを行う
-" [preview-markdown]h <- <silent> :PreviewMarkdown left<CR>   =>ウィンドウの左側でmarkdownのプレビューを行う
-" [preview-markdown]k <- <silent> :PreviewMarkdown top<CR>    =>ウィンドウの上側でmarkdownのプレビューを行う
-" [preview-markdown]j <- <silent> :PreviewMarkdown bottom<CR> =>ウィンドウの下側でmarkdownのプレビューを行う
-"
-" gキーが先頭
-" j                   <-> gj                                  =>表示されている行単位で下に移動
-" k                   <-> gk                                  =>表示されている行単位で上に移動
-"
+" ---leaderキーの設定
+" mapleader="\<Space>" =>標準の操作用
+" [Window]             <- <Leader>w
+" [Tab]                <- <Leader>t
+" [File]               <- <Leader>f
+" [Split]              <- <Leader>s
+" mapleader="s"        =>プラグイン用
+" [NERDTree]           <- <Leader>n
+" [preview-markdown]   <- <Leader>m
+" ---leaderキーから始まるやつ
+" [Window]h            =>ウィンドウ間を左に移動
+" [Window]j            =>ウィンドウ間を下に移動
+" [Window]k            =>ウィンドウ間を上に移動
+" [Window]l            =>ウィンドウ間を右に移動
+" [Window]H            =>ウィンドウを左に動かす
+" [Window]J            =>ウィンドウを下に動かす
+" [Window]K            =>ウィンドウを上に動かす
+" [Window]L            =>ウィンドウを右に動かす
+" [Window]<            =>ウィンドウの幅を一文字分狭くする
+" [Window]>            =>ウィンドウの幅を一文字分広くする
+" [Window]+            =>ウィンドウの高さを一文字分広くする
+" [Window]-            =>ウィンドウの高さを一文字分狭くする
+" [Tab]o               =>:tabnew と入力する
+" [Tab]co              =>現在のタブを閉じる
+" [Tab]ca              =>現在のタブ以外をすべて閉じる
+" [Tab]h               =>タブ間を左に移動する
+" [Tab]l               =>タブ間を右に移動する
+" [Tab]H               =>タブ自体を左に移動する
+" [Tab]L               =>タブ自体を右に移動する
+" [File]t              =>:set filetype=と入力する
+" [File]e              =>:set fileencodingと入力する
+" [File]f              =>:set fileformatと入力する
+" [Split]j             =>画面を上下に分割して下に行く
+" [Split]k             =>画面を上下に分割して下に行く
+" [Split]h             =>画面を左右に分割して左に行く
+" [Split]l             =>画面を左右に分割して右に行く
+" [NERDTree]o          =>現在のタブでNERDTreeを開く
+" [NERDTree]c          =>現在のタブのNERDTreeを閉じる
+" [preview-markdown]t  =>新しいタブでmarkdownのプレビューを行う
+" [preview-markdown]l  =>ウィンドウの右側でmarkdownのプレビューを行う
+" [preview-markdown]h  =>ウィンドウの左側でmarkdownのプレビューを行う
+" [preview-markdown]k  =>ウィンドウの上側でmarkdownのプレビューを行う
+" [preview-markdown]j  =>ウィンドウの下側でmarkdownのプレビューを行う
+" ---その他
+" j                    =>表示されている行単位で下に移動
+" k                    =>表示されている行単位で上に移動
 "
 " -----insert-----
-" モードの変更
-" jj                  <- <ESC>                                =>normalモードにjjで入る
+" ---モードの変更
+" jj                   =>normalモードにjjで入る
+" ---括弧の補完
+" {                    =>{}と入力し括弧の中にカーソルを移す
+" [                    =>[]と入力し括弧の中にカーソルを移す
+" (                    =>()と入力し括弧の中にカーソルを移す
+" '                    =>''と入力し括弧の中にカーソルを移す
+" "                    =>""と入力し括弧の中にカーソルを移す
 "
-" 括弧の補完
-" {}                  <- {
-" []                  <- [
-" ()                  <- (
-" ''                  <- '
-" ""                  <- "
+" -----terminal-insert-----
+" ---その他
+" ESC                  =>ESCキーでノーマルモードに移行する
+" jj                   =>上同
 
 
 " --------------------------------------
@@ -145,7 +146,7 @@ nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
 
 
 " --------------------------------------
-" インサートモードのキー設定
+" インサートモードのキー設定(標準)
 " --------------------------------------
 " normalモードへの移行をjjキーで代用する
 inoremap <silent> jj <ESC>
@@ -156,3 +157,11 @@ inoremap [ []<Left>
 inoremap ( ()<Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
+
+
+" --------------------------------------
+" ターミナルインサートモードのキー設定(標準)
+" --------------------------------------
+" ESCとjjでターミナルノーマルモードへ移行する
+tnoremap <ESC> <C-\><C-n>
+tnoremap jj <C-\><C-n>
