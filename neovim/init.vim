@@ -38,4 +38,3 @@ source ~/dotfiles/neovim/plugin/vim-plug.vim
 source ~/dotfiles/neovim/plugin/molokai.vim
 source ~/dotfiles/neovim/plugin/preview-markdown.vim
 source ~/dotfiles/neovim/plugin/lightline.vim
-source ~/dotfiles/neovim/plugin/ale.vim
