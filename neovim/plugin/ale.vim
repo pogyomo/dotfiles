@@ -3,3 +3,7 @@
 " --------------------------------------
 " エラーや警告を表示する所を常に出す
 let g:ale_sign_column_always = 1
+
+" エラーと警告の表示を変える
+let g:ale_sign_error = "!!"
+let g:ale_sign_warning = "=="
