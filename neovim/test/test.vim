@@ -12,5 +12,4 @@ function! CreateWinCursor(width, height)
     return win
 endfunction
 
-
 let buf = CreateWinCursor(10, 1)

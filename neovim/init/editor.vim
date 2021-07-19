@@ -47,7 +47,7 @@ set title
 set t_Co=256
 
 " カギ括弧入力時に対応するものに一瞬飛ぶ
-set showmatch "有効にする
+set showmatch   "有効にする
 set matchtime=2 "飛ぶ時間(0.1秒の何倍かを指定)
 
 "vimの内部エンコードをutf-8にする
