@@ -1,18 +1,16 @@
-function! CreateWindow() abort
+function! CreateWinCursor(width, height)
     let buf = nvim_create_buf(0, 1)
     let opt = {
         \ 'relative': 'cursor',
         \      'row': 1,
         \      'col': 0,
-        \    'width': 30,
-        \   'height': 10,
+        \    'width': a:width,
+        \   'height': a:height,
         \    'style': 'minimal'
         \ }
     let win = nvim_open_win(buf, 0, opt)
+    return win
 endfunction
 
-function! CloseWindow(buf) abort
-    call nvim_win_close(buf, 0)
-endfunction
 
-let buf = CreateWindow()
+let buf = CreateWinCursor(10, 1)
