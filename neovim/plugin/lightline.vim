@@ -40,6 +40,15 @@ endfunction
 
 
 " --------------------------------------
+" ステータスラインで使用する関数(プラグイン)
+" --------------------------------------
+" 現在のブランチを取得
+function! Plug_lightline_GetBranch()
+    return ' '.FugitiveHead()
+endfunction
+
+
+" --------------------------------------
 " タブページで使用する関数(標準)
 " --------------------------------------
 " タブのバッファの数を返す
@@ -59,7 +68,7 @@ let g:lightline = {
 " アクティブ時に左右に表示するものの設定
 let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
-    \            [ 'fugitive' ], 
+    \            [ 'branch' ],
     \            [ 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
     \ 'right': [ [ 'lineinfo'],
     \            [ 'percent' ],
@@ -68,7 +77,7 @@ let g:lightline.active = {
 
 " インアクティブ時に左右に表示するものの設定
 let g:lightline.inactive = {
-    \  'left': [ [ 'fugitive'], 
+    \  'left': [ [ 'branch' ],
     \            [ 'filename', 'readonly', 'help', 'preview' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
@@ -82,7 +91,7 @@ let g:lightline.component = {
 
 " 使用する関数を登録
 let g:lightline.component_function = {
-    \ 'fugitive': 'FugitiveHead',
+    \   'branch': 'Plug_lightline_GetBranch',
     \ 'filename': 'Plug_lightline_GetFileName',
     \     'help': 'Plug_lightline_IsHelpBuffer',
     \  'preview': 'Plug_lightline_IsPreviewWindow'
@@ -90,12 +99,12 @@ let g:lightline.component_function = {
 
 " 区切り文字の設定
 let g:lightline.separator = {
-    \  'left': '',
-    \ 'right': ''
+    \  'left': "",
+    \ 'right': ""
     \ }
 let g:lightline.subseparator = {
-    \  'left': '|',
-    \ 'right': '|'
+    \  'left': "",
+    \ 'right': ""
     \ }
 
 
@@ -105,7 +114,7 @@ let g:lightline.subseparator = {
 " 左右に表示するものの設定
 let g:lightline.tabline = {
     \  'left': [ [ 'tabs' ] ],
-    \ 'right': [ ]
+    \ 'right': [ [ 'close' ] ]
     \ } 
 
 " タブに表示するものを設定
@@ -121,10 +130,10 @@ let g:lightline.tab_component_function = {
 
 " 区切り文字の設定
 let g:lightline.tabline_separator = {
-    \  'left': '',
-    \ 'right': ''
+    \  'left': "",
+    \ 'right': ""
     \ }
 let g:lightline.tabline_subseparator = {
-    \  'left': '|',
-    \ 'right': '|'
+    \  'left': "",
+    \ 'right': ""
     \ }
