@@ -44,7 +44,10 @@ endfunction
 " --------------------------------------
 " 現在のブランチを取得
 function! Plug_lightline_GetBranch()
-    return ' '.FugitiveHead()
+    if FugitiveHead() == ''
+        return ''
+    else
+        return ' '.FugitiveHead()
 endfunction
 
 
@@ -114,7 +117,7 @@ let g:lightline.subseparator = {
 " 左右に表示するものの設定
 let g:lightline.tabline = {
     \  'left': [ [ 'tabs' ] ],
-    \ 'right': [ [ 'close' ] ]
+    \ 'right': [ ]
     \ } 
 
 " タブに表示するものを設定

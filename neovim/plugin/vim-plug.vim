@@ -8,7 +8,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Plugin '[Github Auther]/[Github repo]'の形式で書く
 " 全体に関わるやつ
 Plug 'tomasr/molokai' "molokaiを入れる
-Plug 'preservim/nerdtree' "NERDTreeを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
 Plug 'skanehira/preview-markdown.vim' "マークダウンのプレビュー
 Plug 'tpope/vim-fugitive' "gitの操作とか

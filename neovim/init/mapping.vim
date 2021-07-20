@@ -9,9 +9,7 @@
 " [Tab]                <- <Leader>t
 " [File]               <- <Leader>f
 " [Split]              <- <Leader>s
-" [NERDTree]           <- <Leader>n
 " [preview-markdown]   <- <Leader>m
-" [vim-easymotion]     <- <Leader>e
 " ---leaderキーから始まるやつ
 " [Window]h            =>ウィンドウ間を左に移動
 " [Window]j            =>ウィンドウ間を下に移動
@@ -39,8 +37,6 @@
 " [Split]k             =>画面を上下に分割して下に行く
 " [Split]h             =>画面を左右に分割して左に行く
 " [Split]l             =>画面を左右に分割して右に行く
-" [NERDTree]o          =>現在のタブでNERDTreeを開く
-" [NERDTree]c          =>現在のタブのNERDTreeを閉じる
 " [preview-markdown]t  =>新しいタブでmarkdownのプレビューを行う
 " [preview-markdown]l  =>ウィンドウの右側でmarkdownのプレビューを行う
 " [preview-markdown]h  =>ウィンドウの左側でmarkdownのプレビューを行う
@@ -77,7 +73,6 @@ nmap <Leader>t [Tab]
 nmap <Leader>f [File]
 nmap <Leader>s [Split]
 " プラグインのleader
-nmap <Leader>n [NERDTree]
 nmap <Leader>m [preview-markdown]
 
 " sキーをleaderにする
@@ -88,7 +83,6 @@ nmap <Leader>t [Tab]
 nmap <Leader>f [File]
 nmap <Leader>s [Split]
 " プラグインのleader
-nmap <Leader>n [NERDTree]
 nmap <Leader>m [preview-markdown]
 
 
@@ -144,10 +138,6 @@ nnoremap gk k
 " --------------------------------------
 " ノーマルモードのキー設定(プラグイン)
 " --------------------------------------
-" NERDTreeの設定
-nnoremap <silent> [NERDTree]o :NERDTree<CR>
-nnoremap <silent> [NERDTree]c :NERDTreeClose<CR>
-
 " preview-markdownの設定
 nnoremap <silent> [preview-markdown]t :PreviewMarkdown tab<CR>
 nnoremap <silent> [preview-markdown]l :PreviewMarkdown right<CR>
