@@ -135,7 +135,7 @@ let g:lightline.tab = {
 " 使用する関数を登録
 let g:lightline.tab_component_function = {
     \ 'bufnum': 'Plug_lightline_GetNumberOfBuffer',
-    \ 'curdir': 'Plug_lightline_GetCurrentDir'
+   \ 'curdir': 'Plug_lightline_GetCurrentDir'
     \ }
 
 " 区切り文字の設定
