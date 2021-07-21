@@ -60,11 +60,6 @@ function! Plug_lightline_GetNumberOfBuffer(n)
     return tabpagewinnr(a:n, '$')
 endfunction
 
-" 現在のカレントディレクトリを取得
-function! Plug_lightline_GetCurrentDir()
-    return expand('%:p')
-endfunction
-
 
 " --------------------------------------
 " ステータスラインの設定
@@ -123,7 +118,7 @@ let g:lightline.subseparator = {
 " 左右に表示するものの設定
 let g:lightline.tabline = {
     \  'left': [ [ 'tabs' ] ],
-    \ 'right': [ [ 'curdir' ] ]
+    \ 'right': [ ]
     \ } 
 
 " タブに表示するものを設定
@@ -134,8 +129,7 @@ let g:lightline.tab = {
 
 " 使用する関数を登録
 let g:lightline.tab_component_function = {
-    \ 'bufnum': 'Plug_lightline_GetNumberOfBuffer',
-   \ 'curdir': 'Plug_lightline_GetCurrentDir'
+    \ 'bufnum': 'Plug_lightline_GetNumberOfBuffer'
     \ }
 
 " 区切り文字の設定
