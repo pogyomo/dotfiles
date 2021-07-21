@@ -45,7 +45,7 @@ endfunction
 " 現在のブランチを取得
 function! Plug_lightline_GetBranch()
     if FugitiveHead() == ''
-        return ''
+        return 'No branch'
     else
         return ' '.FugitiveHead()
 endfunction
