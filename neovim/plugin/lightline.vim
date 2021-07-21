@@ -48,6 +48,7 @@ function! Plug_lightline_GetBranch()
         return 'No branch'
     else
         return ' '.FugitiveHead()
+    endif
 endfunction
 
 
