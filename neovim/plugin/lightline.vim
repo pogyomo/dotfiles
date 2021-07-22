@@ -6,6 +6,16 @@ set showtabline=2 "タブページを常に表示する
 
 
 " --------------------------------------
+" 全体で使用する関数
+" --------------------------------------
+" 非同期で時間毎に描画するためのもの
+function! Plug_lightline_Timer(...)
+    call lightline#update()
+endfunction
+let timer = timer_start(200, 'Plug_lightline_Timer', { 'repeat': -1 })
+
+
+" --------------------------------------
 " ステータスラインで使用する関数(標準)
 " --------------------------------------
 " ファイルパスと修正フラグを表示する
@@ -36,6 +46,11 @@ function! Plug_lightline_IsPreviewWindow()
     else
         return ''
     endif
+endfunction
+
+" 現在の時刻を返す
+function! Plug_lightline_GetTime()
+    return strftime("%H:%M:%S")
 endfunction
 
 
@@ -74,8 +89,8 @@ let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
     \            [ 'branch' ],
     \            [ 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
-    \ 'right': [ [ 'lineinfo'],
-    \            [ 'percent' ],
+    \ 'right': [ [ 'percent', 'lineinfo' ],
+    \            [ 'time' ], 
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
     \ }
 
@@ -83,8 +98,8 @@ let g:lightline.active = {
 let g:lightline.inactive = {
     \  'left': [ [ 'branch' ],
     \            [ 'filename', 'readonly', 'help', 'preview' ] ],
-    \ 'right': [ [ 'lineinfo' ],
-    \            [ 'percent' ],
+    \ 'right': [ [ 'percent', 'lineinfo' ],
+    \            [ 'time' ], 
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
     \ }
 
@@ -96,6 +111,7 @@ let g:lightline.component = {
 " 使用する関数を登録
 let g:lightline.component_function = {
     \   'branch': 'Plug_lightline_GetBranch',
+    \     'time': 'Plug_lightline_GetTime',
     \ 'filename': 'Plug_lightline_GetFileName',
     \     'help': 'Plug_lightline_IsHelpBuffer',
     \  'preview': 'Plug_lightline_IsPreviewWindow'
