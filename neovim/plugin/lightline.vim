@@ -12,7 +12,7 @@ set showtabline=2 "タブページを常に表示する
 function! Plug_lightline_Timer(...)
     call lightline#update()
 endfunction
-let timer = timer_start(200, 'Plug_lightline_Timer', { 'repeat': -1 })
+let lightline_timer = timer_start(200, 'Plug_lightline_Timer', { 'repeat': -1 })
 
 
 " --------------------------------------
@@ -66,6 +66,16 @@ function! Plug_lightline_GetBranch()
     endif
 endfunction
 
+" エラー数と警告数を返す
+function! Plug_lightline_GetErrorsAndWarnings()
+    let dic = ale#statusline#Count(bufnr("%"))
+    if dic.error != 0 || dic.warning != 0
+        return "E(".dic.error.")"." "."W(".dic.warning.")"
+    else
+        return ""
+    endif
+endfunction
+
 
 " --------------------------------------
 " タブページで使用する関数(標準)
@@ -88,9 +98,9 @@ let g:lightline = {
 let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
     \            [ 'branch' ],
-    \            [ 'filename', 'readonly', 'help', 'preview', 'ale' ] ],
-    \ 'right': [ [ 'percent', 'lineinfo' ],
-    \            [ 'time' ], 
+    \            [ 'filename', 'readonly', 'help', 'preview' ] ],
+    \ 'right': [ [ 'ale', 'lineinfo' ],
+    \            [ 'time' ],
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
     \ }
 
@@ -98,8 +108,8 @@ let g:lightline.active = {
 let g:lightline.inactive = {
     \  'left': [ [ 'branch' ],
     \            [ 'filename', 'readonly', 'help', 'preview' ] ],
-    \ 'right': [ [ 'percent', 'lineinfo' ],
-    \            [ 'time' ], 
+    \ 'right': [ [ 'ale', 'lineinfo'],
+    \            [ 'time' ],
     \            [ 'filetype', 'fileformat', 'fileencoding' ] ]
     \ }
 
@@ -115,6 +125,16 @@ let g:lightline.component_function = {
     \ 'filename': 'Plug_lightline_GetFileName',
     \     'help': 'Plug_lightline_IsHelpBuffer',
     \  'preview': 'Plug_lightline_IsPreviewWindow'
+    \ }
+
+" 展開コンポーネントの設定
+let g:lightline.component_expand = {
+    \ 'ale': 'Plug_lightline_GetErrorsAndWarnings'
+    \ }
+
+" コンポーネントの属性設定
+let g:lightline.component_type = {
+    \ 'ale': 'error'
     \ }
 
 " 区切り文字の設定

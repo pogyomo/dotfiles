@@ -11,6 +11,7 @@ Plug 'tomasr/molokai' "molokaiを入れる
 Plug 'itchyny/lightline.vim' "lightlineを入れる
 Plug 'skanehira/preview-markdown.vim' "マークダウンのプレビュー
 Plug 'tpope/vim-fugitive' "gitの操作とか
+Plug 'dense-analysis/ale' "シンタックスチェッカー
 " nesasmに関係するやつ
 Plug 'thentenaar/vim-syntax-obscure' "nesasmのシンタックスハイライト
 " c/c++に関係するやつ

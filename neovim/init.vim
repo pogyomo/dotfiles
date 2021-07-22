@@ -34,7 +34,11 @@ source ~/dotfiles/neovim/init/editor.vim
 " --------------------------------------
 " プラグインの設定
 " --------------------------------------
+" 最初に配置する必要あり
 source ~/dotfiles/neovim/plugin/vim-plug.vim
+
+" 残りのプラグインたち
+source ~/dotfiles/neovim/plugin/ale.vim
 source ~/dotfiles/neovim/plugin/molokai.vim
-source ~/dotfiles/neovim/plugin/preview-markdown.vim
 source ~/dotfiles/neovim/plugin/lightline.vim
+source ~/dotfiles/neovim/plugin/preview-markdown.vim
