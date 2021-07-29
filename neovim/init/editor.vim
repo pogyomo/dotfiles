@@ -11,6 +11,7 @@ augroup tab_setting
     autocmd Filetype markdown setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " markdownの設定
     autocmd Filetype python   setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " pythonの設定
     autocmd Filetype tex      setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " texの設定
+    autocmd Filetype pde      setlocal softtabstop=2 shiftwidth=2 tabstop=2 expandtab   " processingの設定
 augroup END
 
 " 自動インデントを有効にする
