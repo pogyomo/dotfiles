@@ -30,9 +30,6 @@
 " [Tab]l               =>タブ間を右に移動する
 " [Tab]H               =>タブ自体を左に移動する
 " [Tab]L               =>タブ自体を右に移動する
-" [File]t              =>:set filetype=と入力する
-" [File]e              =>:set fileencodingと入力する
-" [File]f              =>:set fileformatと入力する
 " [Split]j             =>画面を上下に分割して下に行く
 " [Split]k             =>画面を上下に分割して下に行く
 " [Split]h             =>画面を左右に分割して左に行く
@@ -70,7 +67,6 @@ let mapleader="\<Space>"
 " 標準のleader
 nmap <Leader>w [Window]
 nmap <Leader>t [Tab]
-nmap <Leader>f [File]
 nmap <Leader>s [Split]
 " プラグインのleader
 nmap <Leader>m [preview-markdown]
@@ -80,7 +76,6 @@ let mapleader="s"
 " 標準のleader
 nmap <Leader>w [Window]
 nmap <Leader>t [Tab]
-nmap <Leader>f [File]
 nmap <Leader>s [Split]
 " プラグインのleader
 nmap <Leader>m [preview-markdown]
@@ -116,11 +111,6 @@ nnoremap [Window]< 5<C-w><
 nnoremap [Window]> 5<C-w>>
 nnoremap [Window]+ 5<C-w>+
 nnoremap [Window]- 5<C-w>-
-
-" ファイル関係のコマンド
-nnoremap [File]t :set filetype=
-nnoremap [File]e :set fileencoding=
-nnoremap [File]f :set fileformat=
 
 " 画面分割関係のコマンド
 nnoremap <silent> [Split]j :sp<CR><C-w>j
