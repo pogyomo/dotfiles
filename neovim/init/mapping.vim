@@ -10,6 +10,7 @@
 " [File]               <- <Leader>f
 " [Split]              <- <Leader>s
 " [preview-markdown]   <- <Leader>m
+" [easymotion]         <- <Leader>e
 " ---leaderキーから始まるやつ
 " [Window]h            =>ウィンドウ間を左に移動
 " [Window]j            =>ウィンドウ間を下に移動
@@ -74,6 +75,7 @@ nmap <Leader>f [File]
 nmap <Leader>s [Split]
 " プラグインのleader
 nmap <Leader>m [preview-markdown]
+nmap <Leader>e [easymotion]
 
 " sキーをleaderにする
 let mapleader="s"
@@ -84,6 +86,7 @@ nmap <Leader>f [File]
 nmap <Leader>s [Split]
 " プラグインのleader
 nmap <Leader>m [preview-markdown]
+nmap <Leader>e [easymotion]
 
 
 " --------------------------------------
@@ -144,6 +147,9 @@ nnoremap <silent> [preview-markdown]l :PreviewMarkdown right<CR>
 nnoremap <silent> [preview-markdown]h :PreviewMarkdown left<CR>
 nnoremap <silent> [preview-markdown]k :PreviewMarkdown top<CR>
 nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
+
+" easymotionの設定
+nmap [easymotion] <Plug>(easymotion-prefix)
 
 
 " --------------------------------------
