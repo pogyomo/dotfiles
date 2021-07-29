@@ -1,3 +1,12 @@
+"       ___             ___   ___                        ___
+"      /__/            /__/  /  /__                     /__/
+"      ___  _______    ___  /  ___/       ___     ___   ___  ___________
+"     /  / /  ___  \  /  / /  /          /  /   _/ _/  /  / /  __   __  \
+"    /  / /  /  /  / /  / /  /          /  /  _/ _/   /  / /  / /  / /  /
+"   /  / /  /  /  / /  / /  /___  ___  /  /__/ _/    /  / /  / /  / /  /
+"  /__/ /__/  /__/ /__/  \_____/ /__/  \______/     /__/ /__/ /__/ /__/
+
+
 " --------------------------------------
 " メモ書き
 " --------------------------------------
@@ -39,6 +48,7 @@ source ~/dotfiles/neovim/plugin/vim-plug.vim
 
 " 残りのプラグインたち
 source ~/dotfiles/neovim/plugin/ale.vim
+source ~/dotfiles/neovim/plugin/easymotion.vim
 source ~/dotfiles/neovim/plugin/lightline.vim
 source ~/dotfiles/neovim/plugin/molokai.vim
 source ~/dotfiles/neovim/plugin/preview-markdown.vim
