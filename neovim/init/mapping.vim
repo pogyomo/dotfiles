@@ -3,12 +3,12 @@
 " --------------------------------------
 " -----normal-----
 " ---leaderキーの設定
-" mapleader="\<Space>" =>標準の操作用1
-" mapleader="s"        =>標準の操作用2
+" mapleader="\<Space>" =>標準の操作用
 " [Window]             <- <Leader>w
 " [Tab]                <- <Leader>t
 " [File]               <- <Leader>f
 " [Split]              <- <Leader>s
+" mapleader="s"        =>プラグインの操作用
 " [preview-markdown]   <- <Leader>m
 " ---leaderキーから始まるやつ
 " [Window]h            =>ウィンドウ間を左に移動
@@ -62,22 +62,14 @@
 " --------------------------------------
 " リーダーキーの設定
 " --------------------------------------
-" spaceキーをleaderに設定する
+" spaceキーをleaderに設定する(標準)
 let mapleader="\<Space>"
-" 標準のleader
 nmap <Leader>w [Window]
 nmap <Leader>t [Tab]
 nmap <Leader>s [Split]
-" プラグインのleader
-nmap <Leader>m [preview-markdown]
 
-" sキーをleaderにする
+" sキーをleaderにする(プラグイン)
 let mapleader="s"
-" 標準のleader
-nmap <Leader>w [Window]
-nmap <Leader>t [Tab]
-nmap <Leader>s [Split]
-" プラグインのleader
 nmap <Leader>m [preview-markdown]
 
 
