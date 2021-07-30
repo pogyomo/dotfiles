@@ -23,6 +23,9 @@ set backspace=indent,eol,start
 " 入力補完の表示を変える
 set completeopt=menuone,noinsert
 
+" クリップボードを共有する
+set clipboard=unnamed
+
 
 " --------------------------------------
 " 表示関係
