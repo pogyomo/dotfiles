@@ -15,7 +15,7 @@ augroup tab_setting
 augroup END
 
 " 自動インデントを有効にする
-set smartindent
+set autoindent
 
 " windowsでバックスペースが効かないことへの対策
 set backspace=indent,eol,start
