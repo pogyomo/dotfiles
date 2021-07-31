@@ -19,10 +19,10 @@
 " [Window]J            =>ウィンドウを下に動かす
 " [Window]K            =>ウィンドウを上に動かす
 " [Window]L            =>ウィンドウを右に動かす
-" [Window]<            =>ウィンドウの幅を5文字分狭くする
-" [Window]>            =>ウィンドウの幅を5文字分広くする
-" [Window]+            =>ウィンドウの高さを5文字分広くする
-" [Window]-            =>ウィンドウの高さを5文字分狭くする
+" [Window]<            =>ウィンドウの幅を10文字分狭くする
+" [Window]>            =>ウィンドウの幅を10文字分広くする
+" [Window]+            =>ウィンドウの高さを10文字分広くする
+" [Window]-            =>ウィンドウの高さを10文字分狭くする
 " [Tab]o               =>:tabnew と入力する
 " [Tab]co              =>現在のタブを閉じる
 " [Tab]ca              =>現在のタブ以外をすべて閉じる
@@ -114,10 +114,10 @@ nnoremap [Window]K <C-w>K
 nnoremap [Window]H <C-w>H
 nnoremap [Window]L <C-w>L
 " ウィンドウの幅と高さをを変える
-nnoremap [Window]< 5<C-w><
-nnoremap [Window]> 5<C-w>>
-nnoremap [Window]+ 5<C-w>+
-nnoremap [Window]- 5<C-w>-
+nnoremap [Window]< 10<C-w><
+nnoremap [Window]> 10<C-w>>
+nnoremap [Window]+ 10<C-w>+
+nnoremap [Window]- 10<C-w>-
 
 " 画面分割関係のコマンド
 nnoremap <silent> [Split]j :sp<CR><C-w>j
