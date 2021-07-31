@@ -154,6 +154,13 @@ inoremap ( ()<Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
 
+" いい感じに括弧を作る
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap '<Enter> ''<Left><CR><ESC><S-o>
+inoremap "<Enter> ""<Left><CR><ESC><S-o>
+
 
 " --------------------------------------
 " ターミナルインサートモードのキー設定(標準)
