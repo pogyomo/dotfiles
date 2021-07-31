@@ -1,21 +1,16 @@
 " --------------------------------------
 " 入力関係
 " --------------------------------------
-" タブ文字関係
-set softtabstop=4 shiftwidth=4 tabstop=4 expandtab                                      "通常の設定
+" タブ文字やインデントの設定
+set softtabstop=4 shiftwidth=4 tabstop=4 expandtab autoindent               " 通常の設定
 augroup tab_setting
     autocmd!
-    autocmd Filetype c        setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " cの設定
-    autocmd Filetype cpp      setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " cppの設定
-    autocmd Filetype make     setlocal softtabstop=0 shiftwidth=4 tabstop=4 noexpandtab " makefileの設定
-    autocmd Filetype markdown setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " markdownの設定
-    autocmd Filetype python   setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " pythonの設定
-    autocmd Filetype tex      setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   " texの設定
-    autocmd Filetype pde      setlocal softtabstop=2 shiftwidth=2 tabstop=2 expandtab   " processingの設定
+    autocmd Filetype c,cpp        setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   cindent     " cとc++の設定
+    autocmd Filetype make         setlocal softtabstop=0 shiftwidth=4 tabstop=4 noexpandtab autoindent  " makefileの設定
+    autocmd Filetype markdown,tex setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   autoindent  " markdownとtexの設定
+    autocmd Filetype python       setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab   smartindent " pythonの設定
+    autocmd Filetype pde          setlocal softtabstop=2 shiftwidth=2 tabstop=2 expandtab   smartindent " processingの設定
 augroup END
-
-" 自動インデントを有効にする
-set autoindent
 
 " windowsでバックスペースが効かないことへの対策
 set backspace=indent,eol,start
