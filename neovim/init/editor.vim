@@ -61,6 +61,9 @@ set scrolloff=5
 " カーソル位置をハイライトする
 set cursorline
 
+" floating windowを透かす
+set pumblend=10
+
 
 " --------------------------------------
 " 検索関係
