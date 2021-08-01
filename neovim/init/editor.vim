@@ -58,6 +58,9 @@ set fileencodings=utf-8,cp932,euc-jp,sjis
 " スクロース時のカーソルと画面の端とに余裕を持たせる
 set scrolloff=5
 
+" カーソル位置をハイライトする
+set cursorline
+
 
 " --------------------------------------
 " 検索関係
