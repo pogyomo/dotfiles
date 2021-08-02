@@ -13,7 +13,6 @@ Plug 'skanehira/preview-markdown.vim' "マークダウンのプレビュー
 Plug 'tpope/vim-fugitive' "gitの操作とか
 Plug 'easymotion/vim-easymotion' "移動を楽にするやつ
 Plug 'dense-analysis/ale' " シンタックスチェッカー
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " lspの導入
 " nesasmに関係するやつ
 Plug 'thentenaar/vim-syntax-obscure' "nesasmのシンタックスハイライト
 " c/c++に関係するやつ
