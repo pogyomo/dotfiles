@@ -10,6 +10,7 @@
 " [Split]              <- <Leader>s
 " [preview-markdown]   <- <Leader>m
 " [easymotion]         <- <Leader>e
+" [coc]                <- <Leader>o
 " ---leaderキーから始まるやつ
 " [Window]h            =>ウィンドウ間を左に移動
 " [Window]j            =>ウィンドウ間を下に移動
@@ -76,6 +77,7 @@ nmap <Leader>s [Split]
 " プラグインのleader
 nmap <Leader>m [preview-markdown]
 nmap <Leader>e [easymotion]
+nmap <Leader>o [coc]
 
 " sキーをleaderにする
 let mapleader="s"
@@ -86,6 +88,7 @@ nmap <Leader>s [Split]
 " プラグインのleader
 nmap <Leader>m [preview-markdown]
 nmap <Leader>e [easymotion]
+nmap <Leader>o [coc]
 
 
 " --------------------------------------
@@ -144,6 +147,16 @@ nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
 
 " easymotionの設定
 nmap [easymotion] <Plug>(easymotion-prefix)
+
+" cocの設定
+nmap [coc]di <Plug>(coc-diagnostic-info)
+nmap [coc]dj <Plug>(coc-diagnostic-next)
+nmap [coc]dk <Plug>(coc-diagnostic-prev)
+nmap [coc]df <Plug>(coc-definition)
+nmap [coc]f  <Plug>(coc-format)
+nmap [coc]rn <Plug>(coc-rename)
+nmap [coc]rf <Plug>(coc-references)
+nmap <silent> [coc]h :<C-u>:call CocAction('doHover')<CR>
 
 
 " --------------------------------------
