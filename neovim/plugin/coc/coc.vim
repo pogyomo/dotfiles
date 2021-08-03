@@ -2,8 +2,7 @@
 " メモ書き
 " --------------------------------------
 " clangd -> * llvmをインストールしてパスを通す
-"           * compile_flags.txtに--target=(gcc -vで出てきたtarget)
-"           を記載してプロジェクトのルートに置く
+"           * compile_flags.txtに'--target=x86_64-win32-gnu'を記載してプロジェクトのルートに置く
 " texlab -> * texlabをインストールしてパスを通す
 
 
