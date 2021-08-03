@@ -9,7 +9,8 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
     \ 'coc-clangd',
-    \ 'coc-texlab'
+    \ 'coc-texlab',
+    \ 'coc-pyright'
     \ ]
 
 " 設定ファイルの場所を変更
