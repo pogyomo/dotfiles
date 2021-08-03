@@ -1,6 +1,3 @@
-" todo:
-"   * cocのマッピングを完成させる
-"   * cocのマッピングを記述する
 " --------------------------------------
 " 一覧
 " --------------------------------------
@@ -43,6 +40,14 @@
 " [preview-markdown]h  =>ウィンドウの左側でmarkdownのプレビューを行う
 " [preview-markdown]k  =>ウィンドウの上側でmarkdownのプレビューを行う
 " [preview-markdown]j  =>ウィンドウの下側でmarkdownのプレビューを行う
+" [coc]dj              =>次のエラー箇所へ移動する
+" [coc]dk              =>前のエラー箇所へ移動する
+" [coc]df              =>定義へジャンプする
+" [coc]dt              =>型の定義へジャンプする
+" [coc]f               =>ファイルを整形する
+" [coc]rn              =>変数をリネームする
+" [coc]rf              =>リファレンスを見る
+" [coc]h               =>ヒントを見る
 " ---その他
 " j                    =>表示されている行単位で下に移動
 " k                    =>表示されている行単位で上に移動
@@ -149,13 +154,19 @@ nnoremap <silent> [preview-markdown]k :PreviewMarkdown top<CR>
 nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
 
 " cocの設定
-nmap [coc]di <Plug>(coc-diagnostic-info)
+" 診断について
 nmap [coc]dj <Plug>(coc-diagnostic-next)
 nmap [coc]dk <Plug>(coc-diagnostic-prev)
+" 定義ジャンプについて
 nmap [coc]df <Plug>(coc-definition)
+nmap [coc]dt <Plug>(coc-type-definition)
+" ファイルの整形
 nmap [coc]f  <Plug>(coc-format)
+" リネーム
 nmap [coc]rn <Plug>(coc-rename)
+" リファレンスを見る
 nmap [coc]rf <Plug>(coc-references)
+" ヒントを見る
 nmap <silent> [coc]h :<C-u>:call CocAction('doHover')<CR>
 
 
