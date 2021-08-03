@@ -2,7 +2,8 @@
 " メモ書き
 " --------------------------------------
 " clangd -> * llvmをインストールしてパスを通す
-"           * compile_flags.txtに'--target=x86_64-win32-gnu'を記載してプロジェクトのルートに置く
+"           * msys2のmingwを使う
+"           * compile_flags.txtに'--target=x86_64-pc-windows-gnu'を記載してプロジェクトのルートに置く
 " texlab -> * texlabをインストールしてパスを通す
 
 
