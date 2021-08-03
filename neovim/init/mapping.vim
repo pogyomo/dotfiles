@@ -145,9 +145,6 @@ nnoremap <silent> [preview-markdown]h :PreviewMarkdown left<CR>
 nnoremap <silent> [preview-markdown]k :PreviewMarkdown top<CR>
 nnoremap <silent> [preview-markdown]j :PreviewMarkdown bottom<CR>
 
-" easymotionの設定
-nmap [easymotion] <Plug>(easymotion-prefix)
-
 " cocの設定
 nmap [coc]di <Plug>(coc-diagnostic-info)
 nmap [coc]dj <Plug>(coc-diagnostic-next)
