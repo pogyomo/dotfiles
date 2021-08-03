@@ -19,3 +19,10 @@ let g:coc_data_home = '~/.config/nvim/coc'
 
 " エラーや警告を表示する欄を常に表示
 set signcolumn=yes
+
+
+" --------------------------------------
+" 補完機能の設定
+" --------------------------------------
+" 補完機能の動き
+set completeopt=menu,preview,noinsert
