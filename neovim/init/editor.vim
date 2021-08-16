@@ -58,6 +58,9 @@ set scrolloff=5
 " カーソル位置をハイライトする
 set cursorline
 
+" true colorに対応させる
+set termguicolors
+
 
 " --------------------------------------
 " 検索関係
