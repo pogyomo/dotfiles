@@ -12,6 +12,7 @@
 " 入れるextensionを設定
 " texlabとclangdが必須
 let g:coc_global_extensions = [
+    \ 'coc-java',
     \ 'coc-json',
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
