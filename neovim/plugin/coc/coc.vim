@@ -17,7 +17,6 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
     \ 'coc-clangd',
-    \ 'coc-solargraph',
     \ 'coc-omnisharp',
     \ 'coc-texlab',
     \ 'coc-pyright'
