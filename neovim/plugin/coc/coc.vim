@@ -19,7 +19,8 @@ let g:coc_global_extensions = [
     \ 'coc-clangd',
     \ 'coc-omnisharp',
     \ 'coc-texlab',
-    \ 'coc-pyright'
+    \ 'coc-pyright',
+    \ 'coc-rls'
     \ ]
 
 " 設定ファイルの場所を変更
