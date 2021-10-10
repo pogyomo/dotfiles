@@ -2,7 +2,7 @@
 " プラグインの登録
 " --------------------------------------
 " 呼び出し必須
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " ここに導入したいプラグインを書く
 " Plugin '[Github Auther]/[Github repo]'の形式で書く

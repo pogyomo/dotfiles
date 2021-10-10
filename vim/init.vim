@@ -36,17 +36,17 @@
 " --------------------------------------
 " 標準の設定
 " --------------------------------------
-source ~/dotfiles/neovim/init/mapping.vim
-source ~/dotfiles/neovim/init/editor.vim
+source ~/dotfiles/vim/init/mapping.vim
+source ~/dotfiles/vim/init/editor.vim
 
 
 " --------------------------------------
 " プラグインの設定
 " --------------------------------------
 " 最初に配置する必要あり
-source ~/dotfiles/neovim/plugin/vim-plug.vim
+source ~/dotfiles/vim/plugin/vim-plug.vim
 
 " 残りのプラグインたち
-source ~/dotfiles/neovim/plugin/lightline.vim
-source ~/dotfiles/neovim/plugin/molokai.vim
-source ~/dotfiles/neovim/plugin/preview-markdown.vim
+source ~/dotfiles/vim/plugin/lightline.vim
+source ~/dotfiles/vim/plugin/molokai.vim
+source ~/dotfiles/vim/plugin/preview-markdown.vim
