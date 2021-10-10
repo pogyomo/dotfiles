@@ -4,4 +4,3 @@ curl -fo ~/.config/nvim/autoload/plug.vim --create-dirs \
 
 # make symbolic link
 ln -sfv ~/dotfiles/neovim/init.vim ~/.config/nvim/init.vim
-ln -sfv ~/dotfiles/neovim/init.vim ~/.vimrc
