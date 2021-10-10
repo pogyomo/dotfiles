@@ -37,7 +37,7 @@ let g:coc_data_home = '~/.config/nvim/coc'
 " エラーや警告を表示する欄を常に表示
 set signcolumn=yes
 
-" 起動時に無効化(nodejsのversionが足りなかったとき)
+" 起動時に起動しない(CocStartで起動)
 let g:coc_start_at_startup = 0
 
 
