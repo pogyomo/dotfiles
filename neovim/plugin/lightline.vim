@@ -87,7 +87,7 @@ let g:lightline = {
 " アクティブ時に左右に表示するものの設定
 let g:lightline.active = {
     \  'left': [ [ 'mode', 'paste' ],
-    \            [ 'coc', 'branch' ],
+    \            [ 'branch' ],
     \            [ 'filename', 'readonly', 'help', 'preview' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'time' ],
@@ -96,7 +96,7 @@ let g:lightline.active = {
 
 " インアクティブ時に左右に表示するものの設定
 let g:lightline.inactive = {
-    \  'left': [ [ 'coc', 'branch' ],
+    \  'left': [ [ 'branch' ],
     \            [ 'filename', 'readonly', 'help', 'preview' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'time' ],
@@ -111,7 +111,6 @@ let g:lightline.component = {
 " 使用する関数を登録
 let g:lightline.component_function = {
     \   'branch': 'Plug_lightline_GetBranch',
-    \      'coc': 'coc#status',
     \     'time': 'Plug_lightline_GetTime',
     \ 'filename': 'Plug_lightline_GetFileName',
     \     'help': 'Plug_lightline_IsHelpBuffer',
