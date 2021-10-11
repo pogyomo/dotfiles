@@ -37,9 +37,6 @@ let g:coc_data_home = '~/.config/nvim/coc'
 " エラーや警告を表示する欄を常に表示
 set signcolumn=yes
 
-" 起動時に起動しない(CocStartで起動)
-let g:coc_start_at_startup = 0
-
 
 " --------------------------------------
 " 補完機能の設定
