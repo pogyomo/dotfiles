@@ -5,8 +5,7 @@
 " coc-json     -> * 特になし
 " coc-tsserver -> * 特になし
 " coc-vimlsp   -> * 特になし
-" coc-clangd   -> * llvmをインストールしてパスを通す
-"                 * 'mingw-w64-x86_64-clang'と'mingw-w64-x86_64-clang-tools-extra'を入れる
+" coc-clangd   -> * clangdをインストールしてパスを通す
 " coc-texlab   -> * texlabをインストールしてパスを通す
 " coc-pyright  -> * 特になし
 " coc-rls      -> * 特になし
