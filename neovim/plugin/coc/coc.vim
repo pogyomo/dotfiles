@@ -6,7 +6,7 @@
 " coc-tsserver -> * 特になし
 " coc-vimlsp   -> * 特になし
 " coc-clangd   -> * clangdをインストールしてパスを通す
-" coc-texlab   -> * texlabをインストールしてパスを通す
+" coc-texlab   -> * 特になし
 " coc-pyright  -> * 特になし
 " coc-rls      -> * 特になし
 
