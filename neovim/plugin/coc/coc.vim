@@ -18,12 +18,9 @@
 " texlabとclangdが必須
 let g:coc_global_extensions = [
     \ 'coc-java',
-    \ 'coc-json',
-    \ 'coc-tsserver',
     \ 'coc-vimlsp',
     \ 'coc-clangd',
     \ 'coc-texlab',
-    \ 'coc-pyright',
     \ 'coc-rls'
     \ ]
 
