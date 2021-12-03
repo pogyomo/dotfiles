@@ -11,20 +11,22 @@ local opts = { noremap = true, silent = true }
 -- Use space key as leader
 vim.g.mapleader = ' '
 -- Leader for basic key mapping
-vim.api.nvim_set_keymap('n', '<Leader>w', '[Window]', {})
-vim.api.nvim_set_keymap('n', '<Leader>t', '[Tab]',    {})
-vim.api.nvim_set_keymap('n', '<Leader>s', '[Split]',  {})
+vim.api.nvim_set_keymap('n', '<Leader>w', '[Window]',   {})
+vim.api.nvim_set_keymap('n', '<Leader>t', '[Tab]',      {})
+vim.api.nvim_set_keymap('n', '<Leader>s', '[Split]',    {})
 -- Leader for plugin key mapping
-vim.api.nvim_set_keymap('n', '<Leader>h', '[Hop]',    {})
+vim.api.nvim_set_keymap('n', '<Leader>h', '[Hop]',      {})
+vim.api.nvim_set_keymap('n', '<Leader>g', '[Fugitive]', {})
 
 -- Use s key as leader
 vim.g.mapleader = 's'
 -- Leader for basic key mapping
-vim.api.nvim_set_keymap('n', '<Leader>w', '[Window]', {})
-vim.api.nvim_set_keymap('n', '<Leader>t', '[Tab]',    {})
-vim.api.nvim_set_keymap('n', '<Leader>s', '[Split]',  {})
+vim.api.nvim_set_keymap('n', '<Leader>w', '[Window]',   {})
+vim.api.nvim_set_keymap('n', '<Leader>t', '[Tab]',      {})
+vim.api.nvim_set_keymap('n', '<Leader>s', '[Split]',    {})
 -- Leader for plugin key mapping
-vim.api.nvim_set_keymap('n', '<Leader>h', '[Hop]',    {})
+vim.api.nvim_set_keymap('n', '<Leader>h', '[Hop]',      {})
+vim.api.nvim_set_keymap('n', '<Leader>g', '[Fugitive]', {})
 
 
 -- ---------------------------------
@@ -81,6 +83,11 @@ vim.api.nvim_set_keymap('n', '[Hop]c<Enter>', ':HopChar1<CR>',     opts)
 vim.api.nvim_set_keymap('n', '[Hop]cc',       ':HopChar2<CR>',     opts)
 vim.api.nvim_set_keymap('n', '[Hop]l',        ':HopLine<CR>',      opts)
 vim.api.nvim_set_keymap('n', '[Hop]s',        ':HopLineStart<CR>', opts)
+
+-- fugitive
+vim.api.nvim_set_keymap('n', '[Fugitive]a',   ':Gwrite<CR>',       opts)
+vim.api.nvim_set_keymap('n', '[Fugitive]c',   ':Git commit<CR>',   opts)
+vim.api.nvim_set_keymap('n', '[Fugitive]p',   ':Git push<CR>',     opts)
 
 
 -- ---------------------------------
