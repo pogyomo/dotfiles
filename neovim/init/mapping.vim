@@ -9,7 +9,7 @@
 " [Tab]                <- <Leader>t
 " [Split]              <- <Leader>s
 " [preview-markdown]   <- <Leader>m
-" [easymotion]         <- <Leader>e
+" [hop]                <- <Leader>h
 " [coc]                <- <Leader>o
 " ---leaderキーから始まるやつ
 " [Window]h            =>ウィンドウ間を左に移動
@@ -48,6 +48,12 @@
 " [coc]rn              =>変数をリネームする
 " [coc]rf              =>リファレンスを見る
 " [coc]h               =>ヒントを見る
+" [hop]w               =>単語へジャンプ
+" [hop]l               =>ラインへジャンプ
+" [hop]s               =>ラインの非空白部分へジャンプ
+" [hop]c<Enter>        =>1文字へジャンプ
+" [hop]cc              =>2文字へジャンプ
+" [hop]p               =>パターン検索してジャンプ
 " ---その他
 " j                    =>表示されている行単位で下に移動
 " k                    =>表示されている行単位で上に移動
@@ -84,7 +90,7 @@ nmap <Leader>t [Tab]
 nmap <Leader>s [Split]
 " プラグインのleader
 nmap <Leader>m [preview-markdown]
-nmap <Leader>e [easymotion]
+nmap <Leader>h [hop]
 nmap <Leader>o [coc]
 
 " sキーをleaderにする
@@ -95,7 +101,7 @@ nmap <Leader>t [Tab]
 nmap <Leader>s [Split]
 " プラグインのleader
 nmap <Leader>m [preview-markdown]
-nmap <Leader>e [easymotion]
+nmap <Leader>h [hop]
 nmap <Leader>o [coc]
 
 
@@ -168,6 +174,14 @@ nmap [coc]rn <Plug>(coc-rename)
 nmap [coc]rf <Plug>(coc-references)
 " ヒントを見る
 nmap <silent> [coc]h :<C-u>:call CocAction('doHover')<CR>
+
+" hop.nvimの設定
+nnoremap <silent> [hop]w        :HopWord<CR>
+nnoremap <silent> [hop]l        :HopLine<CR>
+nnoremap <silent> [hop]s        :HopLineStart<CR>
+nnoremap <silent> [hop]c<Enter> :HopChar1<CR>
+nnoremap <silent> [hop]cc       :HopChar2<CR>
+nnoremap <silent> [hop]p        :HopPattern<CR>
 
 
 " --------------------------------------

@@ -12,6 +12,7 @@ Plug 'itchyny/lightline.vim' "lightlineを入れる
 Plug 'skanehira/preview-markdown.vim' "マークダウンのプレビュー
 Plug 'tpope/vim-fugitive' "gitの操作とか
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " lspとか
+Plug 'phaazon/hop.nvim' " easymotionみたいなやつ
 " nesasmに関係するやつ
 Plug 'thentenaar/vim-syntax-obscure' "nesasmのシンタックスハイライト
 " c/c++に関係するやつ
