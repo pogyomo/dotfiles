@@ -2,6 +2,7 @@
 -- Register plugin
 -- ---------------
 -- Need to be called
+-- In lua, hoge.hoge = hoge['hoge']
 vim.fn['plug#begin']([[~/.config/nvim/plugged]])
 
 -- Write like Plug
