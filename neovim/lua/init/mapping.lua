@@ -84,13 +84,6 @@ vim.api.nvim_set_keymap('n', '[Hop]cc',       ':HopChar2<CR>',     opts)
 vim.api.nvim_set_keymap('n', '[Hop]l',        ':HopLine<CR>',      opts)
 vim.api.nvim_set_keymap('n', '[Hop]s',        ':HopLineStart<CR>', opts)
 
--- fugitive
-vim.api.nvim_set_keymap('n', '[Fugitive]a',   ':Gwrite<CR>',       opts)
-vim.api.nvim_set_keymap('n', '[Fugitive]c',   ':Git commit<CR>',   opts)
-vim.api.nvim_set_keymap('n', '[Fugitive]p',   ':Git push<CR>',     opts)
-
-
-
 
 -- ---------------------------------
 -- Basic key mapping for insert mode
