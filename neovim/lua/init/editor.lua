@@ -3,53 +3,88 @@
 -- ------------------
 -- Tab chareacter and indent
 -- Normal settings
-vim.o.softtabstop = 4
-vim.o.shiftwidth  = 4
-vim.o.tabstop     = 4
-vim.o.expandtab   = true
-vim.o.autoindent  = true    
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth  = 4
+vim.opt.tabstop     = 4
+vim.opt.expandtab   = true
+vim.opt.autoindent  = true
 
 -- Share clipboard
-vim.o.clipboard   = 'unnamedplus'
+vim.opt.clipboard   = 'unnamedplus'
 
 
 -- -------------------
 -- Settings for screen
 -- -------------------
+-- Enable syntax
+vim.cmd('syntax on')
+
 -- Don't display command
-vim.o.showcmd        = false
+vim.opt.showcmd        = false
 
 -- Display row number
-vim.o.number         = true
-vim.o.relativenumber = true
+vim.opt.number         = true
+vim.opt.relativenumber = true
 
 -- Disable beep and flashing screen
-vim.o.belloff        = 'all'
-
--- Enable syntax
-vim.o.syntax         = 'on'
+vim.opt.belloff        = 'all'
 
 -- Show current file name above window
-vim.o.title          = true
+vim.opt.title          = true
+
+-- Jump to corresponding backets when entered it
+-- and back to current position
+vim.opt.showmatch      = true
+vim.opt.matchtime      = 2 -- Time to jump (0.1 * x sec)
+
+-- Change internal encoding of vim as utf-8
+vim.opt.encoding       = 'utf-8'
+
+-- Measure for character corruption
+vim.opt.fileencodings  = 'utf-8, cp932, enc-jp, sjis'
+
+-- When scrolling, have some space
+-- between sursor and edge of screen
+vim.opt.scrolloff      = 5
+
+-- Highlight current cursor position
+vim.opt.cursorline     = true
+
+-- Adapt vim to true color
+vim.opt.termguicolors  = true
+
+
+-- -------------------
+-- Settings for search
+-- -------------------
+-- Enable increment search
+vim.opt.incsearch  = true
+
+-- Don't distinguish upper and lower character 
+vim.opt.ignorecase = true
+
+-- If upper character is contained,
+-- disenable ignorecase
+vim.opt.smartcase  = true
 
 
 -- ------------------
 -- Settings for files
 -- ------------------
--- Enable modeline
-vim.o.modeline = true
-
 -- Detect file type and load indent, plugin
 vim.cmd('filetype plugin indent on')
 
+-- Enable modeline
+vim.opt.modeline = true
+
 -- If a file was updated other place, reload the file
-vim.o.autoread = true
+vim.opt.autoread = true
 
 -- Don't make undo file
-vim.o.undofile = false
+vim.opt.undofile = false
 
 -- Don't make backup file
-vim.o.backup   = false
+vim.opt.backup   = false
 
 -- Don't make swap file
-vim.o.swapfile = false
+vim.opt.swapfile = false
