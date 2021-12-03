@@ -90,6 +90,8 @@ vim.api.nvim_set_keymap('n', '[Fugitive]c',   ':Git commit<CR>',   opts)
 vim.api.nvim_set_keymap('n', '[Fugitive]p',   ':Git push<CR>',     opts)
 
 
+
+
 -- ---------------------------------
 -- Basic key mapping for insert mode
 -- ---------------------------------
