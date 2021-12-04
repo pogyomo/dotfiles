@@ -1,3 +1,12 @@
+-- -------------------
+-- Function for config
+-- -------------------
+-- Escape keycode
+local function escape_keycode(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+
 -- ------------------
 -- Settings for input
 -- ------------------
@@ -11,6 +20,10 @@ vim.opt.autoindent  = true
 
 -- Share clipboard
 vim.opt.clipboard   = 'unnamedplus'
+
+-- Completion
+-- Movement of insert mode completion
+vim.opt.completeopt = 'menuone,noinsert,preview'
 
 
 -- -------------------
