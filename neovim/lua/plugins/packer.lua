@@ -79,6 +79,58 @@ function setup_nvim_lspconfig()
     }
 end
 
+-- For lightline
+function setup_lightline()
+    -- Settings for display
+    vim.opt.laststatus  = 2
+    vim.opt.showtabline = 2
+
+    -- Settings for statusline and tabline
+    vim.g.lightline = {
+        -- Colorscheme
+        colorscheme  = 'wombat',
+        
+        -- Things to display in statusline when it is active
+        active       = {
+             left  = {
+                { 'mode', 'paste' },
+                { 'filename' }
+            },
+            right = {
+                { 'lineinfo' },
+                { 'filetype', 'fileformat', 'fileencoding' }
+            }
+        },
+
+        -- Things to display in statusline when it is inactive
+        inactive = {
+            left  = {
+                { 'mode', 'paste' },
+                { 'filename' }
+            },
+            right = {
+                { 'lineinfo' },
+                { 'filetype', 'fileformat', 'fileencoding' }
+            }
+        },
+
+        -- Component to use in statusline
+        component = {
+            lineinfo = '%v:%l/%L'
+        },
+
+        -- Separator to use in statusline
+        separator    = {
+            left  = '',
+            right = ''
+        },
+        subseparator = {
+            left  = '',
+            right = ''
+        }
+    }
+end
+
 
 -- -----------------
 -- Standard settings
@@ -110,6 +162,14 @@ return require('packer').startup(function()
             require'hop'.setup()
         end,
     }          
+
+    -- Statusline
+    use{
+        'itchyny/lightline.vim',
+        config = function()
+            setup_lightline()
+        end,
+    }
 
     -- Lsp and related plugin
     use{
