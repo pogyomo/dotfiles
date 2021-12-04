@@ -21,10 +21,6 @@ vim.opt.autoindent  = true
 -- Share clipboard
 vim.opt.clipboard   = 'unnamedplus'
 
--- Completion
--- Movement of insert mode completion
-vim.opt.completeopt = 'menuone,noinsert,preview'
-
 
 -- -------------------
 -- Settings for screen
