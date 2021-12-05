@@ -15,9 +15,25 @@ return require('packer').startup(function()
     -- Packer should be maneged by itself
     use'wbthomason/packer.nvim'
 
-    -- Syntax highlights
-    use'bfrg/vim-cpp-modern'           -- For c/c++
-    use'thentenaar/vim-syntax-obscure' -- For nesasm/ca65
+    -- Syntax highlights for c/c++
+    use{
+        'bfrg/vim-cpp-modern',
+        opt = true,
+        ft  = {
+            'c',
+            'cpp'
+        }
+    }
+
+    -- Syntax highlights for nesasm/ca65
+    use{
+        'thentenaar/vim-syntax-obscure',
+        opt = true,
+        ft  = {
+            'nesasm',
+            'ca65'
+        }
+    }
 
     -- Colorscheme
     use{

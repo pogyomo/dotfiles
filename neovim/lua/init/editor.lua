@@ -1,12 +1,3 @@
--- -------------------
--- Function for config
--- -------------------
--- Escape keycode
-local function escape_keycode(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-
 -- ------------------
 -- Settings for input
 -- ------------------
@@ -82,6 +73,14 @@ vim.opt.smartcase  = true
 -- ------------------
 -- Detect file type and load indent, plugin
 vim.cmd('filetype plugin indent on')
+
+-- Change filetype depend on extension
+vim.cmd([[
+augroup change_ft
+    autocmd!
+    autocmd BufNewFile,BufRead *.tex set ft=tex
+augroup END
+]])
 
 -- Enable modeline
 vim.opt.modeline = true
