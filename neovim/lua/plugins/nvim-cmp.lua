@@ -4,7 +4,9 @@ function setup_nvim_cmp()
     vim.opt.pumblend    = 30 -- Completion window will translucent
 
     -- Setup nvim-cmp at window
-    local cmp = require'cmp'
+    local cmp      = require'cmp'
+    local behavior = { behavior = cmp.SelectBehavior.Insert }
+    local opts     = { 'i', 'c' }
     cmp.setup(
     {
         -- Specify snippet engine
@@ -19,12 +21,12 @@ function setup_nvim_cmp()
         -- Setting of mappings
         mapping =
         {
-            ['<C-n>']     = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),{ 'i', 'c' }),
-            ['<C-p>']     = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),{ 'i', 'c' }),
-            ['<C-b>']     = cmp.mapping(cmp.mapping.scroll_docs(-4),                                           { 'i', 'c' }),
-            ['<C-f>']     = cmp.mapping(cmp.mapping.scroll_docs(4),                                            { 'i', 'c' }),
-            ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(),                                                { 'i', 'c' }),
-            ['<C-e>']     = cmp.mapping(cmp.mapping.abort(),                                                   { 'i', 'c' }),
+            ['<C-n>']     = cmp.mapping(cmp.mapping.select_next_item(behavior), opts),
+            ['<C-p>']     = cmp.mapping(cmp.mapping.select_prev_item(behavior), opts),
+            ['<C-b>']     = cmp.mapping(cmp.mapping.scroll_docs(-4),            opts),
+            ['<C-f>']     = cmp.mapping(cmp.mapping.scroll_docs(4),             opts),
+            ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(),                 opts),
+            ['<C-e>']     = cmp.mapping(cmp.mapping.abort(),                    opts),
             ['<CR>']      = cmp.mapping.confirm({ select = false }),
         },
 
@@ -32,7 +34,6 @@ function setup_nvim_cmp()
         completion = {
             keyword_length = 1
         },
-
         
         -- Search word from selected place
         sources = cmp.config.sources(
@@ -42,9 +43,8 @@ function setup_nvim_cmp()
         },
         {
             { name = 'buffer' },
-            { name = 'path' }
+            { name = 'path' },
         }),
-
     })
 
     -- Setup nvim-cmp at '/'

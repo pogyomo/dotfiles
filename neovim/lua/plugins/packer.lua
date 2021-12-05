@@ -2,9 +2,10 @@
 -- Standard settings
 -- -----------------
 -- Functions
+require('plugins.molokai')
 require('plugins.lightline')
-require('plugins.nvim-cmp')
 require('plugins.nvim-lspconfig')
+require('plugins.nvim-cmp')
 
 -- It should be written
 vim.cmd[[packadd packer.nvim]]
@@ -22,7 +23,7 @@ return require('packer').startup(function()
     use{
         'tomasr/molokai',
         config = function()
-            vim.cmd('colorscheme molokai')
+            setup_molokai()
         end,
     }
 
