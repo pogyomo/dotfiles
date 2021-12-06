@@ -69,13 +69,15 @@ return require('packer').startup(function()
             -- Completion plugin
             'hrsh7th/nvim-cmp',
 
-            -- Dependention of nvim-cmp
+            -- Snippet plugin
+            'hrsh7th/vim-vsnip',
+
+            -- Dependention of nvim-cmp and vim-vsnip
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip',
         },
         config = function()
             setup_nvim_cmp()
