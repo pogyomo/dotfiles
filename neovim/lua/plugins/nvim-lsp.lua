@@ -26,9 +26,12 @@ function setup_nvim_lsp()
 
     -- Configur lsp
     lsp_installer.on_server_ready(function(server)
+        -- Common setting
         local opts = {
             capabilities = capabilities
         }
+
+        -- Setup lsp
         server:setup(opts)
     end)
 end
