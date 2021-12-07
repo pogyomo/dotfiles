@@ -17,7 +17,7 @@ function setup_nvim_lsp()
         local server_is_found, server = lsp_installer.get_server(name)
         if server_is_found then
             if not server:is_installed() then
-                print("INstalling " .. name)
+                print("Installing " .. name)
                 server:install()
             end
         end
