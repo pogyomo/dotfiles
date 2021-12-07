@@ -4,7 +4,7 @@
 -- Functions
 require('plugins.molokai')
 require('plugins.lightline')
-require('plugins.nvim-lspconfig')
+require('plugins.nvim-lsp')
 require('plugins.nvim-cmp')
 
 -- It should be written
@@ -66,6 +66,9 @@ return require('packer').startup(function()
     use{
         'neovim/nvim-lspconfig',
         requires = {
+            -- Installer
+            'williamboman/nvim-lsp-installer',
+
             -- Completion plugin
             'hrsh7th/nvim-cmp',
 
@@ -81,7 +84,7 @@ return require('packer').startup(function()
         },
         config = function()
             setup_nvim_cmp()
-            setup_nvim_lspconfig()
+            setup_nvim_lsp()
         end,
     }
 end)
