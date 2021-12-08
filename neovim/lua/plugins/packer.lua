@@ -46,6 +46,7 @@ return require('packer').startup(function()
     -- Easymotion like plugin
     use{
         'phaazon/hop.nvim',
+        branch = 'v1',
         config = function()
             require'hop'.setup()
         end,
@@ -61,6 +62,9 @@ return require('packer').startup(function()
 
     -- Git
     use'tpope/vim-fugitive'
+
+    -- Floaterm
+    use'voldikss/vim-floaterm'
 
     -- Lsp and related plugin
     use{

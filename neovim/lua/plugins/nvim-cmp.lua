@@ -21,12 +21,13 @@ function setup_nvim_cmp()
         -- Setting of mappings
         mapping =
         {
-            ['<C-n>']     = cmp.mapping(cmp.mapping.select_next_item(behavior), opts),
-            ['<C-p>']     = cmp.mapping(cmp.mapping.select_prev_item(behavior), opts),
-            ['<C-b>']     = cmp.mapping(cmp.mapping.scroll_docs(-4),            opts),
-            ['<C-f>']     = cmp.mapping(cmp.mapping.scroll_docs(4),             opts),
-            ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(),                 opts),
-            ['<C-e>']     = cmp.mapping(cmp.mapping.abort(),                    opts),
+            ['<C-n>']     = cmp.mapping(cmp.mapping.select_next_item(behavior),  opts),
+            ['<C-p>']     = cmp.mapping(cmp.mapping.select_prev_item(behavior),  opts),
+            ['<Tab>']     = cmp.mapping(cmp.mapping.select_next_item(behavior),  opts),
+            ['<C-b>']     = cmp.mapping(cmp.mapping.scroll_docs(-4),             opts),
+            ['<C-f>']     = cmp.mapping(cmp.mapping.scroll_docs(4),              opts),
+            ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(),                  opts),
+            ['<C-e>']     = cmp.mapping(cmp.mapping.abort(),                     opts),
             ['<CR>']      = cmp.mapping.confirm({ select = false }),
         },
 
@@ -42,7 +43,15 @@ function setup_nvim_cmp()
             { name = 'vsnip' },
         },
         {
-            { name = 'buffer' },
+            { 
+                name   = 'buffer',
+                option = {
+                    -- Get word from all buffer
+                    get_bufnrs = function()
+                        return vim.api.nvim_list_bufs()
+                    end
+                },
+            },
             { name = 'path' },
         }),
     })
