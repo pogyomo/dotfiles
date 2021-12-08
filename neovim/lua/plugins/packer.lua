@@ -64,7 +64,15 @@ return require('packer').startup(function()
     use'tpope/vim-fugitive'
 
     -- Floaterm
-    use'voldikss/vim-floaterm'
+    use{
+        'voldikss/vim-floaterm',
+        config = function()
+            -- Set options
+            vim.g.floaterm_width     = 0.8
+            vim.g.floaterm_height    = 0.8
+            vim.g.floaterm_autoclose = 2
+        end
+    }
 
     -- Lsp and related plugin
     use{
