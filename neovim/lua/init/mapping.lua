@@ -88,7 +88,7 @@ vim.api.nvim_set_keymap('n', '[Hop]l',      ':HopLine<CR>',                     
 vim.api.nvim_set_keymap('n', '[Hop]L',      ':HopLineStart<CR>',                           opts)
 
 -- vim-floaterm
-vim.api.nvim_set_keymap('n', '[Floaterm]n', [[:FloatermNew --autoclose=2<CR><C-\\><C-n>]], opts)
+vim.api.nvim_set_keymap('n', '[Floaterm]n', [[:FloatermNew --autoclose=2<CR><C-\><C-n>]], opts)
 vim.api.nvim_set_keymap('n', '[Floaterm]h', [[:FloatermPrev<CR><C-\><C-n>]],               opts)
 vim.api.nvim_set_keymap('n', '[Floaterm]H', [[:FloatermFirst<CR><C-\><C-n>]],              opts)
 vim.api.nvim_set_keymap('n', '[Floaterm]l', [[:FloatermNext<CR><C-\><C-n>]],               opts)
