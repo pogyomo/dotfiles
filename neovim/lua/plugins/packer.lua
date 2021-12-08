@@ -55,13 +55,14 @@ return require('packer').startup(function()
     -- Statusline
     use{
         'itchyny/lightline.vim',
+        requires = {
+            -- Get current branch
+            'itchyny/vim-gitbranch'
+        },
         config = function()
             setup_lightline()
         end,
     }
-
-    -- Git
-    use'tpope/vim-fugitive'
 
     -- Floaterm
     use{

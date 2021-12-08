@@ -42,22 +42,7 @@ function setup_lightline()
     -- Function to return current branch
     vim.cmd([[
     function! LightlineGetBranch()
-        if FugitiveHead() == ''
-            return 'No branch'
-        else
-            return ' '.FugitiveHead()
-        endif
-    endfunction
-    ]])
-
-    -- Function to return current branch
-    vim.cmd([[
-    function! LightlineGetBranch()
-        if FugitiveHead() == ''
-            return 'No branch'
-        else
-            return ' '.FugitiveHead()
-        endif
+        return gitbranch#name() == '' ? 'no branch' : 'branch : ' . gitbranch#name()
     endfunction
     ]])
 
@@ -124,12 +109,12 @@ function setup_lightline()
 
         -- Separator to use in statusline
         separator    = {
-            left  = '',
-            right = ''
+            left  = '',
+            right = ''
         },
         subseparator = {
-            left  = '',
-            right = ''
+            left  = '|',
+            right = '|'
         },
 
         -- Things to display in tabline 
@@ -144,12 +129,12 @@ function setup_lightline()
 
         -- Separator to use in statusline
         tabline_separator    = {
-            left  = '',
-            right = ''
+            left  = '',
+            right = ''
         },
         tabline_subseparator = {
-            left  = '',
-            right = ''
+            left  = '|',
+            right = '|'
         },
 
         -- Mode name
