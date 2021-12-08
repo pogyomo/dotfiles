@@ -17,6 +17,7 @@ vim.api.nvim_set_keymap('n', '<Leader>s', '[Split]',    {})
 -- Leader for plugin key mapping
 vim.api.nvim_set_keymap('n', '<Leader>h', '[Hop]',      {})
 vim.api.nvim_set_keymap('n', '<Leader>g', '[Fugitive]', {})
+vim.api.nvim_set_keymap('n', '<Leader>f', '[Floaterm]', {})
 
 -- Use s key as leader
 vim.g.mapleader = 's'
@@ -27,6 +28,7 @@ vim.api.nvim_set_keymap('n', '<Leader>s', '[Split]',    {})
 -- Leader for plugin key mapping
 vim.api.nvim_set_keymap('n', '<Leader>h', '[Hop]',      {})
 vim.api.nvim_set_keymap('n', '<Leader>g', '[Fugitive]', {})
+vim.api.nvim_set_keymap('n', '<Leader>f', '[Floaterm]', {})
 
 
 -- ---------------------------------
@@ -77,12 +79,12 @@ vim.api.nvim_set_keymap('n', 'gk',       'k',              opts)
 -- Plugin key mapping for normal mode
 -- ----------------------------------
 -- hop.nvim
-vim.api.nvim_set_keymap('n', '[Hop]w', ':HopWord<CR>',      opts)
-vim.api.nvim_set_keymap('n', '[Hop]p', ':HopPattern<CR>',   opts)
-vim.api.nvim_set_keymap('n', '[Hop]c', ':HopChar1<CR>',     opts)
-vim.api.nvim_set_keymap('n', '[Hop]C', ':HopChar2<CR>',     opts)
-vim.api.nvim_set_keymap('n', '[Hop]l', ':HopLine<CR>',      opts)
-vim.api.nvim_set_keymap('n', '[Hop]L', ':HopLineStart<CR>', opts)
+vim.api.nvim_set_keymap('n', '[Hop]w',      ':HopWord<CR>',       opts)
+vim.api.nvim_set_keymap('n', '[Hop]p',      ':HopPattern<CR>',    opts)
+vim.api.nvim_set_keymap('n', '[Hop]c',      ':HopChar1<CR>',      opts)
+vim.api.nvim_set_keymap('n', '[Hop]C',      ':HopChar2<CR>',      opts)
+vim.api.nvim_set_keymap('n', '[Hop]l',      ':HopLine<CR>',       opts)
+vim.api.nvim_set_keymap('n', '[Hop]L',      ':HopLineStart<CR>',  opts)
 
 
 -- ---------------------------------
@@ -107,6 +109,6 @@ vim.api.nvim_set_keymap('i', '(<Enter>', '()<Left><CR><ESC><S-o>', opts)
 -- -----------------------------------
 -- Basic key mapping for terminal mode
 -- -----------------------------------
--- Use jj to go to normal mode
-vim.api.nvim_set_keymap('t', '<ESC>', [[<C-\><C-n>]], opts)
-vim.api.nvim_set_keymap('t', 'jj',    [[<C-\><C-n>]], opts)
+-- Use Alt-(jj) and Alt-ESC to go to normal mode
+vim.api.nvim_set_keymap('t', '<A-j><A-j>', [[<C-\><C-n>]], opts)
+vim.api.nvim_set_keymap('t', '<A-ESC>',    [[<C-\><C-n>]], opts)
