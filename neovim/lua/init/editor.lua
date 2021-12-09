@@ -12,6 +12,9 @@ vim.opt.autoindent  = true
 -- Share clipboard
 vim.opt.clipboard   = 'unnamedplus'
 
+-- For backspace
+vim.opt.backspace   = 'indent,eol,start'
+
 
 -- -------------------
 -- Settings for screen

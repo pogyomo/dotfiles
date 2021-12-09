@@ -12,6 +12,9 @@
 " Share clipboard
 set clipboard=unnamedplus
 
+" For backspace
+set backspace=indent,eol,start
+
 
 " -------------------
 " Settings for screen
