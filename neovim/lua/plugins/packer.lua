@@ -2,6 +2,7 @@
 -- Standard settings
 -- -----------------
 -- Functions
+require('plugins.nvim-treesitter')
 require('plugins.molokai')
 require('plugins.lightline')
 require('plugins.nvim-lsp')
@@ -15,16 +16,6 @@ return require('packer').startup(function()
     -- Packer should be maneged by itself
     use'wbthomason/packer.nvim'
 
-    -- Syntax highlights for c/c++
-    use{
-        'bfrg/vim-cpp-modern',
-        opt = true,
-        ft  = {
-            'c',
-            'cpp'
-        }
-    }
-
     -- Syntax highlights for nesasm/ca65
     use{
         'thentenaar/vim-syntax-obscure',
@@ -32,7 +23,16 @@ return require('packer').startup(function()
         ft  = {
             'nesasm',
             'ca65'
-        }
+        },
+    }
+
+    -- Tree-sitter
+    use{
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate', -- If this plugin is updated/installed, update current parser
+        config = function()
+            setup_nvim_treesitter()
+        end,
     }
 
     -- Colorscheme
