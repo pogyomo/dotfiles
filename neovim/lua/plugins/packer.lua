@@ -43,6 +43,9 @@ return require('packer').startup(function()
         end,
     }
 
+    -- Visualize indent
+    use'Yggdroot/indentLine'
+
     -- Easymotion like plugin
     use{
         'phaazon/hop.nvim',

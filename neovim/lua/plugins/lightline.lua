@@ -42,7 +42,11 @@ function setup_lightline()
     -- Function to return current branch
     vim.cmd([[
     function! LightlineGetBranch()
-        return gitbranch#name() == '' ? 'no branch' : 'branch : ' . gitbranch#name()
+        if exists('*gitbranch#name')
+            return gitbranch#name() == '' ? 'no branch' : 'branch : ' . gitbranch#name()
+        else
+            return ''
+        endif
     endfunction
     ]])
 
