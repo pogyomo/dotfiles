@@ -26,7 +26,7 @@ return require('packer').startup(function()
         },
     }
 
-    -- Tree-sitter
+    -- Tree-sitter for syntax highlights
     use{
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate', -- If this plugin is updated/installed, update current parser
