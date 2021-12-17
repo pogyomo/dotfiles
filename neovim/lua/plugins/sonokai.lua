@@ -6,6 +6,9 @@ function setup_sonokai()
     vim.g.sonokai_enable_italic = false
     vim.g.sonokai_disable_italic_comment = true
 
+    -- Disable bold
+    vim.g.sonokai_lightline_disable_bold = true
+
     -- Register colorscheme
     vim.cmd[[colorscheme sonokai]]
 end
