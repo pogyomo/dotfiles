@@ -60,7 +60,7 @@ function setup_lightline()
     -- Settings for statusline and tabline
     vim.g.lightline = {
         -- Colorscheme
-        colorscheme  = 'wombat',
+        colorscheme  = 'sonokai',
         
         -- Things to display in statusline when it is active
         active       = {

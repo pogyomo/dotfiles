@@ -3,7 +3,7 @@
 -- -----------------
 -- Functions
 require('plugins.nvim-treesitter')
-require('plugins.molokai')
+require('plugins.sonokai')
 require('plugins.lightline')
 require('plugins.nvim-lsp')
 require('plugins.nvim-cmp')
@@ -37,9 +37,9 @@ return require('packer').startup(function()
 
     -- Colorscheme
     use{
-        'tomasr/molokai',
+        'sainnhe/sonokai',
         config = function()
-            setup_molokai()
+            setup_sonokai()
         end,
     }
 
