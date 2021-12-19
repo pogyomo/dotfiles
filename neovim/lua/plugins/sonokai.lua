@@ -9,6 +9,9 @@ function setup_sonokai()
     -- Disable bold
     vim.g.sonokai_lightline_disable_bold = true
 
+    -- Set virtual text color
+    vim.g.sonokai_diagnostic_virtual_text = 'colored'
+
     -- Register colorscheme
     vim.cmd[[colorscheme sonokai]]
 end
