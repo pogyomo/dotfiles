@@ -53,9 +53,6 @@ set scrolloff=5
 " Highlight current cursor position
 set cursorline
 
-" Adapt vim to true color
-set termguicolors
-
 
 " -------------------
 " Settings for search
@@ -103,7 +100,7 @@ set noswapfile
 " Config of leader key
 " --------------------
 " Use space key as basic leader
-let mapleader = '\<Space>'
+let mapleader = "\<Space>"
 " Leader for basic key mapping
 nmap <Leader>w [Window]
 nmap <Leader>t [Tab]
