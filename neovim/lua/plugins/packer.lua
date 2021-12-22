@@ -78,6 +78,14 @@ return require('packer').startup(function()
         end,
     }
 
+    -- Fuzzy finder
+    use{
+        'nvim-telescope/telescope.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+        },
+    }
+
     -- Lsp and related plugin
     use{
         'neovim/nvim-lspconfig',

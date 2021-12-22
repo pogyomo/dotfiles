@@ -21,6 +21,7 @@ vim.g.mapleader = 's'
 -- Leader for plugin key mapping
 vim.api.nvim_set_keymap('n', '<Leader>h', '[Hop]',       {})
 vim.api.nvim_set_keymap('n', '<Leader>f', '[Floaterm]',  {})
+vim.api.nvim_set_keymap('n', '<Leader>t', '[Telescope]', {})
 
 
 -- ---------------------------------
@@ -71,22 +72,25 @@ vim.api.nvim_set_keymap('n', 'gk',       'k',              default)
 -- Plugin key mapping for normal mode
 -- ----------------------------------
 -- hop.nvim
-vim.api.nvim_set_keymap('n', '[Hop]w',      ':HopWord<CR>',                    default)
-vim.api.nvim_set_keymap('n', '[Hop]p',      ':HopPattern<CR>',                 default)
-vim.api.nvim_set_keymap('n', '[Hop]c',      ':HopChar1<CR>',                   default)
-vim.api.nvim_set_keymap('n', '[Hop]C',      ':HopChar2<CR>',                   default)
-vim.api.nvim_set_keymap('n', '[Hop]l',      ':HopLine<CR>',                    default)
-vim.api.nvim_set_keymap('n', '[Hop]L',      ':HopLineStart<CR>',               default)
+vim.api.nvim_set_keymap('n', '[Hop]w',       ':HopWord<CR>',                    default)
+vim.api.nvim_set_keymap('n', '[Hop]p',       ':HopPattern<CR>',                 default)
+vim.api.nvim_set_keymap('n', '[Hop]c',       ':HopChar1<CR>',                   default)
+vim.api.nvim_set_keymap('n', '[Hop]C',       ':HopChar2<CR>',                   default)
+vim.api.nvim_set_keymap('n', '[Hop]l',       ':HopLine<CR>',                    default)
+vim.api.nvim_set_keymap('n', '[Hop]L',       ':HopLineStart<CR>',               default)
 
 -- vim-floaterm
-vim.api.nvim_set_keymap('n', '[Floaterm]n', [[:FloatermNew<CR><C-\><C-n>]],    default)
-vim.api.nvim_set_keymap('n', '[Floaterm]h', [[:FloatermPrev<CR><C-\><C-n>]],   default)
-vim.api.nvim_set_keymap('n', '[Floaterm]H', [[:FloatermFirst<CR><C-\><C-n>]],  default)
-vim.api.nvim_set_keymap('n', '[Floaterm]l', [[:FloatermNext<CR><C-\><C-n>]],   default)
-vim.api.nvim_set_keymap('n', '[Floaterm]L', [[:FloatermLast<CR><C-\><C-n>]],   default)
-vim.api.nvim_set_keymap('n', '[Floaterm]s', [[:FloatermShow<CR><C-\><C-n>]],   default)
-vim.api.nvim_set_keymap('n', '[Floaterm]S', [[:FloatermHide<CR><C-\><C-n>]],   default)
-vim.api.nvim_set_keymap('n', '[Floaterm]t', [[:FloatermToggle<CR><C-\><C-n>]], default)
+vim.api.nvim_set_keymap('n', '[Floaterm]n',  [[:FloatermNew<CR><C-\><C-n>]],    default)
+vim.api.nvim_set_keymap('n', '[Floaterm]h',  [[:FloatermPrev<CR><C-\><C-n>]],   default)
+vim.api.nvim_set_keymap('n', '[Floaterm]H',  [[:FloatermFirst<CR><C-\><C-n>]],  default)
+vim.api.nvim_set_keymap('n', '[Floaterm]l',  [[:FloatermNext<CR><C-\><C-n>]],   default)
+vim.api.nvim_set_keymap('n', '[Floaterm]L',  [[:FloatermLast<CR><C-\><C-n>]],   default)
+vim.api.nvim_set_keymap('n', '[Floaterm]s',  [[:FloatermShow<CR><C-\><C-n>]],   default)
+vim.api.nvim_set_keymap('n', '[Floaterm]S',  [[:FloatermHide<CR><C-\><C-n>]],   default)
+vim.api.nvim_set_keymap('n', '[Floaterm]t',  [[:FloatermToggle<CR><C-\><C-n>]], default)
+
+-- Telescope.nvim
+vim.api.nvim_set_keymap('n', '[Telescope]n', ':Telescope<CR>',                  default);
 
 
 -- ---------------------------------
