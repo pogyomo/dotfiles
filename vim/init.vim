@@ -100,7 +100,7 @@ set noswapfile
 " Config of leader key
 " --------------------
 " Use space key as basic leader
-let mapleader = "\<Space>"
+let mapleader="\<Space>"
 " Leader for basic key mapping
 nmap <Leader>w [Window]
 nmap <Leader>t [Tab]
@@ -176,3 +176,10 @@ inoremap (<Enter> ()<Left><CR><ESC><S-o>
 " Use Alt-(jj) and Alt-ESC to go to normal mode
 tnoremap <A-j><A-j> <C-\><C-n>
 tnoremap <A-ESC> <C-\><C-n>
+
+
+" ----------------------
+" Statusline and tabline
+" ----------------------
+set laststatus=2
+set showtabline=2
