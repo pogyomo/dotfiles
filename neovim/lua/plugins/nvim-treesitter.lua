@@ -8,6 +8,7 @@ function setup_nvim_treesitter()
             'lua',
             'latex',
             'bibtex',
+            'markdown',
         },
 
         -- Settings for highligh
