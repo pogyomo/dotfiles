@@ -9,6 +9,7 @@ function setup_nvim_treesitter()
             'latex',
             'bibtex',
             'markdown',
+            'rust',
         },
 
         -- Settings for highligh

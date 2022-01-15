@@ -12,6 +12,7 @@ function setup_nvim_lsp()
     local servers = {
         'clangd',
         'texlab',
+        'rust_analyzer',
     }
     for _, name in pairs(servers) do
         local server_is_found, server = lsp_installer.get_server(name)
