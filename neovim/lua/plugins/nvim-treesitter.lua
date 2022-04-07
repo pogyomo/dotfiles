@@ -6,6 +6,7 @@ function setup_nvim_treesitter()
             'c',
             'cpp',
             'lua',
+            'java',
             'latex',
             'bibtex',
             'markdown',
