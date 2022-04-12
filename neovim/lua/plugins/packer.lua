@@ -4,9 +4,9 @@
 -- Functions
 require('plugins.nvim-treesitter')
 require('plugins.sonokai')
-require('plugins.lightline')
 require('plugins.nvim-lsp')
 require('plugins.nvim-cmp')
+require('plugins.lualine')
 
 -- It should be written
 vim.cmd[[packadd packer.nvim]]
@@ -16,7 +16,7 @@ return require('packer').startup(function()
     -- Packer should be maneged by itself
     use'wbthomason/packer.nvim'
 
-    -- Syntax highlights for nesasm/ca65
+    -- Syntax highlights
     use{
         'thentenaar/vim-syntax-obscure',
         opt = true,
@@ -25,11 +25,9 @@ return require('packer').startup(function()
             'ca65'
         },
     }
-
-    -- Tree-sitter for syntax highlights
     use{
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate', -- If this plugin is updated/installed, update current parser
+        run = ':TSUpdate',
         config = function()
             setup_nvim_treesitter()
         end,
@@ -46,57 +44,28 @@ return require('packer').startup(function()
     -- Visualize indent
     use'Yggdroot/indentLine'
 
-    -- Easymotion like plugin
-    use{
-        'phaazon/hop.nvim',
-        branch = 'v1',
-        config = function()
-            require'hop'.setup()
-        end,
-    }          
-
     -- Statusline
     use{
-        'itchyny/lightline.vim',
-        requires = {
-            -- Get current branch
-            'itchyny/vim-gitbranch'
-        },
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
-            setup_lightline()
-        end,
-    }
-
-    -- Floaterm
-    use{
-        'voldikss/vim-floaterm',
-        config = function()
-            -- Set options
-            vim.g.floaterm_width     = 0.8
-            vim.g.floaterm_height    = 0.8
-            vim.g.floaterm_autoclose = 2
-        end,
-    }
-
-    -- Fuzzy finder
-    use{
-        'nvim-telescope/telescope.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'kyazdani42/nvim-web-devicons',
-        },
+            setup_lualine()
+        end
     }
 
     -- Lsp and related plugin
     use{
         'neovim/nvim-lspconfig',
+        requires = { 'williamboman/nvim-lsp-installer' },
+        config = function()
+            setup_nvim_lsp()
+        end,
+    }
+
+    -- Completion plugin
+    use{
+        'hrsh7th/nvim-cmp',
         requires = {
-            -- Installer
-            'williamboman/nvim-lsp-installer',
-
-            -- Completion plugin
-            'hrsh7th/nvim-cmp',
-
             -- Snippet plugin
             'hrsh7th/vim-vsnip',
 
@@ -109,7 +78,6 @@ return require('packer').startup(function()
         },
         config = function()
             setup_nvim_cmp()
-            setup_nvim_lsp()
         end,
     }
 end)
