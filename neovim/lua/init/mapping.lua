@@ -16,13 +16,6 @@ vim.api.nvim_set_keymap('n', '<Leader>w', '[Window]',    {})
 vim.api.nvim_set_keymap('n', '<Leader>t', '[Tab]',       {})
 vim.api.nvim_set_keymap('n', '<Leader>s', '[Split]',     {})
 
--- Use s key as plugin leader
-vim.g.mapleader = 's'
--- Leader for plugin key mapping
-vim.api.nvim_set_keymap('n', '<Leader>h', '[Hop]',       {})
-vim.api.nvim_set_keymap('n', '<Leader>f', '[Floaterm]',  {})
-vim.api.nvim_set_keymap('n', '<Leader>t', '[Telescope]', {})
-
 
 -- ---------------------------------
 -- Basic key mapping for normal mode
