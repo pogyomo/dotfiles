@@ -39,7 +39,6 @@ function setup_nvim_cmp()
         -- Search word from selected place
         sources = cmp.config.sources(
         {
-            { name = 'copilot' },
             { name = 'nvim_lsp' },
             { name = 'vsnip' },
         },

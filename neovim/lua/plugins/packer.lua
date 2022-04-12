@@ -8,10 +8,8 @@ require('plugins.nvim-lsp')
 require('plugins.nvim-cmp')
 require('plugins.lualine')
 
--- It should be written
-vim.cmd[[packadd packer.nvim]]
-
 -- Plugin that will be managed by packer
+vim.cmd[[packadd packer.nvim]]
 return require('packer').startup(function()
     -- Packer should be maneged by itself
     use'wbthomason/packer.nvim'
@@ -33,15 +31,13 @@ return require('packer').startup(function()
         end,
     }
 
-    -- Colorscheme
+    -- Visual
     use{
         'sainnhe/sonokai',
         config = function()
             setup_sonokai()
         end,
     }
-
-    -- Visualize indent
     use'Yggdroot/indentLine'
 
     -- Statusline
