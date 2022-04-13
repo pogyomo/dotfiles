@@ -39,6 +39,12 @@ return require('packer').startup(function()
         end,
     }
     use'Yggdroot/indentLine'
+    use{
+        'petertriho/nvim-scrollbar',
+        config = function()
+            require'scrollbar'.setup()
+        end
+    }
 
     -- Statusline
     use{
