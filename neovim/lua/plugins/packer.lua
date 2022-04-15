@@ -16,24 +16,27 @@ return require('packer').startup(function()
 
     -- Syntax highlights
     use{ 'thentenaar/vim-syntax-obscure', opt = true, ft = { 'nesasm', 'ca65' } }
-    use{ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = setup_nvim_treesitter() }
+    use{
+        'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+        config = function() setup_nvim_treesitter() end
+    }
 
     -- Visual
-    use{ 'sainnhe/sonokai', config = setup_sonokai() }
-    use{ 'lukas-reineke/indent-blankline.nvim', config = require'indent_blankline'.setup() }
+    use{ 'sainnhe/sonokai', config = function() setup_sonokai() end }
+    use{ 'lukas-reineke/indent-blankline.nvim', config = function() require'indent_blankline'.setup() end }
 
     -- Statusline
     use{
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = setup_lualine()
+        config = function() setup_lualine() end
     }
 
     -- Lsp and related plugin
     use{
         'neovim/nvim-lspconfig',
         requires = { 'williamboman/nvim-lsp-installer' },
-        config = setup_nvim_lsp()
+        config = function() setup_nvim_lsp() end
     }
 
     -- Completion plugin
@@ -50,6 +53,6 @@ return require('packer').startup(function()
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-vsnip',
         },
-        config = setup_nvim_cmp()
+        config = function() setup_nvim_cmp() end
     }
 end)
