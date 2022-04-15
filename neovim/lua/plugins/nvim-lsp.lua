@@ -7,7 +7,6 @@ function setup_nvim_lsp()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities       = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-
     -- Install lsp
     local servers = {
         'clangd',
@@ -24,7 +23,6 @@ function setup_nvim_lsp()
             end
         end
     end
-
 
     -- Configur lsp
     lsp_installer.on_server_ready(function(server)
