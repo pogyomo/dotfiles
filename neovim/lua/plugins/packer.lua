@@ -12,56 +12,28 @@ require('plugins.lualine')
 vim.cmd[[packadd packer.nvim]]
 return require('packer').startup(function()
     -- Packer should be maneged by itself
-    use'wbthomason/packer.nvim'
+    use{ 'wbthomason/packer.nvim' }
 
     -- Syntax highlights
-    use{
-        'thentenaar/vim-syntax-obscure',
-        opt = true,
-        ft  = {
-            'nesasm',
-            'ca65'
-        },
-    }
-    use{
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function()
-            setup_nvim_treesitter()
-        end,
-    }
+    use{ 'thentenaar/vim-syntax-obscure', opt = true, ft = { 'nesasm', 'ca65' } }
+    use{ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = setup_nvim_treesitter() }
 
     -- Visual
-    use{
-        'sainnhe/sonokai',
-        config = function()
-            setup_sonokai()
-        end,
-    }
-    use'Yggdroot/indentLine'
-    use{
-        'petertriho/nvim-scrollbar',
-        config = function()
-            require'scrollbar'.setup()
-        end
-    }
+    use{ 'sainnhe/sonokai', config = setup_sonokai() }
+    use{ 'lukas-reineke/indent-blankline.nvim', config = require'indent_blankline'.setup() }
 
     -- Statusline
     use{
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function()
-            setup_lualine()
-        end
+        config = setup_lualine()
     }
 
     -- Lsp and related plugin
     use{
         'neovim/nvim-lspconfig',
         requires = { 'williamboman/nvim-lsp-installer' },
-        config = function()
-            setup_nvim_lsp()
-        end,
+        config = setup_nvim_lsp()
     }
 
     -- Completion plugin
@@ -78,8 +50,6 @@ return require('packer').startup(function()
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-vsnip',
         },
-        config = function()
-            setup_nvim_cmp()
-        end,
+        config = setup_nvim_cmp()
     }
 end)
