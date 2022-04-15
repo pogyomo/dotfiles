@@ -7,7 +7,7 @@ function setup_lualine()
         lualine_c = { { 'filename', symbols = filename_symbols } },
         lualine_x = { 'encoding', { 'fileformat', symbols = fileformat_symbols }, 'filetype' },
         lualine_y = { 'progress' },
-        lualine_z = { 'location' }
+        lualine_z = { '%l/%L:%c' }
     }
     local status_tab = {
         lualine_a = { { 'tabs', max_length = vim.o.columns, mode = 2 } },
