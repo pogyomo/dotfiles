@@ -11,16 +11,14 @@ function setup_nvim_cmp()
     {
         -- Specify snippet engine
         -- It is needed to run this plugin
-        snippet = 
-        {
+        snippet = {
             expand = function(args)
                 vim.fn['vsnip#anonymous'](args.body)
             end,
         },
 
         -- Setting of mappings
-        mapping =
-        {
+        mapping = {
             ['<C-n>']     = cmp.mapping(cmp.mapping.select_next_item(behavior),  opts),
             ['<C-p>']     = cmp.mapping(cmp.mapping.select_prev_item(behavior),  opts),
             ['<Tab>']     = cmp.mapping(cmp.mapping.select_next_item(behavior),  opts),
