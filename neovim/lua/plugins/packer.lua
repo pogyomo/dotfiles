@@ -23,7 +23,10 @@ return require('packer').startup(function()
 
     -- Visual
     use{ 'sainnhe/sonokai', config = function() setup_sonokai() end }
-    use{ 'lukas-reineke/indent-blankline.nvim', config = function() require'indent_blankline'.setup() end }
+    use{
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require'indent_blankline'.setup() end
+    }
 
     -- Statusline
     use{
