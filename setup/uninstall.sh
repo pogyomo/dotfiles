@@ -6,3 +6,6 @@ rm -rf ~/.config/nvim
 # for vim
 ## delete symbolic link
 rm ~/.vimrc
+
+# for wezterm
+rm -rf ~/.config/wezterm
