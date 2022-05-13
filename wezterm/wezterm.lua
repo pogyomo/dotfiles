@@ -13,7 +13,7 @@ return {
         bottom = 0
     },
 
-    initial_cols = 160,
-    initial_rows = 48,
+    initial_cols = 120,
+    initial_rows = 36,
     window_background_opacity = 0.9
 }
