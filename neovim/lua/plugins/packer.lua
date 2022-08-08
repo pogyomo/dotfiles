@@ -1,17 +1,12 @@
--- -----------------
--- Standard settings
--- -----------------
--- Local Modules
-local treesitter = require('plugins.nvim-treesitter')
-local sonokai    = require('plugins.sonokai')
-local nvim_lsp   = require('plugins.nvim-lsp')
-local nvim_cmp   = require('plugins.nvim-cmp')
-local lualine    = require('plugins.lualine')
-
--- External modules
+-- External plugins
+local treesitter = require('plugins.external.nvim-treesitter')
+local sonokai    = require('plugins.external.sonokai')
+local nvim_lsp   = require('plugins.external.nvim-lsp')
+local nvim_cmp   = require('plugins.external.nvim-cmp')
+local lualine    = require('plugins.external.lualine')
 local indent = require('indent_blankline')
 
--- Plugin that will be managed by packer
+-- Plugins that will be managed by packer
 vim.cmd[[packadd packer.nvim]]
 return require('packer').startup(function()
     -- Packer should be maneged by itself
