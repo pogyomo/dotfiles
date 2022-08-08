@@ -12,7 +12,7 @@ function M.setup()
     cmp.setup(
     {
         -- Specify snippet engine
-        -- It is needed to run this plugin
+        -- It is required to run this plugin
         snippet = {
             expand = function(args)
                 vim.fn['vsnip#anonymous'](args.body)
