@@ -10,13 +10,18 @@ local indent     = require('indent_blankline')
 vim.cmd[[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer should be maneged by itself
-    use{ 'wbthomason/packer.nvim' }
+    use{
+        'wbthomason/packer.nvim'
+    }
 
     -- Syntax highlights
-    use{ 'thentenaar/vim-syntax-obscure', opt = true, ft = { 'nesasm', 'ca65' } }
     use{
-        'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-        config = treesitter.setup(),
+        'thentenaar/vim-syntax-obscure',
+        opt = true, ft = { 'nesasm', 'ca65' }
+    }
+    use{
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate', config = treesitter.setup(),
     }
 
     -- Visual
@@ -28,12 +33,16 @@ return require('packer').startup(function(use)
         'lukas-reineke/indent-blankline.nvim',
         config = indent.setup()
     }
-    use{ 'rcarriga/nvim-notify' }
+    use{
+        'rcarriga/nvim-notify'
+    }
 
     -- Statusline
     use{
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        requires = {
+            'kyazdani42/nvim-web-devicons', opt = true
+        },
         config = lualine.setup()
     }
 
