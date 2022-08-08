@@ -4,11 +4,11 @@ local sonokai    = require('plugins.external.sonokai')
 local nvim_lsp   = require('plugins.external.nvim-lsp')
 local nvim_cmp   = require('plugins.external.nvim-cmp')
 local lualine    = require('plugins.external.lualine')
-local indent = require('indent_blankline')
+local indent     = require('indent_blankline')
 
 -- Plugins that will be managed by packer
 vim.cmd[[packadd packer.nvim]]
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- Packer should be maneged by itself
     use{ 'wbthomason/packer.nvim' }
 
@@ -16,7 +16,7 @@ return require('packer').startup(function()
     use{ 'thentenaar/vim-syntax-obscure', opt = true, ft = { 'nesasm', 'ca65' } }
     use{
         'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-        config = treesitter.setup()
+        config = treesitter.setup(),
     }
 
     -- Visual

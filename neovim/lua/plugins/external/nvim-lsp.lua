@@ -16,6 +16,7 @@ function M.setup()
     -- Install lsp automatically
     mason_lspconfig.setup({
         ensure_installed = {
+            'sumneko_lua',
             'clangd',
             'texlab',
             'rust_analyzer',
@@ -41,7 +42,7 @@ function M.setup()
                 settings = {
                     Lua = {
                         diagnostics = {
-                            globals = { 'vim', 'use' }
+                            globals = { 'vim' }
                         }
                     }
                 }
