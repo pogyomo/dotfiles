@@ -1,12 +1,15 @@
 -- -----------------
 -- Standard settings
 -- -----------------
--- Functions
-require('plugins.nvim-treesitter')
-require('plugins.sonokai')
-require('plugins.nvim-lsp')
-require('plugins.nvim-cmp')
-require('plugins.lualine')
+-- Local Modules
+local treesitter = require('plugins.nvim-treesitter')
+local sonokai    = require('plugins.sonokai')
+local nvim_lsp   = require('plugins.nvim-lsp')
+local nvim_cmp   = require('plugins.nvim-cmp')
+local lualine    = require('plugins.lualine')
+
+-- External modules
+local indent = require('indent_blankline')
 
 -- Plugin that will be managed by packer
 vim.cmd[[packadd packer.nvim]]
@@ -18,21 +21,25 @@ return require('packer').startup(function()
     use{ 'thentenaar/vim-syntax-obscure', opt = true, ft = { 'nesasm', 'ca65' } }
     use{
         'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-        config = function() setup_nvim_treesitter() end
+        config = treesitter.setup()
     }
 
     -- Visual
-    use{ 'sainnhe/sonokai', config = function() setup_sonokai() end }
+    use{
+        'sainnhe/sonokai',
+        config = sonokai.setup()
+    }
     use{
         'lukas-reineke/indent-blankline.nvim',
-        config = function() require'indent_blankline'.setup() end
+        config = indent.setup()
     }
+    use{ 'rcarriga/nvim-notify' }
 
     -- Statusline
     use{
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function() setup_lualine() end
+        config = lualine.setup()
     }
 
     -- Lsp and related plugin
@@ -42,7 +49,7 @@ return require('packer').startup(function()
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
         },
-        config = function() setup_nvim_lsp() end
+        config = nvim_lsp.setup()
     }
 
     -- Completion plugin
@@ -59,6 +66,6 @@ return require('packer').startup(function()
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-vsnip',
         },
-        config = function() setup_nvim_cmp() end
+        config = nvim_cmp.setup()
     }
 end)

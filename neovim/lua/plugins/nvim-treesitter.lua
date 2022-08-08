@@ -1,4 +1,6 @@
-function setup_nvim_treesitter()
+local M = {}
+
+function M.setup()
     -- Set config
     require'nvim-treesitter.configs'.setup {
         -- Language to install
@@ -21,3 +23,5 @@ function setup_nvim_treesitter()
         },
     }
 end
+
+return M

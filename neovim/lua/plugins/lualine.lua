@@ -1,4 +1,8 @@
-function setup_lualine()
+local M = {}
+
+function M.setup()
+    local lualine = require('lualine')
+
     local filename_symbols   = { modified = ' +',     readonly = ' -',    unnamed  = 'no name' }
     local fileformat_symbols = { unix     = ' unix', dos      = ' dos', mac      = ' mac'   }
     local status_line = {
@@ -18,10 +22,12 @@ function setup_lualine()
         lualine_z = {}
     }
 
-    require('lualine').setup {
+    lualine.setup {
         options          = { theme = 'sonokai', globalstatus = true },
         sections         = status_line,
         inactive_section = status_line,
         tabline          = status_tab,
     }
 end
+
+return M

@@ -1,4 +1,6 @@
-function setup_nvim_cmp()
+local M = {}
+
+function M.setup()
     -- Global option of nvim-cmp
     vim.opt.completeopt = 'menu,menuone,noselect'
     vim.opt.pumblend    = 30 -- Completion window will translucent
@@ -33,7 +35,7 @@ function setup_nvim_cmp()
         completion = {
             keyword_length = 1
         },
-        
+
         -- Search word from selected place
         sources = cmp.config.sources(
         {
@@ -41,7 +43,7 @@ function setup_nvim_cmp()
             { name = 'vsnip' },
         },
         {
-            { 
+            {
                 name   = 'buffer',
                 option = {
                     -- Get word from all buffer
@@ -74,3 +76,5 @@ function setup_nvim_cmp()
         })
     })
 end
+
+return M

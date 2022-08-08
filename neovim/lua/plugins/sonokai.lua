@@ -1,4 +1,6 @@
-function setup_sonokai()
+local M = {}
+
+function M.setup()
     -- Set style
     vim.g.sonokai_style = 'shusia'
 
@@ -18,3 +20,5 @@ function setup_sonokai()
     -- Register colorscheme
     vim.cmd[[colorscheme sonokai]]
 end
+
+return M
