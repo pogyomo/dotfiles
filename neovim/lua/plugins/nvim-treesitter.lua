@@ -15,7 +15,7 @@ function setup_nvim_treesitter()
         },
 
         -- Settings for highligh
-        highlight        = {
+        highlight = {
             -- Enable highlight
             enable = true,
         },
