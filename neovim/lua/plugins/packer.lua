@@ -38,7 +38,10 @@ return require('packer').startup(function()
     -- Lsp and related plugin
     use{
         'neovim/nvim-lspconfig',
-        requires = { 'williamboman/nvim-lsp-installer' },
+        requires = {
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+        },
         config = function() setup_nvim_lsp() end
     }
 
