@@ -29,7 +29,7 @@ local status_tab = {
     lualine_b = {},
     lualine_c = {},
     lualine_x = {},
-    lualine_y = { "vim.fn.strftime(' %H:%M:%S')" },
+    lualine_y = { "vim.fn.strftime(' %Y/%m/%d %H:%M:%S')" },
     lualine_z = {},
 }
 
