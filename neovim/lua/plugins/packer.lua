@@ -1,13 +1,5 @@
--- External plugins
-local treesitter = require('plugins.external.nvim-treesitter')
-local sonokai    = require('plugins.external.sonokai')
-local nvim_lsp   = require('plugins.external.nvim-lsp')
-local nvim_cmp   = require('plugins.external.nvim-cmp')
-local lualine    = require('plugins.external.lualine')
-local indent     = require('indent_blankline')
-
 -- Plugins that will be managed by packer
-vim.cmd[[packadd packer.nvim]]
+vim.api.nvim_exec('packadd packer.nvim', false)
 return require('packer').startup(function(use)
     -- Packer should be maneged by itself
     use{
@@ -21,17 +13,18 @@ return require('packer').startup(function(use)
     }
     use{
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate', config = treesitter.setup(),
+        run = ':TSUpdate',
+        config = require('plugins.external.nvim-treesitter'),
     }
 
     -- Visual
     use{
         'sainnhe/sonokai',
-        config = sonokai.setup()
+        config = require('plugins.external.sonokai'),
     }
     use{
         'lukas-reineke/indent-blankline.nvim',
-        config = indent.setup()
+        config = require('plugins.external.indent')
     }
     use{
         'rcarriga/nvim-notify'
@@ -43,7 +36,7 @@ return require('packer').startup(function(use)
         requires = {
             'kyazdani42/nvim-web-devicons', opt = true
         },
-        config = lualine.setup()
+        config = require('plugins.external.lualine')
     }
 
     -- Lsp and related plugin
@@ -53,7 +46,7 @@ return require('packer').startup(function(use)
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
         },
-        config = nvim_lsp.setup()
+        config = require('plugins.external.nvim-lsp')
     }
 
     -- Completion plugin
@@ -70,6 +63,6 @@ return require('packer').startup(function(use)
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-vsnip',
         },
-        config = nvim_cmp.setup()
+        config = require('plugins.external.nvim-cmp')
     }
 end)

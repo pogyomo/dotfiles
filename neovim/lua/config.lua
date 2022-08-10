@@ -1,6 +1,6 @@
 -- load init settings
-require('init.mapping')
-require('init.editor')
+require('core.mappings')
+require('core.editor')
 
 -- load plugin settings
 require('plugins.packer')
