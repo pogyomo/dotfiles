@@ -15,4 +15,4 @@ vim.g.sonokai_diagnostic_virtual_text = 'colored'
 vim.g.sonokai_better_performance = true
 
 -- Register colorscheme
-vim.api.nvim_exec('silent! colorscheme sonokai', false)
+vim.cmd[[silent! colorscheme sonokai]]
