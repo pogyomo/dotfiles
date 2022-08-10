@@ -1,5 +1,6 @@
-local mods = require('core.util').requires{ 'lualine' }
-if next(mods) == nil then
+local util = require('core.util')
+local mods = util.requires{ 'lualine' }
+if util.is_empty(mods) then
     return
 end
 
