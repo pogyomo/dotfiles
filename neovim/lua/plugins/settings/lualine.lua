@@ -1,5 +1,5 @@
 local function setup()
-    local util = require('collection.util')
+    local util = require('core.util')
     local mods = util.requires{ 'lualine' }
     if util.is_empty(mods) then
         return
