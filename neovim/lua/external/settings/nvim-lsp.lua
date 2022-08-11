@@ -1,5 +1,5 @@
 local function setup()
-    local util = require'core.util'
+    local util = require'internal.utils'
     local mods = util.requires{
         'mason',
         'mason-lspconfig',
