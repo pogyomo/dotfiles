@@ -1,6 +1,7 @@
 -- Plugins that will be managed by packer
 vim.cmd.packadd('packer.nvim')
-return require('packer').startup(function(use)
+return require('packer').startup{
+function(use)
     -- Packer should be maneged by itself
     use{
         'wbthomason/packer.nvim'
@@ -66,4 +67,11 @@ return require('packer').startup(function(use)
         },
         config = require('external.settings.nvim-cmp'),
     }
-end)
+end,
+config = {
+    display = {
+        open_fn = function()
+            return require('packer.util').float{ border = 'rounded' }
+        end
+    }
+}}
