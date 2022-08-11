@@ -6,6 +6,11 @@ return require('packer').startup(function(use)
         'wbthomason/packer.nvim'
     }
 
+    -- My plugin
+    use{
+        'pogyomo/collection.nvim',
+    }
+
     -- Syntax highlights
     use{
         'thentenaar/vim-syntax-obscure',

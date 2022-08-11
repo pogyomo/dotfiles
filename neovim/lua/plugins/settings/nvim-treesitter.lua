@@ -1,5 +1,5 @@
 local function setup()
-    local util = require('core.util')
+    local util = require('collection.util')
     local mods = util.requires{ 'nvim-treesitter.configs' }
     if util.is_empty(mods) then
         return
