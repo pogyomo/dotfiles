@@ -15,6 +15,10 @@ vim.opt.clipboard   = 'unnamedplus'
 -- For backspace
 vim.opt.backspace   = 'indent,eol,start'
 
+-- Disable mouse
+vim.opt.mouse = ''
+
+
 
 -- -------------------
 -- Settings for screen

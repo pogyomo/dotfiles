@@ -18,18 +18,18 @@ return require('packer').startup(function(use)
     }
     use{
         'nvim-treesitter/nvim-treesitter',
-        run = ':silent! TSUpdate',
-        config = function() require('plugins.external.nvim-treesitter') end,
+        run = ':TSUpdate',
+        config = require('plugins.external.nvim-treesitter'),
     }
 
     -- Visual
     use{
         'sainnhe/sonokai',
-        config = function() require('plugins.external.sonokai') end,
+        config = require('plugins.external.sonokai'),
     }
     use{
         'lukas-reineke/indent-blankline.nvim',
-        config = function() require('plugins.external.indent') end,
+        config = require('plugins.external.indent'),
     }
     use{
         'rcarriga/nvim-notify'
@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
         requires = {
             'kyazdani42/nvim-web-devicons', opt = true
         },
-        config = function() require('plugins.external.lualine') end,
+        config = require('plugins.external.lualine'),
     }
 
     -- Lsp and related plugin
@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
         },
-        config = function() require('plugins.external.nvim-lsp') end,
+        config = require('plugins.external.nvim-lsp'),
     }
 
     -- Completion plugin
@@ -68,6 +68,6 @@ return require('packer').startup(function(use)
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-vsnip',
         },
-        config = function() require('plugins.external.nvim-cmp') end,
+        config = require('plugins.external.nvim-cmp'),
     }
 end)

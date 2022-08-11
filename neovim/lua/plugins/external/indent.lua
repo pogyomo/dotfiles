@@ -1,7 +1,11 @@
-local util = require('core.util')
-local mods = util.requires{ 'indent_blankline' }
-if util.is_empty(mods) then
-    return
+local function setup()
+    local util = require('core.util')
+    local mods = util.requires{ 'indent_blankline' }
+    if util.is_empty(mods) then
+        return
+    end
+
+    mods['indent_blankline'].setup()
 end
 
-mods['indent_blankline'].setup()
+return setup
