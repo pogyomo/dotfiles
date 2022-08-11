@@ -2,12 +2,10 @@ local function setup()
     -- Set style
     vim.g.sonokai_style = 'shusia'
 
-    -- Disable italic
+    -- Disable italic and bold
     vim.g.sonokai_enable_italic           = false
     vim.g.sonokai_disable_italic_comment  = true
-
-    -- Disable bold
-    vim.g.sonokai_lightline_disable_bold = true
+    vim.g.sonokai_lightline_disable_bold  = true
 
     -- Set virtual text color
     vim.g.sonokai_diagnostic_virtual_text = 'colored'

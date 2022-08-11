@@ -1,5 +1,5 @@
 -- Plugins that will be managed by packer
-vim.cmd[[packadd packer.nvim]]
+vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
     -- Packer should be maneged by itself
     use{
@@ -18,21 +18,22 @@ return require('packer').startup(function(use)
     }
     use{
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = require('plugins.external.nvim-treesitter'),
+        run = ':silent! TSUpdate',
+        config = require('plugins.settings.nvim-treesitter'),
     }
 
     -- Visual
     use{
         'sainnhe/sonokai',
-        config = require('plugins.external.sonokai'),
+        config = require('plugins.settings.sonokai'),
     }
     use{
         'lukas-reineke/indent-blankline.nvim',
-        config = require('plugins.external.indent'),
+        config = require('plugins.settings.indent'),
     }
     use{
-        'rcarriga/nvim-notify'
+        'rcarriga/nvim-notify',
+        config = require('plugins.settings.notify'),
     }
 
     -- Statusline
@@ -41,7 +42,7 @@ return require('packer').startup(function(use)
         requires = {
             'kyazdani42/nvim-web-devicons', opt = true
         },
-        config = require('plugins.external.lualine'),
+        config = require('plugins.settings.lualine'),
     }
 
     -- Lsp and related plugin
@@ -51,7 +52,7 @@ return require('packer').startup(function(use)
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
         },
-        config = require('plugins.external.nvim-lsp'),
+        config = require('plugins.settings.nvim-lsp'),
     }
 
     -- Completion plugin
@@ -68,6 +69,6 @@ return require('packer').startup(function(use)
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-vsnip',
         },
-        config = require('plugins.external.nvim-cmp'),
+        config = require('plugins.settings.nvim-cmp'),
     }
 end)

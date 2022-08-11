@@ -61,7 +61,6 @@ local function setup()
 
     -- Setup nvim-cmp at '/'
     mods['cmp'].setup.cmdline('/', {
-        -- Search word from selected place
         sources = {
             { name = 'buffer' }
         }
@@ -69,7 +68,6 @@ local function setup()
 
     -- Setup nvim-cmp at ':'
     mods['cmp'].setup.cmdline(':', {
-        -- Search word from selected place
         sources = mods['cmp'].config.sources(
         {
             { name = 'path' }
