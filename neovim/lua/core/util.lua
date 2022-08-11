@@ -6,7 +6,7 @@ local M = {}
 ---@param  names table
 ---@return table
 function M.requires(names)
-    if type(names) ~= "table" then
+    if not type(names) == "table" then
         return {}
     end
 
