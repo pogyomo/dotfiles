@@ -6,11 +6,6 @@ return require('packer').startup(function(use)
         'wbthomason/packer.nvim'
     }
 
-    -- Utilities
-    use{
-        'nvim-lua/plenary.nvim',
-    }
-
     -- Syntax highlights
     use{
         'thentenaar/vim-syntax-obscure',
