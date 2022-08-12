@@ -10,10 +10,10 @@ vim.opt.expandtab   = true
 vim.opt.autoindent  = true
 
 -- Share clipboard
-vim.opt.clipboard   = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 
 -- For backspace
-vim.opt.backspace   = 'indent,eol,start'
+vim.opt.backspace = 'indent,eol,start'
 
 -- Disable mouse
 vim.opt.mouse = ''
@@ -26,52 +26,52 @@ vim.opt.mouse = ''
 vim.cmd('syntax on')
 
 -- Don't display command
-vim.opt.showcmd        = false
+vim.opt.showcmd = false
 
 -- Display row number
 vim.opt.number         = true
 vim.opt.relativenumber = true
 
 -- Disable beep and flashing screen
-vim.opt.belloff        = 'all'
+vim.opt.belloff = 'all'
 
 -- Show current file name above window
-vim.opt.title          = true
+vim.opt.title = true
 
 -- Jump to corresponding backets when entered it
 -- and back to current position
-vim.opt.showmatch      = true
-vim.opt.matchtime      = 2 -- Time to jump (0.1 * x sec)
+vim.opt.showmatch = true
+vim.opt.matchtime = 2 -- Time to jump (0.1 * x sec)
 
 -- Change internal encoding of vim as utf-8
-vim.opt.encoding       = 'utf-8'
+vim.opt.encoding = 'utf-8'
 
 -- Measure for character corruption
-vim.opt.fileencodings  = 'utf-8, cp932, enc-jp, sjis'
+vim.opt.fileencodings = 'utf-8, cp932, enc-jp, sjis'
 
 -- When scrolling, have some space
 -- between sursor and edge of screen
-vim.opt.scrolloff      = 5
+vim.opt.scrolloff = 5
 
 -- Highlight current cursor position
-vim.opt.cursorline     = true
+vim.opt.cursorline = true
 
 -- Adapt vim to true color
-vim.opt.termguicolors  = true
+vim.opt.termguicolors = true
 
 
 -- -------------------
 -- Settings for search
 -- -------------------
 -- Enable increment search
-vim.opt.incsearch  = true
+vim.opt.incsearch = true
 
 -- Don't distinguish upper and lower character 
 vim.opt.ignorecase = true
 
 -- If upper character is contained,
 -- disenable ignorecase
-vim.opt.smartcase  = true
+vim.opt.smartcase = true
 
 
 -- ------------------
@@ -80,13 +80,8 @@ vim.opt.smartcase  = true
 -- Detect file type and load indent, plugin
 vim.cmd('filetype plugin indent on')
 
--- Change filetype depend on extension
-vim.cmd([[
-augroup change_ft
-    autocmd!
-    autocmd BufNewFile,BufRead *.tex set ft=tex
-augroup END
-]])
+-- When create empty .tex file, recognize it as latex (not planetex)
+vim.g.tex_flavor = "latex"
 
 -- Enable modeline
 vim.opt.modeline = true
@@ -98,7 +93,7 @@ vim.opt.autoread = true
 vim.opt.undofile = false
 
 -- Don't make backup file
-vim.opt.backup   = false
+vim.opt.backup = false
 
 -- Don't make swap file
 vim.opt.swapfile = false
