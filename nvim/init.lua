@@ -1,1 +1,2 @@
-vim.cmd[[inoremap jj <ESC>]]
+require("core")
+require("plugins")

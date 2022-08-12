@@ -1,7 +1,7 @@
 # for nvim
 ## delete directory
 rm -rf ~/.local/share/nvim/site/pack/packer
-rm -r ~/.config/nvim
+rm -rf ~/.config/nvim
 
 ## for neovim
 ### delete directory
