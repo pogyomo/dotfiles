@@ -7,7 +7,7 @@ local function setup()
 
     -- Global option of nvim-cmp
     vim.opt.completeopt = 'menu,menuone,noselect'
-    vim.opt.pumblend    = 30 -- Completion window will translucent
+    vim.opt.pumblend    = 10 -- Completion window will translucent
 
     -- Setup nvim-cmp at window
     local behavior = { behavior = mods['cmp'].SelectBehavior.Insert }
@@ -34,9 +34,15 @@ local function setup()
             ['<CR>']      = mods['cmp'].mapping.confirm({ select = false }),
         },
 
-        -- Number of character that need to start auto completion
         completion = {
-            keyword_length = 1
+            -- Number of character that need to start auto completion
+            keyword_length = 1,
+        },
+
+        window = {
+            documentation = {
+                border = "rounded",
+            },
         },
 
         -- Search word from selected place
