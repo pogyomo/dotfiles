@@ -1,7 +1,12 @@
-# for neovim
+# for nvim
 ## delete directory
-rm -rf ~/.local/share/nvim/site/pack/packer/start/*
-rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim/site/pack/packer
+rm -r ~/.config/nvim
+
+## for neovim
+### delete directory
+#rm -rf ~/.local/share/nvim/site/pack/packer/start/*
+#rm -rf ~/.config/nvim
 
 # for vim
 ## delete symbolic link
