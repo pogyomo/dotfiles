@@ -71,6 +71,14 @@ end,
 config = {
     display = {
         open_fn = function()
+            vim.api.nvim_create_augroup("PackerWinBlend", {})
+            vim.api.nvim_create_autocmd("FileType", {
+                group   = "PackerWinBlend",
+                pattern = "packer",
+                callback = function()
+                    vim.opt.winblend = 10
+                end,
+            })
             return require('packer.util').float{ border = 'rounded' }
         end
     }
