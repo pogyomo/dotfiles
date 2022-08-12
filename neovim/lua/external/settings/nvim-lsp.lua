@@ -29,14 +29,13 @@ local function setup()
 
     -- Setup lspcomfig with cmp_nvim_lsp
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities       = mods['cmp_nvim_lsp'].update_capabilities(capabilities)
+    capabilities = mods['cmp_nvim_lsp'].update_capabilities(capabilities)
     mods['mason-lspconfig'].setup_handlers{
         -- Default setting
         function(server)
-            local opts = {
+            mods['lspconfig'][server].setup({
                 capabilities = capabilities
-            }
-            mods['lspconfig'][server].setup(opts)
+            })
         end,
 
         -- Settings for specific servers
@@ -54,13 +53,7 @@ local function setup()
         ['rust_analyzer'] = function()
             mods['lspconfig'].rust_analyzer.setup{
                 settings = {
-                    Lua = {
-                        -- Only show name and type in completion window 
-                        -- This option is added since May 16, 2022
-                        -- See: https://github.com/rust-lang/rust-analyzer/pull/12010
-                        signatureInfo = {
-                            detail = "parameters"
-                        }
+                    ["rust-analyzer"] = {
                     }
                 }
             }
