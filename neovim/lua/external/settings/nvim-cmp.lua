@@ -1,6 +1,6 @@
 local function setup()
     local util = require('internal.plugins.utils')
-    local mods = util.requires{ 'cmp' }
+    local mods = util.requires('cmp')
     if util.is_empty(mods) then
         return
     end

@@ -1,6 +1,6 @@
 local function setup()
     local util = require('internal.plugins.utils')
-    local mods = util.requires{ 'notify' }
+    local mods = util.requires('notify')
     if util.is_empty(mods) then
         return
     end

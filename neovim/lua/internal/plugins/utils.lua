@@ -1,14 +1,32 @@
 local M = {}
 
----Get an array contains module names and
+---Take value-function paired table and return its return value.
+---If there is no associated function, return default.
+---@generic T
+---@generic U
+---@param value T
+---@param default U
+---@param table table<T, fun(): U>
+---@return U
+function M.match(value, default, table)
+    local func = table[value]
+    return func and func() or default --== func ? func() : default
+end
+
+---Take an array or a string that contains module names and
 ---return name-module paired table.
 ---If failed, return empty table.
----@param  names table
----@return table
+---@param  names string[] | string
+---@return table<string, unknown>
 function M.requires(names)
-    if not type(names) == "table" then
-        return {}
-    end
+    names = M.match(type(names), {}, {
+        ["string"] = function()
+            return { names }
+        end,
+        ["table"] = function()
+            return names
+        end
+    })
 
     local ret = {}
     for _, name in ipairs(names) do
