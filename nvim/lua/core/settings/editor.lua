@@ -4,8 +4,6 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
--- Disable mouse
-vim.opt.mouse = ""
 
 -- Settings for visual
 -- Do not show command
