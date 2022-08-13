@@ -1,5 +1,4 @@
 -- Memo: vim.keymap.set dosen't accept noremap (only accept remap). See neovim/runtime/lua/vim/keymap.lua
--- Memo: 
 
 -- Leader keys
 vim.g.mapleader = " "
