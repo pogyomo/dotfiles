@@ -10,7 +10,7 @@ function(use)
     }
     use{
         "nvim-treesitter/nvim-treesitter",
-        config = require("plugins.settings.treesitter") 
+        config = require("plugins.settings.treesitter")
     }
 
     -- Statusline
@@ -34,6 +34,30 @@ function(use)
     use{
         "rcarriga/nvim-notify",
         config = require("plugins.settings.notify")
+    }
+
+    -- Language Server Protocol
+    use{
+        "williamboman/mason.nvim",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "williamboman/mason-lspconfig.nvim",
+        },
+        config = require("plugins.settings.lsp")
+    }
+
+    -- Completion
+    use{
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+        },
+        config = require("plugins.settings.cmp")
     }
 end,
 config = {
