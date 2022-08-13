@@ -5,6 +5,9 @@ local function setup()
         "luasnip",
     }
 
+    -- Enable transparency for completion window
+    vim.opt.pumblend = 10
+
     -- Normal settings
     mods["cmp"].setup{
         snippet = {
