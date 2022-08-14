@@ -24,9 +24,14 @@ local function setup()
         formatting = {
             format = mods["lspkind"].cmp_format{
                 mode = "symbol_text",
-                -- When using rust, left side of completion menu show too long infomation.
-                -- So I disabled it.
-                menu = {},
+                -- List all possible source name
+                menu = {
+                    buffer = "[Buffer]",
+                    cmdline = "[Cmd]",
+                    luasnip = "[LuaSnip]",
+                    nvim_lsp = "[LSP]",
+                    path = "[Path]",
+                },
             }
         },
         mapping = {
