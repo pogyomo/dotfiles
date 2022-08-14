@@ -17,14 +17,18 @@ local function setup()
     mods["mason"].setup()
     mods["mason-lspconfig"].setup{
         ensure_installed = {
-            "rust_analyzer",
+            "clangd",
             "sumneko_lua",
+            "rust_analyzer",
         }
     }
 
     -- Settings of specific lsp with nvim-cmp
     local cap = vim.lsp.protocol.make_client_capabilities()
     cap = mods["cmp_nvim_lsp"].update_capabilities(cap)
+    mods["lspconfig"].clangd.setup{
+        capabilities = cap,
+    }
     mods["lspconfig"].sumneko_lua.setup{
         capabilities = cap,
         settings = {
