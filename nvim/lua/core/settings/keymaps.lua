@@ -7,6 +7,9 @@ vim.keymap.set("n", "<Leader>w", "[Window]",  { remap = true })
 vim.keymap.set("n", "<Leader>s", "[Split]",   { remap = true })
 
 -- Default keymaps for normal mode
+-- Movement
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
 -- Tab page 
 vim.keymap.set("n", "[TabPage]l", "gt")
 vim.keymap.set("n", "[TabPage]h", "gT")
