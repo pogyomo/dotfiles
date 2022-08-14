@@ -3,6 +3,7 @@ local function setup()
     local mods = util.requires{
         "cmp",
         "luasnip",
+        "lspkind",
     }
 
     -- Enable transparency for completion window
@@ -19,6 +20,14 @@ local function setup()
             documentation = {
                 border = "rounded",
             },
+        },
+        formatting = {
+            format = mods["lspkind"].cmp_format{
+                mode = "symbol_text",
+                -- When using rust, left side of completion menu show too long infomation.
+                -- So I disabled it.
+                menu = {},
+            }
         },
         mapping = {
             ["<Tab>"] = mods["cmp"].mapping.select_next_item(),
