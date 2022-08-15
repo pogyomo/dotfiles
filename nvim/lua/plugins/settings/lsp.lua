@@ -14,7 +14,11 @@ local function setup()
     vim.opt.signcolumn = "yes"
 
     -- Initialize
-    mods["mason"].setup()
+    mods["mason"].setup{
+        ui = {
+            border = "rounded",
+        }
+    }
     mods["mason-lspconfig"].setup{
         ensure_installed = {
             "clangd",
