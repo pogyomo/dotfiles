@@ -1,15 +1,15 @@
 local function setup()
-    local util = require('utils')
-    local mods = util.requires('notify')
+    local util = require("utils")
+    local mods = util.requires("notify")
     if util.is_empty(mods) then
         return
     end
 
-    mods['notify'].setup{
+    mods["notify"].setup{
         fps = 60,
-        stages = 'fade',
+        stages = "fade",
     }
-    vim.notify = mods['notify']
+    vim.notify = mods["notify"]
 end
 
 return setup
