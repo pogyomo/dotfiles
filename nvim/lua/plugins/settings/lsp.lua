@@ -41,27 +41,26 @@ local function setup()
     -- Settings of specific lsp with nvim-cmp
     local cap = vim.lsp.protocol.make_client_capabilities()
     cap = mods["cmp_nvim_lsp"].update_capabilities(cap)
-    mods["lspconfig"].clangd.setup{
-        capabilities = cap,
-    }
-    mods["lspconfig"].sumneko_lua.setup{
-        capabilities = cap,
-        settings = {
-            Lua = {
-                runtime = {
-                    version = "LuaJIT",
-                },
-                diagnostics = {
-                    globals = { "vim" },
+    mods["mason-lspconfig"].setup_handlers{
+        function(name)
+            mods["lspconfig"][name].setup {
+                capabilities = cap,
+            }
+        end,
+        ["sumneko_lua"] = function()
+            mods["lspconfig"].sumneko_lua.setup{
+                settings = {
+                    Lua = {
+                        runtime = {
+                            version = "LuaJIT",
+                        },
+                        diagnostics = {
+                            globals = { "vim" },
+                        }
+                    }
                 }
             }
-        }
-    }
-    mods["lspconfig"].rust_analyzer.setup{
-        capabilities = cap,
-    }
-    mods["lspconfig"].zls.setup{
-        capabilities = cap,
+        end,
     }
 end
 
