@@ -17,6 +17,7 @@ local function setup()
             "latex",
             "markdown",
             "rust",
+            "zig",
         },
 
         -- Settings for highligh

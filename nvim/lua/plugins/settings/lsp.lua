@@ -13,6 +13,16 @@ local function setup()
     -- Always show signcolumn (in left)
     vim.opt.signcolumn = "yes"
 
+    -- Autocmd for mason
+    vim.api.nvim_create_augroup("MasonAugroup", {})
+    vim.api.nvim_create_autocmd("FileType", {
+        group = "MasonAugroup",
+        pattern = "mason",
+        callback = function()
+            vim.opt.winblend = 10
+        end
+    })
+
     -- Initialize
     mods["mason"].setup{
         ui = {
@@ -24,6 +34,7 @@ local function setup()
             "clangd",
             "sumneko_lua",
             "rust_analyzer",
+            "zls",
         }
     }
 
@@ -47,6 +58,9 @@ local function setup()
         }
     }
     mods["lspconfig"].rust_analyzer.setup{
+        capabilities = cap,
+    }
+    mods["lspconfig"].zls.setup{
         capabilities = cap,
     }
 end
