@@ -35,6 +35,10 @@ function(use)
         "rcarriga/nvim-notify",
         config = require("plugins.settings.notify")
     }
+    use{
+        "folke/todo-comments.nvim",
+        config = require("plugins.settings.todo")
+    }
 
     -- Language Server Protocol
     use{
