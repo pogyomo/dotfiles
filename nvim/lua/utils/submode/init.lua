@@ -19,6 +19,16 @@ function Submode:create(name, info)
     self.info[name] = info
     vim.keymap.set(info.mode, info.enter, function() self:enter(name) end)
     vim.keymap.set(info.mode, info.leave, function() self:leave(name) end)
+
+    local auname = "Submode_" .. name
+    vim.api.nvim_create_augroup(auname, {})
+    vim.api.nvim_create_autocmd("ModeChanged", {
+        group = auname,
+        pattern = "*",
+        callback = function()
+            self:leave(name)
+        end,
+    })
 end
 
 ---Register keymap to the submode
