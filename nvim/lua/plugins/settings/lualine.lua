@@ -17,7 +17,7 @@ local function setup()
     }
 
     local status_line = {
-        lualine_a = { { "mode",  fmt = string.lower } },
+        lualine_a = { { "mode",  fmt = string.lower }, "require('utils.submode'):mode()"},
         lualine_b = { "branch", "diff", "diagnostics" },
         lualine_c = { { "filename", symbols = filename_symbols } },
         lualine_x = { "encoding", { "fileformat", symbols = fileformat_symbols }, "filetype" },
