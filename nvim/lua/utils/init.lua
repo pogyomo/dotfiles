@@ -46,10 +46,10 @@ end
 ---@param  table table
 ---@return boolean
 function M.is_empty(table)
-    if not type(table) == "table" then
-        return false
-    else
+    if type(table) == "table" then
         return next(table) == nil
+    else
+        return false
     end
 end
 
