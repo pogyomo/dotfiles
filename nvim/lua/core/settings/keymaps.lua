@@ -53,7 +53,6 @@ submode:register("WinResize", { lhs = "j", rhs = function() utils:win_resize_to(
 submode:register("WinResize", { lhs = "k", rhs = function() utils:win_resize_to("up")    end })
 submode:register("WinResize", { lhs = "h", rhs = function() utils:win_resize_to("left")  end })
 submode:register("WinResize", { lhs = "l", rhs = function() utils:win_resize_to("right") end })
-
 -- Lsp operator
 submode:create("LspOperator", { mode = "n", enter = "[Lsp]", leave = "<ESC>" })
 submode:register("LspOperator", { lhs = "d", rhs = vim.lsp.buf.definition })
