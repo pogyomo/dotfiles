@@ -1,10 +1,15 @@
 -- Memo: vim.keymap.set dosen't accept noremap (only accept remap). See neovim/runtime/lua/vim/keymap.lua
 
+local submode = require("utils.submode")
+local utils   = require("core.settings.utils")
+
 -- Leader keys
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>t", "[TabPage]", { remap = true })
 vim.keymap.set("n", "<Leader>w", "[Window]",  { remap = true })
 vim.keymap.set("n", "<Leader>s", "[Split]",   { remap = true })
+vim.keymap.set("n", "<Leader>r", "[Resize]",  { remap = true })
+vim.keymap.set("n", "<Leader>l", "[Lsp]",     { remap = true })
 
 -- Default keymaps for normal mode
 -- Movement
@@ -40,3 +45,19 @@ vim.keymap.set("i", [["]], [[""<Left>]])
 vim.keymap.set("i", "{<Enter>", "{}<Left><CR><ESC><S-o>")
 vim.keymap.set("i", "[<Enter>", "[]<Left><CR><ESC><S-o>")
 vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
+
+-- Keymaps for submodes
+-- Window resizer
+submode:create("WinResize", { mode = "n", enter = "[Resize]", leave = "<ESC>" })
+submode:register("WinResize", { lhs = "j", rhs = function() utils:win_resize_to("down")  end })
+submode:register("WinResize", { lhs = "k", rhs = function() utils:win_resize_to("up")    end })
+submode:register("WinResize", { lhs = "h", rhs = function() utils:win_resize_to("left")  end })
+submode:register("WinResize", { lhs = "l", rhs = function() utils:win_resize_to("right") end })
+
+-- Lsp operator
+submode:create("LspOperator", { mode = "n", enter = "[Lsp]", leave = "<ESC>" })
+submode:register("LspOperator", { lhs = "d", rhs = vim.lsp.buf.definition })
+submode:register("LspOperator", { lhs = "D", rhs = vim.lsp.buf.declaration })
+submode:register("LspOperator", { lhs = "H", rhs = vim.lsp.buf.hover })
+submode:register("LspOperator", { lhs = "i", rhs = vim.lsp.buf.implementation })
+submode:register("LspOperator", { lhs = "r", rhs = vim.lsp.buf.references })
