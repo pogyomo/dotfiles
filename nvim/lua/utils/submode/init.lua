@@ -5,13 +5,11 @@ local utils = require("utils.submode.utils")
 ---@field info table<string, SubmodeInfo>
 ---@field maps table<string, SubmodeMapping[]>
 ---@field escp table<string, MappingRestoreInfo[]>
----@field names_to_leave_with table<string, table<string, boolean | nil>> Names that have a same keys to leave
 Submode = {
     curr = "",
     info = {},
     maps = {},
     escp = {},
-    names_to_leave_with = {}
 }
 
 ---Create a new submode
@@ -19,11 +17,9 @@ Submode = {
 ---@param info SubmodeInfo
 function Submode:create(name, info)
     self.info[name] = info
-    self.names_to_leave_with[info.leave] = self.names_to_leave_with[info.leave] or {}
-    self.names_to_leave_with[info.leave][name] = true
 
     vim.keymap.set(info.mode, info.enter, function() self:enter(name) end)
-    vim.keymap.set(info.mode, info.leave, function() self:leave(info.leave) end)
+    vim.keymap.set(info.mode, info.leave, function() self:leave() end)
 
     local auname = "Submode_" .. name
     vim.api.nvim_create_augroup(auname, {})
@@ -31,7 +27,7 @@ function Submode:create(name, info)
         group = auname,
         pattern = "*",
         callback = function()
-            self:leave(info.leave)
+            self:leave()
         end,
     })
 end
@@ -69,15 +65,16 @@ function Submode:enter(name)
     self.curr = name
 end
 
----@param leave string keys to leave the submode
-function Submode:leave(leave)
-    if self.names_to_leave_with[leave][self.curr] then
-        for _, map in pairs(self.maps[self.curr]) do
-            vim.keymap.del(self.info[self.curr].mode, map.lhs)
-        end
-        utils.restore(self.escp[self.curr])
-        self.curr = ""
+function Submode:leave()
+    if self.curr == "" then
+        return
     end
+
+    for _, map in pairs(self.maps[self.curr]) do
+        vim.keymap.del(self.info[self.curr].mode, map.lhs)
+    end
+    utils.restore(self.escp[self.curr])
+    self.curr = ""
 end
 
 return setmetatable({}, { __index = Submode })
