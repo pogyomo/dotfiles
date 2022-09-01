@@ -48,6 +48,7 @@ vim.keymap.set("i", "[<Enter>", "[]<Left><CR><ESC><S-o>")
 vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
 
 -- Keymaps for submodes
+-- HACK: Need to change movement of WinResize.
 -- Window resizer
 submode:create("WinResize", {
     mode = "n",
