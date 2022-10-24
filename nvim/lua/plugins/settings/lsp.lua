@@ -39,8 +39,7 @@ local function setup()
     }
 
     -- Settings of specific lsp with nvim-cmp
-    local cap = vim.lsp.protocol.make_client_capabilities()
-    cap = mods["cmp_nvim_lsp"].update_capabilities(cap)
+    local cap = mods["cmp_nvim_lsp"].default_capabilities()
     mods["mason-lspconfig"].setup_handlers{
         function(name)
             mods["lspconfig"][name].setup {
