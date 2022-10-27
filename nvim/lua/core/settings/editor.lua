@@ -6,6 +6,8 @@ vim.opt.tabstop = 4
 vim.opt.expandtab = true
 -- Auto indent
 vim.opt.cindent = true
+-- Disable mouse
+vim.opt.mouse = ""
 
 -- Settings for visual
 -- Do not show command
