@@ -35,8 +35,7 @@ vim.keymap.set("n", "[Split]j", "<cmd>sp<CR><C-w>j")
 vim.keymap.set("n", "[Split]k", "<cmd>sp<CR><C-w>k")
 vim.keymap.set("n", "[Split]h", "<cmd>vsp<CR><C-w>h")
 vim.keymap.set("n", "[Split]l", "<cmd>vsp<CR><C-w>l")
-
--- Default keymaps for normal mode
+-- Misc
 vim.keymap.set("i", "jj",  "<ESC>")
 vim.keymap.set("i", "{",   "{}<Left>")
 vim.keymap.set("i", "[",   "[]<Left>")
