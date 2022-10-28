@@ -15,11 +15,8 @@ function(use)
 
     -- Statusline
     use{
+        -- NOTE: Lualine doesn't work well if I install neovim via brew.
         "nvim-lualine/lualine.nvim",
-        -- After the commit "6fbc35b3e0134ccce3848fef8855a3bb390aa509", tabline doesn't works well.
-        -- Below commit reverted above commit, but this commit is also reverted by newer commit. 
-        -- So, I will fix the commit until lualine fix this problem.
-        commit = "b1042d318446601d57e8b44033e597e003511636",
         requires = {
             "kyazdani42/nvim-web-devicons", opt = true
         },
