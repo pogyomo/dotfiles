@@ -57,7 +57,7 @@ function Submode:enter(name)
         return
     end
 
-    self.escp[name] = self.escp[name] or {}
+    self.escp[name] = {}
     for _, map in pairs(self.maps[name] or {}) do
         self.escp[name] = utils.save(self.info[name].mode, map.lhs, self.escp[name])
         vim.keymap.set(self.info[name].mode, map.lhs, map.rhs, map.opts)
