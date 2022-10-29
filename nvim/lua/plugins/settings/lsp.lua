@@ -5,6 +5,7 @@ local function setup()
         "lspconfig",
         "mason-lspconfig",
         "cmp_nvim_lsp",
+        "fidget",
     }
     if util.is_empty(mods) then
         return
@@ -12,6 +13,9 @@ local function setup()
 
     -- Always show signcolumn (in left)
     vim.opt.signcolumn = "yes"
+
+    -- Initialize fidget (show lsp's progress)
+    mods["fidget"].setup()
 
     -- Autocmd for mason
     vim.api.nvim_create_augroup("MasonAugroup", {})

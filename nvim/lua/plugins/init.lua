@@ -45,8 +45,12 @@ function(use)
     use{
         "williamboman/mason.nvim",
         requires = {
+            -- Core plugins
             "neovim/nvim-lspconfig",
             "williamboman/mason-lspconfig.nvim",
+
+            -- Show progress of lsp
+            "j-hui/fidget.nvim",
         },
         config = require("plugins.settings.lsp")
     }
