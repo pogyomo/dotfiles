@@ -1,6 +1,3 @@
--- NOTE: vim.keymap.set dosen't accept noremap (only accept remap).
--- NOTE: See neovim/runtime/lua/vim/keymap.lua
-
 local submode = require("utils.submode")
 local utils   = require("core.settings.keymaps.utils")
 
