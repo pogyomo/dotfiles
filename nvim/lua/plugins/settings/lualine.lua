@@ -1,6 +1,9 @@
 local function setup()
     local util = require("utils")
-    local mods = util.requires("lualine")
+    local mods = util.requires{
+        "lualine",
+        "submode",
+    }
     if util.is_empty(mods) then
         return
     end
@@ -17,7 +20,13 @@ local function setup()
     }
 
     local status_line = {
-        lualine_a = { { "mode",  fmt = string.lower }, "require('utils.submode'):mode()"},
+        lualine_a = {
+            { "mode",  fmt = string.lower },
+            {
+                function() return mods["submode"]:mode() end,
+                cond = function() return mods["submode"]:mode() ~= nil end
+            },
+        },
         lualine_b = { "branch", "diff", "diagnostics" },
         lualine_c = { { "filename", symbols = filename_symbols } },
         lualine_x = { "encoding", { "fileformat", symbols = fileformat_symbols }, "filetype" },

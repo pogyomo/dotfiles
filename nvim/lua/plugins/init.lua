@@ -75,6 +75,8 @@ function(use)
         },
         config = require("plugins.settings.cmp")
     }
+
+    use("pogyomo/submode.nvim")
 end,
 config = {
     display = {

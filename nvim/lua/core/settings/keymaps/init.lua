@@ -1,4 +1,4 @@
-local submode = require("utils.submode")
+local submode = require("submode")
 local utils   = require("core.settings.keymaps.utils")
 
 -- Leader keys
