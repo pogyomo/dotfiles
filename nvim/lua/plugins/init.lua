@@ -10,6 +10,7 @@ function(use)
     }
     use{
         "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
         config = require("plugins.settings.treesitter")
     }
 
