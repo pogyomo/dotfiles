@@ -77,7 +77,10 @@ function(use)
     }
 
     -- Key mapping
-    use("pogyomo/submode.nvim")
+    use{
+        "pogyomo/submode.nvim",
+        config = require("plugins.settings.submode")
+    }
 end,
 config = {
     display = {
