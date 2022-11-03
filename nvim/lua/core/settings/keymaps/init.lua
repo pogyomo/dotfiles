@@ -8,6 +8,7 @@ vim.keymap.set("n", "<Leader>w", "[Window]",  { remap = true })
 vim.keymap.set("n", "<Leader>s", "[Split]",   { remap = true })
 vim.keymap.set("n", "<Leader>r", "[Resize]",  { remap = true })
 vim.keymap.set("n", "<Leader>l", "[Lsp]",     { remap = true })
+vim.keymap.set("n", "<Leader>d", "[Doc]",     { remap = true })
 
 -- Default keymaps for normal mode
 -- Movement
@@ -92,4 +93,22 @@ submode:register("LspOperator", {
 submode:register("LspOperator", {
     lhs = "r",
     rhs = vim.lsp.buf.references
+})
+-- Document reader
+submode:create("DocReader", {
+    mode = "n",
+    enter = "[Doc]",
+    leave = { "q", "<ESC>" }
+})
+submode:register("DocReader", {
+    lhs = "<Enter>",
+    rhs = "<C-]>"
+})
+submode:register("DocReader", {
+    lhs = "u",
+    rhs = "<cmd>po<cr>"
+})
+submode:register("DocReader", {
+    lhs = "r",
+    rhs = "<cmd>ta<cr>"
 })
