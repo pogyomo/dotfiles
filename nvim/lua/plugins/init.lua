@@ -76,6 +76,7 @@ function(use)
         config = require("plugins.settings.cmp")
     }
 
+    -- Key mapping
     use("pogyomo/submode.nvim")
 end,
 config = {
