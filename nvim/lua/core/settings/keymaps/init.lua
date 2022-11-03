@@ -45,12 +45,14 @@ vim.keymap.set("i", "[<Enter>", "[]<Left><CR><ESC><S-o>")
 vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
 
 -- Keymaps for submodes
--- HACK: Need to change movement of WinResize.
+-- Variables
+local leave = { "q", "<ESC>" }
 -- Window resizer
+-- HACK: Need to change movement of WinResize.
 submode:create("WinResize", {
     mode = "n",
     enter = "[Resize]",
-    leave = "<ESC>"
+    leave = leave
 })
 submode:register("WinResize", {
     lhs = "j",
@@ -72,7 +74,7 @@ submode:register("WinResize", {
 submode:create("LspOperator", {
     mode = "n",
     enter = "[Lsp]",
-    leave = "<ESC>"
+    leave = leave
 })
 submode:register("LspOperator", {
     lhs = "d",
@@ -98,7 +100,7 @@ submode:register("LspOperator", {
 submode:create("DocReader", {
     mode = "n",
     enter = "[Doc]",
-    leave = { "q", "<ESC>" }
+    leave = leave
 })
 submode:register("DocReader", {
     lhs = "<Enter>",
