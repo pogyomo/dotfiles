@@ -6,7 +6,7 @@ local function setup()
     end
 
     mods["notify"].setup{
-        timeout = 500,
+        timeout = 1000,
         fps = 60,
         stages = "fade",
     }
