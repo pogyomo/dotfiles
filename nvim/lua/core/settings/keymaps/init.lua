@@ -1,5 +1,14 @@
-local submode = require("submode")
-local utils   = require("core.settings.keymaps.utils")
+local util = require("utils")
+local mods = util.requires{
+    "submode",
+    "core.settings.keymaps.utils",
+}
+if util.is_empty(mods) then
+    return
+end
+
+local submode = mods["submode"]
+local utils   = mods["core.settings.keymaps.utils"]
 
 -- Leader keys
 vim.g.mapleader = " "
