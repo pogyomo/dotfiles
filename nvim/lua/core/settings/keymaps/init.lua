@@ -57,24 +57,24 @@ vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
 -- Variables
 local leave = { "q", "<ESC>" }
 -- Window resizer
-submode:create("WinResize", {
+submode:create("WinResizer", {
     mode = "n",
     enter = "[Resize]",
     leave = leave
 })
-submode:register("WinResize", {
+submode:register("WinResizer", {
     lhs = "j",
     rhs = function() utils:win_resize_to("down") end
 })
-submode:register("WinResize", {
+submode:register("WinResizer", {
     lhs = "k",
     rhs = function() utils:win_resize_to("up") end
 })
-submode:register("WinResize", {
+submode:register("WinResizer", {
     lhs = "h",
     rhs = function() utils:win_resize_to("left") end
 })
-submode:register("WinResize", {
+submode:register("WinResizer", {
     lhs = "l",
     rhs = function() utils:win_resize_to("right") end
 })
