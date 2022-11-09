@@ -19,7 +19,7 @@ vim.keymap.set("n", "<Leader>r", "[Resize]",  { remap = true })
 vim.keymap.set("n", "<Leader>l", "[Lsp]",     { remap = true })
 vim.keymap.set("n", "<Leader>d", "[Doc]",     { remap = true })
 
--- Default keymaps for normal mode
+-- Keymaps for normal mode
 -- Movement
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
@@ -42,6 +42,8 @@ vim.keymap.set("n", "[Split]j", "<cmd>sp<CR><C-w>j")
 vim.keymap.set("n", "[Split]k", "<cmd>sp<CR><C-w>k")
 vim.keymap.set("n", "[Split]h", "<cmd>vsp<CR><C-w>h")
 vim.keymap.set("n", "[Split]l", "<cmd>vsp<CR><C-w>l")
+
+-- Keymaps for insert mode
 -- Misc
 vim.keymap.set("i", "jj",  "<ESC>")
 vim.keymap.set("i", "{",   "{}<Left>")
