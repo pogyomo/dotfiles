@@ -57,7 +57,6 @@ vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
 -- Variables
 local leave = { "q", "<ESC>" }
 -- Window resizer
--- HACK: Need to change movement of WinResize.
 submode:create("WinResize", {
     mode = "n",
     enter = "[Resize]",

@@ -39,6 +39,23 @@ function M:win_resize_to(direction)
         },
     }
 
+    -- Prevent that command line moves
+    if direction == "up" or direction == "down" then
+        if not (self.win_is_movable_to("up") or self.win_is_movable_to("down")) then
+            return
+        end
+    end
+
+    if direction == "left" and self.win_is_movable_to("left") and self.win_is_movable_to("right") then
+        vim.api.nvim_input("5<C-w>" .. "<LT>")
+        return
+    end
+
+    if direction == "up" and self.win_is_movable_to("up") and self.win_is_movable_to("down") then
+        vim.api.nvim_input("5<C-w>" .. "-")
+        return
+    end
+
     local movability = self.win_is_movable_to(direction)
     vim.api.nvim_input("5<C-w>" .. table[direction][movability])
 end
