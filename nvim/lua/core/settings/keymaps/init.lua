@@ -55,6 +55,10 @@ vim.keymap.set("i", "{<Enter>", "{}<Left><CR><ESC><S-o>")
 vim.keymap.set("i", "[<Enter>", "[]<Left><CR><ESC><S-o>")
 vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
 
+-- Keymaps for terminal mode
+-- Enable to exit from terminal mode by <ESC> like insert mode
+vim.keymap.set("t", "<ESC>", "<C-\\><C-N>")
+
 -- Keymaps for submodes
 -- Variables
 local leave = { "q", "<ESC>" }
