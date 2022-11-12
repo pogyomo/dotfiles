@@ -5,9 +5,7 @@ local function setup()
         return
     end
 
-    mods["submode"]:setup{
-        leave_when_mode_changed = false,
-    }
+    mods["submode"]:setup()
 end
 
 return setup
