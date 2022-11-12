@@ -62,7 +62,7 @@ vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
 -- Enable to exit from terminal mode by <ESC> like insert mode
 vim.keymap.set("t", "<ESC>", "<C-\\><C-N>")
 
--- Keymaps for submodes
+-- Settings for submodes
 -- Variables
 local leave = { "q", "<ESC>" }
 -- Window resizer
@@ -130,4 +130,21 @@ submode:register("DocReader", {
 submode:register("DocReader", {
     lhs = "r",
     rhs = "<cmd>ta<cr>"
+})
+
+-- Autocommand for submodes
+-- DocReader
+vim.api.nvim_create_augroup("DocReaderAutocmds", {})
+vim.api.nvim_create_autocmd("BufEnter", {
+    group = "DocReaderAutocmds",
+    pattern = "*",
+    callback = function()
+        if vim.opt.ft:get() == "help" then
+            submode:enter("DocReader")
+        else
+            if submode:mode() == "DocReader" then
+                submode:leave()
+            end
+        end
+    end
 })
