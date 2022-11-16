@@ -138,10 +138,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
     callback = function()
         if vim.opt.ft:get() == "help" then
             submode:enter("DocReader")
-        else
-            if submode:mode() == "DocReader" then
-                submode:leave()
-            end
+        end
+    end
+})
+vim.api.nvim_create_autocmd("BufLeave", {
+    group = "DocReaderAutocmds",
+    pattern = "*",
+    callback = function()
+        if vim.opt.ft:get() == "help" then
+            submode:leave()
         end
     end
 })
