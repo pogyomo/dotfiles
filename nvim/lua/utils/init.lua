@@ -53,7 +53,7 @@ function M.is_empty(table)
     end
 end
 
----Resize arbitarily thisngs that is represented by number or integer using easing function.
+---Resize arbitarily things that is represented by number or integer using easing function.
 ---@param fps  integer Fps of this resize.
 ---@param span integer How long dose it take to resize, or 0 for immediate change. Unit is milliseconds.
 ---@param diff number  How much to resize.
