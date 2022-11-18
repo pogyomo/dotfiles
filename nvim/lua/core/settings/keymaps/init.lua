@@ -132,21 +132,18 @@ submode:register("DocReader", {
 -- Autocommand for submodes
 -- DocReader
 vim.api.nvim_create_augroup("DocReaderAutocmds", {})
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd({
+    "BufEnter", "BufLeave"
+}, {
     group = "DocReaderAutocmds",
     pattern = "*",
-    callback = function()
+    callback = function(opt)
         if vim.opt.ft:get() == "help" then
-            submode:enter("DocReader")
-        end
-    end
-})
-vim.api.nvim_create_autocmd("BufLeave", {
-    group = "DocReaderAutocmds",
-    pattern = "*",
-    callback = function()
-        if vim.opt.ft:get() == "help" then
-            submode:leave()
+            if opt.event == "BufEnter" then
+                submode:enter("DocReader")
+            else
+                submode:leave()
+            end
         end
     end
 })
