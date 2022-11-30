@@ -128,6 +128,13 @@ submode:register("DocReader", {
     lhs = "r",
     rhs = "<cmd>ta<cr>"
 })
+submode:register("DocReader", {
+    lhs = "i",
+    rhs = function()
+        submode:leave()
+        vim.api.nvim_input("<insert>")
+    end
+})
 
 -- Autocommand for submodes
 -- DocReader
