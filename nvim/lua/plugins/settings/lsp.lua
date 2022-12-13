@@ -38,6 +38,7 @@ local function setup()
             "clangd",
             "sumneko_lua",
             "rust_analyzer",
+            "tsserver",
         }
     }
 
