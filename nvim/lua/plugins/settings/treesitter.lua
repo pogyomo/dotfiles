@@ -12,6 +12,7 @@ local function setup()
             "c",
             "cpp",
             "go",
+            "help",
             "java",
             "lua",
             "latex",
