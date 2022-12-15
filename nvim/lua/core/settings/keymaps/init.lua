@@ -73,16 +73,13 @@ submode:create("WinResizer", {
 submode:register("WinResizer", {
     lhs = "j",
     rhs = function() utils:win_resize_to("down") end
-})
-submode:register("WinResizer", {
+}, {
     lhs = "k",
     rhs = function() utils:win_resize_to("up") end
-})
-submode:register("WinResizer", {
+}, {
     lhs = "h",
     rhs = function() utils:win_resize_to("left") end
-})
-submode:register("WinResizer", {
+}, {
     lhs = "l",
     rhs = function() utils:win_resize_to("right") end
 })
@@ -95,20 +92,16 @@ submode:create("LspOperator", {
 submode:register("LspOperator", {
     lhs = "d",
     rhs = vim.lsp.buf.definition
-})
-submode:register("LspOperator", {
+}, {
     lhs = "D",
     rhs = vim.lsp.buf.declaration
-})
-submode:register("LspOperator", {
+}, {
     lhs = "H",
     rhs = vim.lsp.buf.hover
-})
-submode:register("LspOperator", {
+}, {
     lhs = "i",
     rhs = vim.lsp.buf.implementation
-})
-submode:register("LspOperator", {
+}, {
     lhs = "r",
     rhs = vim.lsp.buf.references
 })
@@ -119,16 +112,13 @@ submode:create("DocReader", {
 submode:register("DocReader", {
     lhs = "<Enter>",
     rhs = "<C-]>"
-})
-submode:register("DocReader", {
+}, {
     lhs = "u",
     rhs = "<cmd>po<cr>"
-})
-submode:register("DocReader", {
+}, {
     lhs = "r",
     rhs = "<cmd>ta<cr>"
-})
-submode:register("DocReader", {
+}, {
     lhs = "i",
     rhs = function()
         submode:leave()
