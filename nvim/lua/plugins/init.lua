@@ -11,9 +11,14 @@ function(use)
     use{
         "nvim-treesitter/nvim-treesitter",
         run = function()
-            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+            local ts_update = require("nvim-treesitter.install").update({
+                with_sync = true
+            })
             ts_update()
         end,
+        requires = {
+            "p00f/nvim-ts-rainbow"
+        },
         config = require("plugins.settings.treesitter")
     }
 
