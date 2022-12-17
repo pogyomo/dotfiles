@@ -11,13 +11,13 @@ function(use)
     use{
         "nvim-treesitter/nvim-treesitter",
         run = function()
-            local ts_update = require("nvim-treesitter.install").update({
+            require("nvim-treesitter.install").update{
                 with_sync = true
-            })
-            ts_update()
+            }()
         end,
         requires = {
-            "p00f/nvim-ts-rainbow"
+            -- NOTE: Loading this plugin if nvim-treesitter is installed.
+            { "p00f/nvim-ts-rainbow", module = { "nvim-treesitter.config" } }
         },
         config = require("plugins.settings.treesitter")
     }
@@ -27,7 +27,7 @@ function(use)
         -- NOTE: Lualine doesn't work well if I install neovim via brew.
         "nvim-lualine/lualine.nvim",
         requires = {
-            "kyazdani42/nvim-web-devicons", opt = true
+            { "kyazdani42/nvim-web-devicons", opt = true }
         },
         config = require("plugins.settings.lualine")
     }
@@ -102,7 +102,9 @@ config = {
                     vim.opt.winblend = 10
                 end,
             })
-            return require("packer.util").float{ border = "rounded" }
+            return require("packer.util").float{
+                border = "rounded"
+            }
         end
     }
 }}
