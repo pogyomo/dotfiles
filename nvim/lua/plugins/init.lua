@@ -6,7 +6,7 @@ function(use)
     -- Syntax highlight
     use{
         "thentenaar/vim-syntax-obscure",
-        opt = true, ft = { "nesasm", "ca65" }
+        ft = { "nesasm", "ca65" }
     }
     use{
         "nvim-treesitter/nvim-treesitter",
@@ -17,7 +17,12 @@ function(use)
         end,
         requires = {
             -- NOTE: Loading this plugin if nvim-treesitter is installed.
-            { "p00f/nvim-ts-rainbow", module = { "nvim-treesitter.config" } }
+            {
+                "p00f/nvim-ts-rainbow",
+                cond = function()
+                    return pcall(require, "nvim-treesitter")
+                end
+            },
         },
         config = require("plugins.settings.treesitter")
     }
