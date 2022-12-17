@@ -27,19 +27,35 @@ local function setup()
                 cond = function() return mods["submode"]:mode() ~= nil end
             },
         },
-        lualine_b = { "branch", "diff", "diagnostics" },
-        lualine_c = { { "filename", symbols = filename_symbols } },
-        lualine_x = { "encoding", { "fileformat", symbols = fileformat_symbols }, "filetype" },
-        lualine_y = { "progress" },
-        lualine_z = { "%l/%L:%c" }
+        lualine_b = {
+            "branch", "diff", "diagnostics"
+        },
+        lualine_c = {
+            { "filename", symbols = filename_symbols }
+        },
+        lualine_x = {
+            "encoding",
+            { "fileformat", symbols = fileformat_symbols },
+            "filetype"
+        },
+        lualine_y = {
+            "progress"
+        },
+        lualine_z = {
+            "%l/%L:%c"
+        }
     }
 
     local status_tab = {
-        lualine_a = { { "tabs", max_length = vim.o.columns, mode = 2 } },
+        lualine_a = {
+            { "tabs", max_length = vim.o.columns, mode = 2 }
+        },
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
-        lualine_y = { "vim.fn.strftime(' %Y/%m/%d %H:%M:%S')" },
+        lualine_y = {
+            "vim.fn.strftime(' %Y/%m/%d %H:%M:%S')"
+        },
         lualine_z = {},
     }
 
