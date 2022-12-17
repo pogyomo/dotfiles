@@ -55,18 +55,16 @@ function(use)
         config = require("plugins.settings.todo")
     }
 
-    -- Language Server Protocol
+    -- Package manager
     use{
         "williamboman/mason.nvim",
         requires = {
-            -- Core plugins
+            -- LSP manager and utility
             "neovim/nvim-lspconfig",
             "williamboman/mason-lspconfig.nvim",
-
-            -- Show progress of lsp
             "j-hui/fidget.nvim",
         },
-        config = require("plugins.settings.lsp")
+        config = require("plugins.settings.mason")
     }
 
     -- Completion
