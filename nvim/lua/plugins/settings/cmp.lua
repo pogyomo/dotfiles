@@ -5,6 +5,9 @@ local function setup()
         "luasnip",
         "lspkind",
     }
+    if util.is_empty(mods) then
+        return
+    end
 
     -- Enable transparency for completion window
     vim.opt.pumblend = 10
