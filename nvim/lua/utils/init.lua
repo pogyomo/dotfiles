@@ -53,38 +53,4 @@ function M.is_empty(table)
     end
 end
 
----Resize arbitarily things that is represented by number or integer using easing function.
----@param fps  integer Fps of this resize.
----@param span integer How long dose it take to resize, or 0 for immediate change. Unit is milliseconds.
----@param diff number  How much to resize.
----@param getter fun(): number  Function to get target's value.
----@param setter fun(v: number) Function to set value to target.
----@param easing fun(t: number): number Easing function that will be used while resizing.
----@param after? fun()  Function that will be called after resize done.
-function M.resize(diff, fps, span, getter, setter, easing, after)
-    if span == 0 then
-        setter(getter() + diff)
-        return
-    end
-
-    local interval = 1000 / fps
-    local original = getter()
-    local counter  = 0
-    local counter_diff = 1000 / (span * fps)
-    local timer    = vim.loop.new_timer()
-    timer:start(0, interval, vim.schedule_wrap(function()
-        if timer:is_closing() then
-            return
-        end
-
-        if counter <= 1 then
-            setter(original + diff * easing(counter))
-            counter = counter + counter_diff
-        else
-            timer:stop()
-            timer:close(vim.schedule_wrap(after and after or function() end))
-        end
-    end))
-end
-
 return M
