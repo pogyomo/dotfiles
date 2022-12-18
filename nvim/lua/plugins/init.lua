@@ -22,7 +22,7 @@ function(use)
                 cond = function()
                     return pcall(require, "nvim-treesitter")
                 end
-            },
+            }
         },
         config = require("plugins.settings.treesitter")
     }
@@ -32,7 +32,7 @@ function(use)
         -- NOTE: Lualine doesn't work well if I install neovim via brew.
         "nvim-lualine/lualine.nvim",
         requires = {
-            { "kyazdani42/nvim-web-devicons", opt = true }
+            "kyazdani42/nvim-web-devicons"
         },
         config = require("plugins.settings.lualine")
     }
@@ -62,7 +62,7 @@ function(use)
             -- LSP manager and utility
             "neovim/nvim-lspconfig",
             "williamboman/mason-lspconfig.nvim",
-            "j-hui/fidget.nvim",
+            "j-hui/fidget.nvim"
         },
         config = require("plugins.settings.mason")
     }
@@ -83,7 +83,7 @@ function(use)
             "saadparwaiz1/cmp_luasnip",
 
             -- Visual
-            "onsails/lspkind.nvim",
+            "onsails/lspkind.nvim"
         },
         config = require("plugins.settings.cmp")
     }
