@@ -97,18 +97,6 @@ function(use)
         "windwp/nvim-autopairs",
         config = require("plugins.settings.autopairs")
     }
-
-    -- Utils
-    use{
-        "justinhj/battery.nvim",
-        requires = {
-            "kyazdani42/nvim-web-devicons",
-            "nvim-lua/plenary.nvim"
-        },
-        config = function()
-            vim.schedule_wrap(require("battery").setup)
-        end
-    }
 end,
 config = {
     display = {
