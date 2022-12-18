@@ -3,6 +3,7 @@ local function setup()
     local mods = util.requires{
         "lualine",
         "submode",
+        "battery"
     }
     if util.is_empty(mods) then
         return
@@ -54,6 +55,7 @@ local function setup()
         lualine_c = {},
         lualine_x = {},
         lualine_y = {
+            mods["battery"].get_status_line,
             "vim.fn.strftime(' %Y/%m/%d %H:%M:%S')"
         },
         lualine_z = {},
