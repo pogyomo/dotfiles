@@ -48,14 +48,6 @@ vim.keymap.set("n", "[Split]l", "<cmd>vsp<CR><C-w>l")
 -- Keymaps for insert mode
 -- Misc
 vim.keymap.set("i", "jj",  "<ESC>")
-vim.keymap.set("i", "{",   "{}<Left>")
-vim.keymap.set("i", "[",   "[]<Left>")
-vim.keymap.set("i", "(",   "()<Left>")
-vim.keymap.set("i", [[']], [[''<Left>]])
-vim.keymap.set("i", [["]], [[""<Left>]])
-vim.keymap.set("i", "{<Enter>", "{}<Left><CR><ESC><S-o>")
-vim.keymap.set("i", "[<Enter>", "[]<Left><CR><ESC><S-o>")
-vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
 
 -- Keymaps for terminal mode
 -- Enable to exit from terminal mode by <ESC> like insert mode

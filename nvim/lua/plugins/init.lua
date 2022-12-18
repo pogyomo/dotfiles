@@ -93,6 +93,10 @@ function(use)
         "pogyomo/submode.nvim",
         config = require("plugins.settings.submode")
     }
+    use{
+        "windwp/nvim-autopairs",
+        config = require("plugins.settings.autopairs")
+    }
 end,
 config = {
     display = {
