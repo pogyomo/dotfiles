@@ -2,16 +2,10 @@
 --       Move the separator of windows instead of change the size of window.
 
 local util = require("utils.require")
-local mods = util.require{
-    "submode",
-    "core.settings.keymaps.utils"
-}
+local mods = util.require("submode")
 if not mods then
     return
 end
-
-local submode = mods["submode"]
-local utils   = mods["core.settings.keymaps.utils"]
 
 -- Leader keys
 vim.g.mapleader = " "
@@ -56,32 +50,13 @@ vim.keymap.set("t", "<ESC>", "<C-\\><C-N>")
 -- Settings for submodes
 -- Variables
 local leave = { "q", "<ESC>" }
--- Window resizer
-submode:create("WinResizer", {
-    mode = "n",
-    enter = "[Resize]",
-    leave = leave
-})
-submode:register("WinResizer", {
-    lhs = "j",
-    rhs = function() utils:win_resize_to("down") end
-}, {
-    lhs = "k",
-    rhs = function() utils:win_resize_to("up") end
-}, {
-    lhs = "h",
-    rhs = function() utils:win_resize_to("left") end
-}, {
-    lhs = "l",
-    rhs = function() utils:win_resize_to("right") end
-})
 -- Lsp operator
-submode:create("LspOperator", {
+mods["submode"]:create("LspOperator", {
     mode = "n",
     enter = "[Lsp]",
     leave = leave
 })
-submode:register("LspOperator", {
+mods["submode"]:register("LspOperator", {
     lhs = "d",
     rhs = vim.lsp.buf.definition
 }, {
@@ -98,10 +73,10 @@ submode:register("LspOperator", {
     rhs = vim.lsp.buf.references
 })
 -- Document reader
-submode:create("DocReader", {
+mods["submode"]:create("DocReader", {
     mode = "n",
 })
-submode:register("DocReader", {
+mods["submode"]:register("DocReader", {
     lhs = "<Enter>",
     rhs = "<C-]>"
 }, {
@@ -113,7 +88,7 @@ submode:register("DocReader", {
 }, {
     lhs = "i",
     rhs = function()
-        submode:leave()
+        mods["submode"]:leave()
         vim.api.nvim_input("<insert>")
     end
 })
@@ -129,9 +104,9 @@ vim.api.nvim_create_autocmd({
     callback = function(opt)
         if vim.opt.ft:get() == "help" then
             if opt.event == "BufEnter" then
-                submode:enter("DocReader")
+                mods["submode"]:enter("DocReader")
             else
-                submode:leave()
+                mods["submode"]:leave()
             end
         end
     end
