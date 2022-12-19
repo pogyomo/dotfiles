@@ -1,7 +1,9 @@
 local function setup()
-    local util = require("utils.require")
-    local mods = util.require("submode")
-    if not mods then
+    local mod = require("utils.modules")
+    local is_ok, mods = pcall(mod.requires, {
+        "submode"
+    })
+    if not is_ok then
         return
     end
 

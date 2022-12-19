@@ -1,12 +1,12 @@
 local function setup()
-    local util = require("utils.require")
-    local mods = util.require{
+    local mod = require("utils.modules")
+    local is_ok, mods = pcall(mod.requires, {
         "cmp",
         { "nvim-autopairs", as = "autopairs" },
         { "nvim-autopairs.rule", as = "rule" },
         { "nvim-autopairs.completion.cmp", as = "autopairs_cmp" }
-    }
-    if not mods then
+    })
+    if not is_ok then
         return
     end
 
@@ -16,12 +16,6 @@ local function setup()
         "confirm_done",
         mods["autopairs_cmp"].on_confirm_done()
     )
-
-    -- Rules for lua.
-    mods["autopairs"].add_rules{
-        mods["rule"]("then", "end", "lua"),
-        mods["rule"]("do",   "end", "lua")
-    }
 end
 
 return setup

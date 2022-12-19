@@ -1,7 +1,9 @@
 local function setup()
-    local util = require("utils.require")
-    local mods = util.require("todo-comments")
-    if not mods then
+    local mod = require("utils.modules")
+    local is_ok, mods = pcall(mod.requires, {
+        "todo-comments"
+    })
+    if not is_ok then
         return
     end
 

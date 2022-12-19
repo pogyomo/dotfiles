@@ -1,10 +1,10 @@
 local function setup()
-    local util = require("utils.require")
-    local mods = util.require{
+    local mod = require("utils.modules")
+    local is_ok, mods = pcall(mod.requires, {
         "lualine",
-        "submode",
-    }
-    if not mods then
+        "submode"
+    })
+    if not is_ok then
         return
     end
 

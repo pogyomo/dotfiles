@@ -1,13 +1,13 @@
 local function setup()
-    local util = require("utils.require")
-    local mods = util.require{
+    local mod = require("utils.modules")
+    local is_ok, mods = pcall(mod.requires, {
         "mason",
         "lspconfig",
         "mason-lspconfig",
         "cmp_nvim_lsp",
-        "fidget",
-    }
-    if not mods then
+        "fidget"
+    })
+    if not is_ok then
         return
     end
 
