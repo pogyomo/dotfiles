@@ -1,5 +1,6 @@
 ---Require a module safely.
 ---@param name string
+---@return unknown | nil
 local function safely_require(name)
     local is_ok, mod = pcall(require, name)
     return is_ok and mod or nil
@@ -8,7 +9,7 @@ end
 ---Validate module and return module name and its alternative name.
 ---@param mod any Module to validate.
 ---@return string # Extracted module name.
----@return string # Extracted module alternative name.
+---@return string # Extracted alternative name.
 local function validate_module(mod)
     if type(mod) == "string" then
         return mod, mod
