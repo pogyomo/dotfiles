@@ -4,7 +4,6 @@ local function setup()
         "cmp",
         { "nvim-autopairs", as = "autopairs" },
         { "nvim-autopairs.rule", as = "rule" },
-        { "nvim-autopairs.conds", as = "cond" },
         { "nvim-autopairs.completion.cmp", as = "autopairs_cmp" }
     }
     if not mods then
