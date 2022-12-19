@@ -14,9 +14,8 @@ local function validate_module(mod)
     if type(mod) == "string" then
         return mod, mod
     elseif type(mod) == "table" then
-        local err_msg = "If module is table, first element must be string."
-        assert(type(mod[1]) == "string", err_msg)
-        return mod[1], mod.as
+        assert(type(mod[1]) == "string", "First element must be string.")
+        return mod[1], mod.as or mod[1]
     else
         error("Module must be string or table.")
     end
@@ -26,7 +25,7 @@ local M = {}
 
 ---Load modules using these two type of elements.
 ---1. string - Write only the name of module.
----2. { string, as: string } - Pair of module name and alternative name.
+---2. { string, as: string? } - Pair of module name and alternative name.
 ---This only fail if structure of elements is invalid.
 ---Example:
 ---  require("utils.require").require{
