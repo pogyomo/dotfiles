@@ -1,12 +1,12 @@
 -- TODO: Change the behavior of WinResizer:
 --       Move the separator of windows instead of change the size of window.
 
-local util = require("utils")
-local mods = util.requires{
+local util = require("utils.require")
+local mods = util.require{
     "submode",
-    "core.settings.keymaps.utils",
+    "core.settings.keymaps.utils"
 }
-if util.is_empty(mods) then
+if not mods then
     return
 end
 

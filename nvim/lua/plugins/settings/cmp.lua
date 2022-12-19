@@ -1,11 +1,11 @@
 local function setup()
-    local util = require("utils")
-    local mods = util.requires{
+    local util = require("utils.require")
+    local mods = util.require{
         "cmp",
         "luasnip",
         "lspkind",
     }
-    if util.is_empty(mods) then
+    if not mods then
         return
     end
 

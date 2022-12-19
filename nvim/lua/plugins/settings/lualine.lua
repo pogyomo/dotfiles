@@ -1,10 +1,10 @@
 local function setup()
-    local util = require("utils")
-    local mods = util.requires{
+    local util = require("utils.require")
+    local mods = util.require{
         "lualine",
         "submode",
     }
-    if util.is_empty(mods) then
+    if not mods then
         return
     end
 

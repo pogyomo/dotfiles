@@ -1,7 +1,7 @@
 local function setup()
-    local util = require("utils")
-    local mods = util.requires("submode")
-    if util.is_empty(mods) then
+    local util = require("utils.require")
+    local mods = util.require("submode")
+    if not mods then
         return
     end
 
