@@ -40,8 +40,12 @@ local function setup()
         mapping = {
             ["<Tab>"] = mods["cmp"].mapping.select_next_item(),
             ["<CR>"]  = mods["cmp"].mapping.confirm{ select = false },
-            ["<C-n>"] = mods["cmp"].mapping.select_next_item{ behavior = mods["cmp"].SelectBehavior.Select },
-            ["<C-p>"] = mods["cmp"].mapping.select_prev_item{ behavior = mods["cmp"].SelectBehavior.Select },
+            ["<C-n>"] = mods["cmp"].mapping.select_next_item{
+                behavior = mods["cmp"].SelectBehavior.Select
+            },
+            ["<C-p>"] = mods["cmp"].mapping.select_prev_item{
+                behavior = mods["cmp"].SelectBehavior.Select
+            },
             ["<C-b>"] = mods["cmp"].mapping.scroll_docs(-4),
             ["<C-f>"] = mods["cmp"].mapping.scroll_docs(4),
         },
