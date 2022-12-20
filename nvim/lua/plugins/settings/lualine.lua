@@ -8,7 +8,7 @@ local function setup()
         return
     end
 
-    local filename_symbols   = {
+    local filename_symbols = {
         modified = "+",
         readonly = "-",
         unnamed  = "no name"
