@@ -11,12 +11,12 @@ local function setup()
     local filename_symbols   = {
         modified = "+",
         readonly = "-",
-        unnamed  = "no name",
+        unnamed  = "no name"
     }
     local fileformat_symbols = {
         unix = " unix",
         dos  = " dos",
-        mac  = " mac",
+        mac  = " mac"
     }
 
     local status_line = {
@@ -25,7 +25,7 @@ local function setup()
             {
                 function() return mods["submode"]:mode() end,
                 cond = function() return mods["submode"]:mode() ~= nil end
-            },
+            }
         },
         lualine_b = {
             "branch", "diff", "diagnostics"
@@ -56,7 +56,7 @@ local function setup()
         lualine_y = {
             "vim.fn.strftime(' %Y/%m/%d %H:%M:%S')"
         },
-        lualine_z = {},
+        lualine_z = {}
     }
 
     local status_bar = {
@@ -82,7 +82,7 @@ local function setup()
         inactive_section = status_line,
         tabline          = status_tab,
         winbar           = status_bar,
-        inactive_winbar  = status_bar,
+        inactive_winbar  = status_bar
     }
 end
 
