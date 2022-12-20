@@ -14,7 +14,6 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>t", "[TabPage]", { remap = true })
 vim.keymap.set("n", "<Leader>w", "[Window]",  { remap = true })
 vim.keymap.set("n", "<Leader>s", "[Split]",   { remap = true })
-vim.keymap.set("n", "<Leader>r", "[Resize]",  { remap = true })
 vim.keymap.set("n", "<Leader>l", "[Lsp]",     { remap = true })
 
 -- Keymaps for normal mode
@@ -57,8 +56,7 @@ mods["submode"]:create("LspOperator", {
     mode = "n",
     enter = "[Lsp]",
     leave = leave
-})
-mods["submode"]:register("LspOperator", {
+}, {
     lhs = "d",
     rhs = vim.lsp.buf.definition
 }, {
@@ -77,8 +75,7 @@ mods["submode"]:register("LspOperator", {
 -- Document reader
 mods["submode"]:create("DocReader", {
     mode = "n",
-})
-mods["submode"]:register("DocReader", {
+}, {
     lhs = "<Enter>",
     rhs = "<C-]>"
 }, {
