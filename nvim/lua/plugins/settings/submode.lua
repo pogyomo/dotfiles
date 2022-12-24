@@ -12,7 +12,11 @@ local function setup()
 
     -- Settings for submodes
     -- Keymaps to enter submodes
-    vim.keymap.set("n", "<Leader>l", "[Lsp]", { remap = true })
+    vim.g.mapleader = " "
+    vim.keymap.set("n", "<Leader>l", "[Lsp]",    { remap = true })
+    vim.keymap.set("n", "<Leader>t", "[Tab]",    { remap = true })
+    vim.keymap.set("n", "<Leader>w", "[Window]", { remap = true })
+    vim.keymap.set("n", "<Leader>s", "[Split]",  { remap = true})
     -- Variables
     local leave = { "q", "<ESC>" }
     -- Lsp operator
@@ -35,6 +39,61 @@ local function setup()
     }, {
         lhs = "r",
         rhs = vim.lsp.buf.references
+    })
+    -- Tab manager
+    mods["submode"]:create("TabManager", {
+        mode = "n",
+        enter = "[Tab]",
+        leave = leave
+    }, {
+        lhs = { "l", "h" },
+        rhs = function(lhs)
+            mods["submode"]:leave()
+            return lhs == "l" and "gt" or "gT"
+        end,
+        opts = {
+            expr = true
+        }
+    }, {
+        lhs = { "L", "H" },
+        rhs = function(lhs)
+            mods["submode"]:leave()
+            return ("<cmd>%stabmove<cr>"):format(lhs == "L" and "+" or "-")
+        end,
+        opts = {
+            expr = true
+        }
+    })
+    -- Window manager
+    mods["submode"]:create("WindowManager", {
+        mode = "n",
+        enter = "[Window]",
+        leave = leave
+    }, {
+        lhs = { "j", "k", "h", "l", "J", "K", "H", "L" },
+        rhs = function(lhs)
+            mods["submode"]:leave()
+            return ("<C-w>%s"):format(lhs)
+        end,
+        opts = {
+            expr = true
+        }
+    })
+    -- Window splitter
+    mods["submode"]:create("WindowSplit", {
+        mode = "n",
+        enter = "[Split]",
+        leave = leave
+    }, {
+        lhs = { "j", "k", "h", "l" },
+        rhs = function(lhs)
+            mods["submode"]:leave()
+            local prefix = (lhs == "h" or lhs == "l") and "v" or ""
+            return ("<cmd>%ssp<cr><C-w>%s"):format(prefix, lhs)
+        end,
+        opts = {
+            expr = true
+        }
     })
     -- Document reader
     mods["submode"]:create("DocReader", {
