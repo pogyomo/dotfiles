@@ -16,7 +16,7 @@ local function setup()
     vim.keymap.set("n", "<Leader>l", "[Lsp]",    { remap = true })
     vim.keymap.set("n", "<Leader>t", "[Tab]",    { remap = true })
     vim.keymap.set("n", "<Leader>w", "[Window]", { remap = true })
-    vim.keymap.set("n", "<Leader>s", "[Split]",  { remap = true})
+    vim.keymap.set("n", "<Leader>s", "[Split]",  { remap = true })
     -- Variables
     local leave = { "q", "<ESC>" }
     -- Lsp operator
