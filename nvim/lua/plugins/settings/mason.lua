@@ -18,7 +18,7 @@ local function setup()
         -- Initialize mason.
         mods["mason"].setup{
             ui = {
-                border = "rounded",
+                border = "rounded"
             }
         }
 
@@ -43,7 +43,7 @@ local function setup()
                 "clangd",
                 "sumneko_lua",
                 "rust_analyzer",
-                "tsserver",
+                "tsserver"
             }
         }
 
@@ -52,7 +52,7 @@ local function setup()
         mods["mason-lspconfig"].setup_handlers{
             function(name)
                 mods["lspconfig"][name].setup {
-                    capabilities = cap,
+                    capabilities = cap
                 }
             end,
             ["sumneko_lua"] = function()
@@ -60,10 +60,10 @@ local function setup()
                     settings = {
                         Lua = {
                             runtime = {
-                                version = "LuaJIT",
+                                version = "LuaJIT"
                             },
                             diagnostics = {
-                                globals = { "vim" },
+                                globals = { "vim" }
                             }
                         }
                     }

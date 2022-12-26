@@ -20,18 +20,18 @@ local function setup()
             "latex",
             "markdown",
             "rust",
-            "zig",
+            "zig"
         },
 
         -- Settings for highligh
         highlight = {
             -- Enable highlight
-            enable = true,
+            enable = true
         },
 
         rainbow = {
             enable = true,
-            extended_mode = true,
+            extended_mode = true
         }
     }
 end

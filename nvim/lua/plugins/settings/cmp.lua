@@ -21,8 +21,8 @@ local function setup()
         },
         window = {
             documentation = {
-                border = "rounded",
-            },
+                border = "rounded"
+            }
         },
         formatting = {
             format = mods["lspkind"].cmp_format{
@@ -33,8 +33,8 @@ local function setup()
                     cmdline = "[Cmd]",
                     luasnip = "[LuaSnip]",
                     nvim_lsp = "[LSP]",
-                    path = "[Path]",
-                },
+                    path = "[Path]"
+                }
             }
         },
         mapping = {
@@ -47,15 +47,15 @@ local function setup()
                 behavior = mods["cmp"].SelectBehavior.Select
             },
             ["<C-b>"] = mods["cmp"].mapping.scroll_docs(-4),
-            ["<C-f>"] = mods["cmp"].mapping.scroll_docs(4),
+            ["<C-f>"] = mods["cmp"].mapping.scroll_docs(4)
         },
         sources = mods["cmp"].config.sources({
             { name = "nvim_lsp" },
             { name = "luasnip" },
-            { name = "nvim_lsp_signature_help" },
+            { name = "nvim_lsp_signature_help" }
         }, {
             { name = "buffer" },
-            { name = "path" },
+            { name = "path" }
         })
     }
 

@@ -10,7 +10,7 @@ local function setup()
     mods["todo-comments"].setup{
         keywords = {
             REVIEW  = { icon = " ", color = "info" },
-            CHANGED = { icon = " ", color = "hint" },
+            CHANGED = { icon = " ", color = "hint" }
         }
     }
 end

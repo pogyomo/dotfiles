@@ -10,7 +10,7 @@ local function setup()
     mods["notify"].setup{
         timeout = 1000,
         fps = 60,
-        stages = "fade",
+        stages = "fade"
     }
     vim.notify = mods["notify"]
 end
