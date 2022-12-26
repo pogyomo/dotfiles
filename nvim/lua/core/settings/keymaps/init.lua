@@ -1,3 +1,8 @@
+-- Keymaps for normal mode
+-- Move display line.
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
 -- Keymaps for insert mode
 -- Misc
 vim.keymap.set("i", "jj",  "<ESC>")
