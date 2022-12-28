@@ -7,6 +7,10 @@ local function setup()
         return
     end
 
+    local function append_leave(head)
+        return head .. "<cmd>lua require'submode':leave()<cr>"
+    end
+
     -- Setup submode.
     mods["submode"]:setup()
 
@@ -48,21 +52,16 @@ local function setup()
     }, {
         lhs = { "l", "h" },
         rhs = function(lhs)
-            mods["submode"]:leave()
-            return lhs == "l" and "gt" or "gT"
+            return append_leave(lhs == "l" and "gt" or "gT")
         end,
-        opts = {
-            expr = true
-        }
+        opts = { expr = true }
     }, {
         lhs = { "L", "H" },
         rhs = function(lhs)
-            mods["submode"]:leave()
-            return ("<cmd>%stabmove<cr>"):format(lhs == "L" and "+" or "-")
+            local cmd = ("<cmd>%stabmove<cr>"):format(lhs == "L" and "+" or "-")
+            return append_leave(cmd)
         end,
-        opts = {
-            expr = true
-        }
+        opts = { expr = true }
     })
     -- Window manager
     mods["submode"]:create("WindowManager", {
@@ -72,12 +71,9 @@ local function setup()
     }, {
         lhs = { "j", "k", "h", "l", "J", "K", "H", "L" },
         rhs = function(lhs)
-            mods["submode"]:leave()
-            return ("<C-w>%s"):format(lhs)
+            return append_leave(("<C-w>%s"):format(lhs))
         end,
-        opts = {
-            expr = true
-        }
+        opts = { expr = true }
     })
     -- Window splitter
     mods["submode"]:create("WindowSplit", {
@@ -87,13 +83,10 @@ local function setup()
     }, {
         lhs = { "j", "k", "h", "l" },
         rhs = function(lhs)
-            mods["submode"]:leave()
             local prefix = (lhs == "h" or lhs == "l") and "v" or ""
-            return ("<cmd>%ssp<cr><C-w>%s"):format(prefix, lhs)
+            return append_leave(("<cmd>%ssp<cr><C-w>%s"):format(prefix, lhs))
         end,
-        opts = {
-            expr = true
-        }
+        opts = { expr = true }
     })
     -- Document reader
     mods["submode"]:create("DocReader", {
@@ -110,15 +103,15 @@ local function setup()
     }, {
         lhs = "i",
         rhs = function()
-            mods["submode"]:leave()
-            vim.api.nvim_input("<insert>")
-        end
+            return append_leave("<insert>")
+        end,
+        opts = { expr = true }
     })
     -- Better leave
     local bl_timer
     mods["submode"]:create("BetterLeavePre", {
         mode = "i",
-        show_mode = false,
+        --show_mode = false,
         enter = "j",
         enter_cb = function()
             vim.api.nvim_feedkeys("j", "n", true)
@@ -133,25 +126,20 @@ local function setup()
     })
     mods["submode"]:create("BetterLeave", {
         mode = "i",
-        show_mode = false
+        --show_mode = false
     }, {
         lhs = {
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
             "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
             "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+            "<BS>"
         },
         rhs = function(lhs)
-            mods["submode"]:leave()
-            if lhs == "j" then
-                bl_timer:stop()
-                bl_timer:close()
-                local keys = "<BS><ESC>"
-                keys = vim.api.nvim_replace_termcodes(keys, true, true, true)
-                vim.api.nvim_feedkeys(keys, "n", true)
-            else
-                return lhs
-            end
+            print(lhs)
+            bl_timer:stop()
+            bl_timer:close()
+            return append_leave(lhs == "j" and "<BS><ESC>" or lhs)
         end,
         opts = { expr = true }
     })

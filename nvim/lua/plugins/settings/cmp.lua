@@ -9,6 +9,24 @@ local function setup()
         return
     end
 
+    local s = mods["luasnip"].s
+    local t = mods["luasnip"].t
+    mods["luasnip"].add_snippets("rust", {
+        s({ trig = "input" }, {
+            t({
+                "let mut input = Vec::new();",
+                "for line in std::io::stdin().lines() {",
+                "    let line = line.unwrap()",
+                "                   .split_whitespace()",
+                "                   .map(|s| s.to_string())",
+                "                   .collect::<Vec<String>>();",
+                "    input.push(line);",
+                "}",
+                ""
+            }),
+        })
+    })
+
     -- Enable transparency for completion window
     vim.opt.pumblend = 10
 
