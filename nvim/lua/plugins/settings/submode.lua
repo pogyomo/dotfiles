@@ -111,7 +111,7 @@ local function setup()
     local bl_timer
     mods["submode"]:create("BetterLeavePre", {
         mode = "i",
-        --show_mode = false,
+        show_mode = false,
         enter = "j",
         enter_cb = function()
             vim.api.nvim_feedkeys("j", "n", true)
@@ -126,17 +126,15 @@ local function setup()
     })
     mods["submode"]:create("BetterLeave", {
         mode = "i",
-        --show_mode = false
+        show_mode = false
     }, {
         lhs = {
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
             "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
             "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-            "<BS>"
+            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
         },
         rhs = function(lhs)
-            print(lhs)
             bl_timer:stop()
             bl_timer:close()
             return append_leave(lhs == "j" and "<BS><ESC>" or lhs)
