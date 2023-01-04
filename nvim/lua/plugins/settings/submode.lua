@@ -107,40 +107,6 @@ local function setup()
         end,
         opts = { expr = true }
     })
-    -- Better leave
-    local bl_timer
-    mods["submode"]:create("BetterLeavePre", {
-        mode = "i",
-        show_mode = false,
-        enter = "j",
-        enter_cb = function()
-            vim.api.nvim_feedkeys("j", "n", true)
-            mods["submode"]:enter("BetterLeave")
-            bl_timer = vim.loop.new_timer()
-            bl_timer:start(500, 0, vim.schedule_wrap(function()
-                mods["submode"]:leave()
-                bl_timer:stop()
-                bl_timer:close()
-            end))
-        end
-    })
-    mods["submode"]:create("BetterLeave", {
-        mode = "i",
-        show_mode = false
-    }, {
-        lhs = {
-            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-            "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-        },
-        rhs = function(lhs)
-            bl_timer:stop()
-            bl_timer:close()
-            return append_leave(lhs == "j" and "<BS><ESC>" or lhs)
-        end,
-        opts = { expr = true }
-    })
 
     -- Autocommand for submodes
     -- DocReader
