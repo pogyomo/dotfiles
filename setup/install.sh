@@ -5,15 +5,7 @@ if [ ! -d ~/.config ]; then
 fi
 
 # for nvim
-## install packer.nvim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-## make directory
-if [ ! -d ~/.config/nvim ]; then
-    mkdir ~/.config/nvim
-fi
-## make symbolic link
-ln -sfv ~/dotfiles/nvim/* ~/.config/nvim/
+git clone https://github.com/pogyomo/nvim ~/.config/nvim
 
 # for vim
 ## make symbolic link

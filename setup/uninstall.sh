@@ -1,6 +1,6 @@
 # for nvim
 ## delete directory
-rm -rf ~/.local/share/nvim/site/pack/packer
+rm -rf ~/.local/share/nvim
 rm -rf ~/.config/nvim
 
 # for vim
